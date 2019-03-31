@@ -1,0 +1,150 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/404?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7ead8a2b-2310-456c-9857-456322704a70"
+        }
+    ],
+    "vid": [
+        {
+            "value": 129
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2018-11-29T09:36:34+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "651c87b8-5944-4f5b-9bc6-fd60ccdfa55c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "651c87b8-5944-4f5b-9bc6-fd60ccdfa55c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Error 404",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-11-22T10:55:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-29T09:36:34+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/404",
+            "pid": 1,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<img alt=\"Error 404\" data-align=\"center\" data-entity-type=\"file\" data-entity-uuid=\"fb84e902-5f9c-4610-9abc-25d7d0fd70e9\" src=\"\/sites\/default\/files\/inline-images\/404.png\" \/>\r\n<h3 class=\"text-align-center\">&nbsp;<\/h3>\r\n\r\n<h3 class=\"text-align-center\">The requested URL was not found on this server.<\/h3>\r\n",
+            "format": "full_html",
+            "processed": "<img alt=\"Error 404\" data-entity-type=\"file\" data-entity-uuid=\"fb84e902-5f9c-4610-9abc-25d7d0fd70e9\" src=\"\/sites\/default\/files\/inline-images\/404.png\" class=\"align-center\" \/><h3 class=\"text-align-center\">\u00a0<\/h3>\n\n<h3 class=\"text-align-center\">The requested URL was not found on this server.<\/h3>\n",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

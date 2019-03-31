@@ -1,0 +1,13 @@
+{% set color_hexa2 = content.field_foreground_color_info[0]['#markup'] | split(' ',2)[0] %}
+{% set color_opacity2 = content.field_foreground_color_info[0]['#markup'] | split(' ',2)[1] %}
+<div class="row margin1">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+      <div class="centerIcon">
+        <img src="{{ file_url(content.field_info1_icon_image.0['#item'].entity.uri.value) }}">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+      <h3 style="{% if content.field_foreground_color_info[0]['#markup'] %} color: {{ color_hexa2 }}!important;opacity: {{ color_opacity2 }} {% endif %}">{{ content.field_faq_title[0] }}</h3>
+      <p style="{% if content.field_foreground_color_info[0]['#markup'] %} color: {{ color_hexa2 }}!important;opacity: {{ color_opacity2 }} {% endif %}">{{ content.field_banner_short_description[0] }}</p>
+    </div>
+</div>

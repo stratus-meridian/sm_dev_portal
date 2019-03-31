@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        }
+    },
+    "id": [
+        {
+            "value": 9
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e3663901-bb01-4daa-bde2-351050355c84"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 9
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-02-02T10:35:32+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Promo",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-02-04T05:48:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<div class=\"container con-space\">\r\n    <div class=\"position-relative width-lg bg-white text-center z-index mx-lg-auto\">\r\n        <ul class=\"nav nav-font set-nav nav-border nav-box-shadow nav-justified\" id=\"tab\" role=\"tablist\">\r\n            <li class=\"nav-item\"> <a class=\"nav-link font-weight active show\" id=\"one-tab\" data-toggle=\"pill\" href=\"#one\" role=\"tab\" aria-controls=\"one\" aria-selected=\"true\">\r\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\r\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"> <img src=\"sites\/default\/files\/home\/explore_icon.png\"> <\/figure>\r\n                    Register <\/div>\r\n                <\/a> <\/li>\r\n            <li class=\"nav-item\"> <a class=\"nav-link font-weight \" id=\"two-tab\" data-toggle=\"pill\" href=\"#two\" role=\"tab\" aria-controls=\"two\" aria-selected=\"true\">\r\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\r\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"> <img src=\"sites\/default\/files\/home\/explore_icon.png\"> <\/figure>\r\n                    Test <\/div>\r\n                <\/a> <\/li>\r\n            <li class=\"nav-item\"> <a class=\"nav-link font-weight \" id=\"three-tab\" data-toggle=\"pill\" href=\"#three\" role=\"tab\" aria-controls=\"three\" aria-selected=\"true\">\r\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\r\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"> <img src=\"sites\/default\/files\/home\/explore_icon.png\"> <\/figure>\r\n                    Develop <\/div>\r\n                <\/a> <\/li>\r\n        <\/ul>\r\n    <\/div>\r\n    <div class=\"tab-content\">\r\n        <div class=\"tab-pane fade pt-9 show active\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\r\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\r\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\r\n                    <div class=\"mr-btm-title\">\r\n                        <h3 class=\"font-wt-bold ft-style\">Set your priorities and align your teams<\/h3>\r\n                        <p class=\"ft-style\">This is where we sit down, grab a cup of coffee and dial in the details.<\/p>\r\n                    <\/div>\r\n                    <ul class=\"list-unstyled text-col-sec\">\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Understanding who you are <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Whether it's branding, print, UI + UX <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> We've got your front end and back end needs covered <\/span><\/li>\r\n                    <\/ul>\r\n                <\/div>\r\n                <div class=\"col-lg-7 position-relative z-idx-0\">\r\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\"> <\/div>\r\n                    <div class=\"position-absolute btm w-75 z-idx\">\r\n                        <figure> <img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/performance%20%281%29.png\" alt=\"Image Description\"> <\/figure>\r\n                    <\/div>\r\n                <\/div>\r\n            <\/div>\r\n        <\/div>\r\n        <div class=\"tab-pane fade pt-9 \" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\r\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\r\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\r\n                    <div class=\"mr-btm-title\">\r\n                        <h3 class=\"font-wt-bold ft-style\">Focus on achieving measurable outcomes<\/h3>\r\n                        <p class=\"ft-style\">Now that we&#039;ve aligned the details, it&#039;s time to get things mapped out and organized.<\/p>\r\n                    <\/div>\r\n                    <ul class=\"list-unstyled text-col-sec\">\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> We aim high at being focused on building relationships <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style \"> Working together on the daily requires each individual <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> It's important to stay detail oriented with every project we tackle <\/span><\/li>\r\n                    <\/ul>\r\n                <\/div>\r\n                <div class=\"col-lg-7 position-relative z-idx-0\">\r\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\"> <\/div>\r\n                    <div class=\"position-absolute btm w-75 z-idx\">\r\n                        <figure> <img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/achieve%20%282%29.png\" alt=\"Image Description\"> <\/figure>\r\n                    <\/div>\r\n                <\/div>\r\n            <\/div>\r\n        <\/div>\r\n        <div class=\"tab-pane fade pt-9 \" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\r\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\r\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\r\n                    <div class=\"mr-btm-title\">\r\n                        <h3 class=\"font-wt-bold ft-style\">Review performance and improve strategy<\/h3>\r\n                        <p class=\"ft-style\">The time has come to bring those ideas and plans to life.<\/p>\r\n                    <\/div>\r\n                    <ul class=\"list-unstyled text-col-sec\">\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Whether through commerce or just an experience <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Now that your brand is all dressed up <\/span><\/li>\r\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> This part is really crucial in keeping the project <\/span><\/li>\r\n                    <\/ul>\r\n                <\/div>\r\n                <div class=\"col-lg-7 position-relative z-idx-0\">\r\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\"> <\/div>\r\n                    <div class=\"position-absolute btm w-75 z-idx\">\r\n                        <figure> <img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/priority%20%282%29.png\" alt=\"Image Description\"> <\/figure>\r\n                    <\/div>\r\n                <\/div>\r\n            <\/div>\r\n        <\/div>\r\n    <\/div>\r\n<\/div>\r\n",
+            "format": "full_html",
+            "processed": "<div class=\"container con-space\">\n    <div class=\"position-relative width-lg bg-white text-center z-index mx-lg-auto\">\n        <ul class=\"nav nav-font set-nav nav-border nav-box-shadow nav-justified\" id=\"tab\" role=\"tablist\"><li class=\"nav-item\"> <a class=\"nav-link font-weight active show\" id=\"one-tab\" data-toggle=\"pill\" href=\"#one\" role=\"tab\" aria-controls=\"one\" aria-selected=\"true\">\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"><img src=\"sites\/default\/files\/home\/explore_icon.png\" \/><\/figure>\n                    Register <\/div>\n                <\/a> <\/li>\n            <li class=\"nav-item\"> <a class=\"nav-link font-weight \" id=\"two-tab\" data-toggle=\"pill\" href=\"#two\" role=\"tab\" aria-controls=\"two\" aria-selected=\"true\">\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"><img src=\"sites\/default\/files\/home\/explore_icon.png\" \/><\/figure>\n                    Test <\/div>\n                <\/a> <\/li>\n            <li class=\"nav-item\"> <a class=\"nav-link font-weight \" id=\"three-tab\" data-toggle=\"pill\" href=\"#three\" role=\"tab\" aria-controls=\"three\" aria-selected=\"true\">\n                <div class=\"d-md-flex justify-content-md-center align-items-md-center\">\n                    <figure class=\"d-none d-md-block w-100 mwidth mr-4\"><img src=\"sites\/default\/files\/home\/explore_icon.png\" \/><\/figure>\n                    Develop <\/div>\n                <\/a> <\/li>\n        <\/ul><\/div>\n    <div class=\"tab-content\">\n        <div class=\"tab-pane fade pt-9 show active\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\n                    <div class=\"mr-btm-title\">\n                        <h3 class=\"font-wt-bold ft-style\">Set your priorities and align your teams<\/h3>\n                        <p class=\"ft-style\">This is where we sit down, grab a cup of coffee and dial in the details.<\/p>\n                    <\/div>\n                    <ul class=\"list-unstyled text-col-sec\"><li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Understanding who you are <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Whether it's branding, print, UI + UX <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> We've got your front end and back end needs covered <\/span><\/li>\n                    <\/ul><\/div>\n                <div class=\"col-lg-7 position-relative z-idx-0\">\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\" \/><\/div>\n                    <div class=\"position-absolute btm w-75 z-idx\">\n                        <figure><img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/performance%20%281%29.png\" alt=\"Image Description\" \/><\/figure><\/div>\n                <\/div>\n            <\/div>\n        <\/div>\n        <div class=\"tab-pane fade pt-9 \" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\n                    <div class=\"mr-btm-title\">\n                        <h3 class=\"font-wt-bold ft-style\">Focus on achieving measurable outcomes<\/h3>\n                        <p class=\"ft-style\">Now that we've aligned the details, it's time to get things mapped out and organized.<\/p>\n                    <\/div>\n                    <ul class=\"list-unstyled text-col-sec\"><li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> We aim high at being focused on building relationships <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style \"> Working together on the daily requires each individual <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> It's important to stay detail oriented with every project we tackle <\/span><\/li>\n                    <\/ul><\/div>\n                <div class=\"col-lg-7 position-relative z-idx-0\">\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\" \/><\/div>\n                    <div class=\"position-absolute btm w-75 z-idx\">\n                        <figure><img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/achieve%20%282%29.png\" alt=\"Image Description\" \/><\/figure><\/div>\n                <\/div>\n            <\/div>\n        <\/div>\n        <div class=\"tab-pane fade pt-9 \" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n            <div class=\"row justify-content-lg-between align-items-lg-center\">\n                <div class=\"col-lg-4 mr-bt mb-lg-0\">\n                    <div class=\"mr-btm-title\">\n                        <h3 class=\"font-wt-bold ft-style\">Review performance and improve strategy<\/h3>\n                        <p class=\"ft-style\">The time has come to bring those ideas and plans to life.<\/p>\n                    <\/div>\n                    <ul class=\"list-unstyled text-col-sec\"><li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Whether through commerce or just an experience <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> Now that your brand is all dressed up <\/span><\/li>\n                        <li class=\"media my-3\"><span class=\"fas fa-check text-primary mt-1 mr-3\"><\/span> <span class=\"media-body ft-style\"> This part is really crucial in keeping the project <\/span><\/li>\n                    <\/ul><\/div>\n                <div class=\"col-lg-7 position-relative z-idx-0\">\n                    <div class=\"pl-md-9\"> <img class=\"img-fluid shadow1 rounded1\" src=\"sites\/default\/files\/home\/default_image.png\" alt=\"Image Description\" \/><\/div>\n                    <div class=\"position-absolute btm w-75 z-idx\">\n                        <figure><img class=\"info3-bg-img\" src=\"sites\/default\/files\/home\/priority%20%282%29.png\" alt=\"Image Description\" \/><\/figure><\/div>\n                <\/div>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

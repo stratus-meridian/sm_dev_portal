@@ -1,0 +1,78 @@
+name: Stratus Meridian Dev Portal
+type: profile
+description: 'Stratus Meridian Dev Portal.'
+core: 8.x
+
+# Optional: Declare your installation profile as a distribution
+# This will make the installer auto-select this installation profile.
+# The distribution_name property is used in the installer and other places as
+# a label for the software being installed.
+distribution:
+ name: Stratus Meridian Dev Portal
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+install:
+- node
+- history
+- block
+- breakpoint
+- ckeditor
+- color
+- config
+- comment
+- contextual
+- contact
+- menu_link_content
+- datetime
+- block_content
+- quickedit
+- editor
+- help
+- image
+- link
+- menu_ui
+- options
+- path
+- text
+- page_cache
+- dynamic_page_cache
+- big_pipe
+- taxonomy
+- dblog
+- search
+- shortcut
+- system
+- toolbar
+- field
+- field_ui
+- file
+- filter
+- rdf
+- views
+- views_ui
+- tour
+- update
+- user
+- automated_cron
+- hal
+- serialization
+- default_content
+- entity
+- key
+- swagger_ui_formatter
+- ctools
+- pathauto
+- token
+- admin_toolbar
+- adminimal_admin_toolbar
+- better_exposed_filters
+
+# List any themes that should be installed as part of the profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+- bartik
+- seven
+- bootstrap_barrio
+- sm_dev_portal_theme
+- material_admin

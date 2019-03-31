@@ -1,0 +1,49 @@
+<!-- Video Content Section -->
+<div class="container section_margin">
+  <div class="set-position">
+    <div class="bg-img-video text-center con-space-video" style="background-image: url({{ file_url(content.field_video_background_image.0['#item'].entity.uri.value) }});">
+      <!-- Fancybox -->
+          <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">               
+                <div class="modal-content">                  
+                  <div class="modal-body">    
+                    <button type="button" class="close" aria-label="Close" data-dismiss="modal" style="color:black; font-size:25px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>       
+                    <input id="youtubeid1" type="hidden" name="video_url1" value="{{ content.field_video_url[0]['#url'] }}">          
+                    <iframe id="iframeYoutube1" style="width:100%;" width="560" height="315"  src="{{ content.field_video_url[0]['#url'] }}" frameborder="0" allowfullscreen></iframe>  
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% if content.field_video_url[0]['#url'] %}
+            <span onclick="changeVideo1()" class="utube-media-player-icon video_btn utube-media-player-icon--lg">
+                <span class="fas fa-play utube-media-player-icon-inner"></span>
+            </span>
+            {% endif %}
+          <h4 class="mb-0 text-white set-video-title">{{ content.field_video_title[0] }}</h4>
+      <!-- End Fancybox -->
+    </div>
+  
+    <!-- SVG Background -->
+    <figure class="right-margin bottom-margin left-margin">
+      <img class="set-btm-img" src="{{ base_path ~ directory }}/images/bot-img-01.png" alt="Image Description">
+    </figure>
+    <!-- End SVG Background Section -->
+  </div>
+</div>
+  <!-- End Video Content -->
+
+  <script type="text/javascript">
+    
+    //Video Section script
+    function changeVideo1(){ 
+      var video_url1 = document.getElementById("youtubeid1");
+      var iframe1 =document.getElementById("iframeYoutube1");
+      var url1 = video_url1.value;
+      var videoid1 = url1.match(/^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+      iframe1.src="https://www.youtube.com/embed/"+videoid1[2];
+      jQuery("#myModal1").modal("show");
+    }
+    
+  </script>

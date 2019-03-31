@@ -1,0 +1,24 @@
+{% set color_hexa = content.field_foreground_color[0]['#markup'] | split(' ',2)[0] %}
+{% set color_opacity = content.field_foreground_color[0]['#markup'] | split(' ',2)[1] %}
+
+{% set color_hexa_btn = content.field_foreground_color_info[0]['#markup'] | split(' ',2)[0] %}
+{% set color_opacity_btn = content.field_foreground_color_info[0]['#markup'] | split(' ',2)[1] %}
+<li>
+    <div class="col-md-3 col-lg-3 col-xl-3 slider-contwidth">
+      <div class="card set-card-border transition-3d-hover">
+        <header class="card-top text-center p-t">
+          <h4 {% if content.field_foreground_color[0]['#markup'] %}style="color: {{ color_hexa }}!important;opacity: {{ color_opacity }}"{% endif %} class="f-size mb-3 ft-style">{{ content.field_title[0] }}</h4>
+          <span class="d-block">
+            <span class="display-price text-dark ft-style">
+              <span class="align-top ft-size ft-style">{{ content.field_currency_type_[0] }}</span>{{ content.field_price[0] }}
+            </span>
+            <span class="d-block text-secondary f-s-1 ft-style">{{ content.field_repeating_per[0] }}</span>
+          </span>
+        </header>
+        <div class="card-body pd-btm">
+          {{ content.field_description_cta }}
+          <a style="{% if content.field_foreground_color_info[0]['#markup'] %}background-color: {{ color_hexa_btn }}!important;opacity: {{ color_opacity_btn }};{% endif %}" href="{{ content.field_button[0]['#url'] }}" class="btn btn-size btn-sm transition-3d-hover pricing-btn">{{ content.field_button_title[0] }}</a>
+        </div>
+      </div>
+    </div>
+</li>

@@ -1,0 +1,24 @@
+uuid: 92190d04-9a1c-44ad-bcca-4fd04dd6b1f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - sm_dev_portal
+id: sm_dev_portal_footer
+theme: sm_dev_portal
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

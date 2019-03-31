@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for sm_dev_portal.
+ */
+
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function sm_dev_portal_install() {
+  // First, do everything in standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+
+  // Copy logo and color css image to public folder.
+  $path = 'public://color/sm_dev_portal_theme-c5db440b/';
+  if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+    $image = file_get_contents(drupal_get_path("profile", "sm_dev_portal") . "/resources/color/sm_dev_portal_theme-c5db440b/logo.svg");
+    file_save_data($image, $path.'logo.svg', FILE_EXISTS_REPLACE);
+    $css = file_get_contents(drupal_get_path("profile", "sm_dev_portal") . "/resources/color/sm_dev_portal_theme-c5db440b/colors.css");
+    file_save_data($css, $path.'colors.css', FILE_EXISTS_REPLACE);
+  }
+  // Copy banner background image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "sm_dev_portal") . "/resources/stratus-bg.png");
+  file_save_data($image, 'public://stratus-bg.png', FILE_EXISTS_REPLACE);
+
+  // Copy logo image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "sm_dev_portal") . "/resources/logo_1.png");
+  file_save_data($image, 'public://logo_1.png', FILE_EXISTS_REPLACE);
+
+  // Copy image for default content to public folder.
+  $folder_names = array('default_images', 'home', 'api-specs', 'inline-images');
+  foreach($folder_names as $folder_name){
+    $path = 'public://'.$folder_name.'/';
+    if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+      $original = drupal_get_path('profile', 'sm_dev_portal') . '/resources/'.$folder_name;
+      $files = file_scan_directory($original,'/.*/');
+      if(!empty($files)){
+        foreach ($files as $file) {
+          if(!empty($file->uri)){
+            file_unmanaged_copy($file->uri, $path,FILE_EXISTS_REPLACE );
+          }
+        }
+      }
+    }
+  }
+  // Copy swagger-ui library to /libraries/.
+  $dest = \Drupal::root().'/libraries/swagger-ui/';
+  if (file_prepare_directory($dest, FILE_CREATE_DIRECTORY)) {
+    $libraries_path = drupal_get_path('profile', 'sm_dev_portal') . '/resources/libraries/swagger-ui/';
+    if(is_dir($libraries_path)){
+      apigee_devportal_kickstart_copy_dir($libraries_path, $dest);
+    }
+  }
+  // Enable the default content module. This can't be specified as a dependency
+  \Drupal::service('module_installer')->install(['sm_dev_portal_default_content'], TRUE);
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('page.front', '/node/12')->save();
+}
+
+/**
+ * Implements copy directory function.
+ */
+function sm_devportal_copy_dir($source, $dest)
+{
+    // Check for symlinks
+    if (is_link($source)) {
+        return symlink(readlink($source), $dest);
+    }
+
+    // Simple copy for a file
+    if (is_file($source)) {
+        return copy($source, $dest);
+    }
+
+    // Make destination directory
+    if (!is_dir($dest)) {
+        mkdir($dest);
+    }
+
+    // Loop through the folder
+    $dir = dir($source);
+    while (false !== $entry = $dir->read()) {
+        // Skip pointers
+        if ($entry == '.' || $entry == '..') {
+            continue;
+        }
+
+        // Deep copy directories
+        sm_devportal_copy_dir("$source/$entry", "$dest/$entry");
+    }
+
+    // Clean up
+    $dir->close();
+    return true;
+}

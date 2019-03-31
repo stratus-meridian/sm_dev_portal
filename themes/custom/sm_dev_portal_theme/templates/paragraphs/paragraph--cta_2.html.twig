@@ -1,0 +1,51 @@
+<!-- CTA 3 -->
+<div class="container text-center con-space">
+    <!-- Title -->
+    <div class="set-ctaheading text-center mx-auto mrgn-btm">
+      <h2 class="set-join-font">{{ content.field_cta_title[0] }}</h2>
+    </div>
+    <!-- End Title -->
+    <div class="set-btn">
+      <a class="btn btn-color-primary btn-wide1" href="{{ content.field_button[0]['#url'] }}">{{ content.field_button[0]['#title'] }}</a>
+    </div>
+  
+    <!-- Fancybox -->
+    <div class="d-flex set-content-center">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" aria-label="Close" data-dismiss="modal" style="color:black; font-size:25px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <input id="youtubeid" type="hidden" name="video_url" value="{{ content.field_cta_video[0]['#url'] }}">
+                  <iframe id="iframeYoutube" width="560" height="315" style="width:100%;" src="{{ content.field_cta_video[0]['#url'] }}" frameborder="0" allowfullscreen></iframe> 
+                </div>
+              </div>
+            </div>
+          </div>
+          {% if content.field_cta_video[0]['#url'] %}
+          <span onclick="changeVideo()" class="video_btn utube-media-player-icon utube-media-player-icon-primary mr-3">
+              <span class="fas fa-play utube-media-player-icon-inner"></span>
+          </span>
+
+          <a style="color:#1e2022;padding-top: 1.5%;">Watch video</a>
+          {% endif %}
+    </div>
+    <!-- End Fancybox -->
+  </div>
+  <!-- End CTA 3-->
+
+  <script type="text/javascript">
+
+    //CTA2 Section script
+    function changeVideo(){ 
+      var video_url = document.getElementById("youtubeid");
+      var iframe=document.getElementById("iframeYoutube");
+      var url = video_url.value;
+      var videoid = url.match(/^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+      iframe.src="https://www.youtube.com/embed/"+videoid[2];
+      jQuery("#myModal").modal("show");
+    }
+
+  </script>

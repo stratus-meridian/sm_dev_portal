@@ -1,0 +1,25 @@
+uuid: 03490ae5-9296-4a7d-b08c-8ce0332d4d0e
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:6355ddba-5fee-4ce2-84a2-d9afab8c62b7'
+  module:
+    - block_content
+  theme:
+    - sm_dev_portal_theme
+id: sm_dev_portal_theme_footerlogodesigninfootersection
+theme: sm_dev_portal_theme
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:6355ddba-5fee-4ce2-84a2-d9afab8c62b7'
+settings:
+  id: 'block_content:6355ddba-5fee-4ce2-84a2-d9afab8c62b7'
+  label: 'Footer logo design in Footer Section'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

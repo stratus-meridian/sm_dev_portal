@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/default_images\/default_0.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/3?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 170
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f341db4a-fe7f-4d72-a508-d32e776ae3f4"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/3?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "76b01ba2-590c-443a-a5b7-96d1b88b7152"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "default.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/default_images\/default_0.png",
+            "url": "\/sites\/default\/files\/default_images\/default_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 4780
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-02-07T07:14:38+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-02-07T07:14:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

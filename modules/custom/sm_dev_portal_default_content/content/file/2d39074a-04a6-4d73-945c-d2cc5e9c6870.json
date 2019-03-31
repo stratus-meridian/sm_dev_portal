@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/api-specs\/jyothi-test.json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 83
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2d39074a-04a6-4d73-945c-d2cc5e9c6870"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "651c87b8-5944-4f5b-9bc6-fd60ccdfa55c"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "jyothi-test.json"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/api-specs\/jyothi-test.json",
+            "url": "\/sites\/default\/files\/api-specs\/jyothi-test.json"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 9060
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-11-13T22:38:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-13T22:38:51+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

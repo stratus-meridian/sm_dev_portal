@@ -1,0 +1,130 @@
+<section class="banner" {% if content.field_hero_image.0['#item'].entity.uri.value %} style="background: url({{ file_url(content.field_hero_image.0['#item'].entity.uri.value) }}) no-repeat center top fixed; background-size: cover;"{% endif %}>
+    <!-- Background Overlay -->
+    <div class="overlay">
+          <div class="container vmiddle hero-app">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="hero-section">
+                  <!-- Welcome - Hero Message -->
+                  <input type="hidden" id="bgtransparent" value="{{ content.field_make_header_transparent[0] }}">
+                  <h1>{{ content.field_hero_title[0] }}</h1>
+                  <p class="text-white text-normal">{{ content.field_description[0] }}</p>
+                  <a href="{{ content.field_button[0]['#url'] }}" class="btn btn-lg btn-outline-white btn-pill align-self-center">{{ content.field_button_title[0] }}</a>
+                </div><!-- /End Intro-Section -->
+              </div><!-- /End Col -->
+            </div><!-- /End Row -->
+          </div><!-- /End Container Hero-Section -->
+    </div>
+</section>
+<script>
+    window.onload = function() {
+      var bgtransparent = jQuery("#bgtransparent").val();
+      if (bgtransparent == "Yes") {
+        jQuery("#navbar-main").addClass("bg-transparent");
+        jQuery(window).scroll(function() {  
+           var scroll = jQuery(window).scrollTop(); 
+           if (scroll >= 50) {
+              jQuery("#navbar-main").removeClass("bg-transparent");
+            } else {
+               jQuery("#navbar-main").addClass("bg-transparent");
+            }   
+        });
+ 
+      }
+      else{
+            jQuery("#navbar-main").removeClass("bg-transparent");
+      }
+
+      //Video Section script
+      jQuery("#myModal1").on("hidden.bs.modal",function(){
+          jQuery("#iframeYoutube1").attr("src","#");
+      });
+
+      //CTA2 Section script
+      jQuery("#myModal").on("hidden.bs.modal",function(){
+          jQuery("#iframeYoutube").attr("src","#");
+      })
+
+      //Pricing1 Section script
+      jQuery("#content-slider1").lightSlider({
+      item: 4,
+      loop: true,
+      keyPress: true,
+      pager:0,
+      responsive: [
+      {
+          breakpoint: 1500,
+          settings: {
+            item: 4,
+            auto:0,
+            loop:0,
+            slideMove: 1,
+            pager:0
+          }
+        },
+        {
+          breakpoint: 1224,
+          settings: {
+            item: 4,
+            auto:0,
+            loop:0,
+            slideMove: 1,
+            pager:0
+          }
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            item: 2,
+            pager:3,
+            slideMove: 1,
+            loop:1,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            item: 1,
+            pager:4,
+            slideMove: 1,
+            loop:1,
+          }
+        },
+        {
+          breakpoint: 300,
+          settings: {
+            item: 1,
+            pager:4,
+            slideMove: 1,
+            loop:1,
+          }
+        }
+      ]
+    });
+
+  };
+
+  function header_responsive(){
+
+    var bgtransparent = jQuery("#bgtransparent").val();
+      if (bgtransparent == "Yes") {
+
+      var isClass = jQuery('.navbar').hasClass('bg-transparent');
+      if(isClass){
+          jQuery("#navbar-main").removeClass("bg-transparent");
+      }
+
+    }
+
+  }
+
+</script>
+
+{% set color_hexa = content.field_foreground_color[0]['#markup'] | split(' ',2)[0] %}
+{% set color_opacity = content.field_foreground_color[0]['#markup'] | split(' ',2)[1] %}
+<style type="text/css">
+.banner .hero-section h1 , .banner p , .banner a{
+  {% if content.field_foreground_color[0]['#markup'] %} color: {{ color_hexa }}!important;opacity: {{ color_opacity }} {% endif %}
+}
+  
+</style>

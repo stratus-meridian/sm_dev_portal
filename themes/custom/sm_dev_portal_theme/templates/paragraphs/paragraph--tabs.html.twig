@@ -1,0 +1,10 @@
+<li class="nav-item">
+      <a class="nav-link font-weight {% if paragraph.index == 0 %}active show{% endif %}" id="{% if paragraph.index == 0 %}one{% endif %}{% if paragraph.index == 1 %}two{% endif %}{% if paragraph.index == 2 %}three{% endif %}{% if paragraph.index == 3 %}four{% endif %}-tab" data-toggle="pill" href="#{% if paragraph.index == 0 %}one{% endif %}{% if paragraph.index == 1 %}two{% endif %}{% if paragraph.index == 2 %}three{% endif %}{% if paragraph.index == 3 %}four{% endif %}" role="tab" aria-controls="{% if paragraph.index == 0 %}one{% endif %}{% if paragraph.index == 1 %}two{% endif %}{% if paragraph.index == 2 %}three{% endif %}{% if paragraph.index == 3 %}four{% endif %}" aria-selected="true">
+        <div class="d-md-flex justify-content-md-center align-items-md-center">
+          <figure class="d-none d-md-block w-100 mwidth mr-4">
+            {% if content.field_tab_icon.0['#item'].entity.uri.value %}<img src="{{ file_url(content.field_tab_icon.0['#item'].entity.uri.value) }}">{% endif %}
+          </figure>
+          {{ content.field_title[0] }}
+        </div>
+      </a>
+</li>
