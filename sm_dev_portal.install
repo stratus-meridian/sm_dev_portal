@@ -55,7 +55,7 @@ function sm_dev_portal_install() {
   if (file_prepare_directory($dest, FILE_CREATE_DIRECTORY)) {
     $libraries_path = drupal_get_path('profile', 'sm_dev_portal') . '/resources/libraries/swagger-ui/';
     if(is_dir($libraries_path)){
-      apigee_devportal_kickstart_copy_dir($libraries_path, $dest);
+      sm_devportal_copy_dir($libraries_path, $dest);
     }
   }
   // Enable the default content module. This can't be specified as a dependency
