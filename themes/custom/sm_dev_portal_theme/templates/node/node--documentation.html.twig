@@ -72,6 +72,10 @@
  * @ingroup themeable
  */
 #}
+
+{{ attach_library('openapi_ui_redoc/redoc') }}
+{{ attach_library('openapi_ui_redoc/redoc_attr') }}
+
 {% block content %}
 <div class="documentation-detail-wrapper"> 
     
@@ -95,11 +99,12 @@
     {% endif %}
     
     {% if content.body|render %}
-    <div class="body"> {{ content.body }} </div>
+      <div class="body"> {{ content.body }} </div>
     {% endif %}
     
     {% if content.field_swagger|render %}
-        <div class="field_swagger"> {{ content.field_swagger }} </div>
+      {%  set specUrl = file_url(node.field_swagger.entity.uri.value) %}
+      <div class="field_swagger"> <redoc spec-url='{{ specUrl }}'></redoc> </div>
     {% endif %} 
 </div>
 {% endblock %} 
