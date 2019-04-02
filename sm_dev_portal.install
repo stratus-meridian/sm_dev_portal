@@ -50,14 +50,6 @@ function sm_dev_portal_install() {
       }
     }
   }
-  // Copy swagger-ui library to /libraries/.
-  $dest = \Drupal::root().'/libraries/swagger-ui/';
-  if (file_prepare_directory($dest, FILE_CREATE_DIRECTORY)) {
-    $libraries_path = drupal_get_path('profile', 'sm_dev_portal') . '/resources/libraries/swagger-ui/';
-    if(is_dir($libraries_path)){
-      sm_devportal_copy_dir($libraries_path, $dest);
-    }
-  }
   // Enable the default content module. This can't be specified as a dependency
   \Drupal::service('module_installer')->install(['sm_dev_portal_default_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
@@ -67,7 +59,7 @@ function sm_dev_portal_install() {
 /**
  * Implements copy directory function.
  */
-function sm_devportal_copy_dir($source, $dest)
+function sm_dev_portal_copy_dir($source, $dest)
 {
     // Check for symlinks
     if (is_link($source)) {
@@ -93,7 +85,7 @@ function sm_devportal_copy_dir($source, $dest)
         }
 
         // Deep copy directories
-        sm_devportal_copy_dir("$source/$entry", "$dest/$entry");
+        sm_dev_portal_copy_dir("$source/$entry", "$dest/$entry");
     }
 
     // Clean up
