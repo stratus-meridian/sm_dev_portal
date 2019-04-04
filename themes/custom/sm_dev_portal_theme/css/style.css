@@ -2307,3 +2307,25 @@ body.path-blogs .card-body p {
 #block-copyright {
 	margin-top: 5px;
 }
+
+body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
+    top: 170px !important;
+}
+
+.documentation_wrapper .documentation-detail-wrapper .field_domain_image {
+    float: left;
+    width: 22%;
+    margin-right: 20px;
+}
+
+.documentation_wrapper .documentation-detail-wrapper .field_domain_image img {
+    width: 100%;
+    height: auto;
+}
+
+.documentation_wrapper .documentation-detail-wrapper .field--name-title {
+    color: #0033a0;
+}
+.field_swagger pre{
+   color: #ffffff;
+}

@@ -322,3 +322,20 @@
     }
 
 }
+
+
+@media (max-width: 767px) {
+
+
+.documentation_wrapper .documentation-detail-wrapper {
+	text-align: center;
+}
+
+.documentation_wrapper .documentation-detail-wrapper .field_domain_image {
+    width: 100%;
+	margin-top: 20px;
+    margin-right: 0px;
+
+}
+
+}

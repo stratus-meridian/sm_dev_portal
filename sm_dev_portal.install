@@ -1,5 +1,5 @@
 <?php
-
+ 
 /**
  * @file
  * Install, update and uninstall functions for sm_dev_portal.
@@ -50,6 +50,8 @@ function sm_dev_portal_install() {
       }
     }
   }
+  //Updating alias of node
+  sm_dev_portal_update_entity_alias();
   // Enable the default content module. This can't be specified as a dependency
   \Drupal::service('module_installer')->install(['sm_dev_portal_default_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
@@ -57,38 +59,62 @@ function sm_dev_portal_install() {
 }
 
 /**
- * Implements copy directory function.
+* Implements copy directory function.
+*/
+function sm_dev_portal_update_entity_alias() {
+  $entities = [];
+  $entities['node'] = \Drupal::entityQuery('node')->execute();
+  $result = [];
+
+  foreach ($entities as $type => $entity_list) {
+    foreach ($entity_list as $entity_id) {
+      $result[] = [
+        'entity_type' => $type,
+        'id' => $entity_id,
+      ];
+    }
+  }
+
+  // Use the sandbox to store the information needed to track progression.
+  if (!isset($sandbox['current']))
+  {
+    // The count of entities visited so far.
+    $sandbox['current'] = 0;
+    // Total entities that must be visited.
+    $sandbox['max'] = count($result);
+    // A place to store messages during the run.
+  }
+
+  // Process entities by groups of 20.
+  // When a group is processed, the batch update engine determines
+  // whether it should continue processing in the same request or provide
+  // progress feedback to the user and wait for the next request.
+  $limit = 20;
+  $result = array_slice($result, $sandbox['current'], $limit);
+
+  foreach ($result as $row) {
+    $entity_storage = \Drupal::entityTypeManager()->getStorage($row['entity_type']);
+    $entity = $entity_storage->load($row['id']);
+
+    // Update Entity URL alias.
+    \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update');
+
+    // Update our progress information.
+    $sandbox['current']++;
+  }
+
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['current'] / $sandbox['max']);
+
+  if ($sandbox['#finished'] >= 1) {
+    return t('The batch URL Alias update is finished.');
+  }
+}
+
+/**
+ * Rebuild routes to mitigate issue 2938884.
+ *
+ * @see https://www.drupal.org/project/admin_toolbar/issues/2938884
  */
-function sm_dev_portal_copy_dir($source, $dest)
-{
-    // Check for symlinks
-    if (is_link($source)) {
-        return symlink(readlink($source), $dest);
-    }
-
-    // Simple copy for a file
-    if (is_file($source)) {
-        return copy($source, $dest);
-    }
-
-    // Make destination directory
-    if (!is_dir($dest)) {
-        mkdir($dest);
-    }
-
-    // Loop through the folder
-    $dir = dir($source);
-    while (false !== $entry = $dir->read()) {
-        // Skip pointers
-        if ($entry == '.' || $entry == '..') {
-            continue;
-        }
-
-        // Deep copy directories
-        sm_dev_portal_copy_dir("$source/$entry", "$dest/$entry");
-    }
-
-    // Clean up
-    $dir->close();
-    return true;
+function sm_dev_portal_update_8001() {
+  sm_dev_portal_update_entity_alias();
 }
