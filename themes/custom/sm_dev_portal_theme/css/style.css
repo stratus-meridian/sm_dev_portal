@@ -2329,3 +2329,90 @@ body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
 .field_swagger pre{
    color: #ffffff;
 }
+
+.blog-wrapper .title h4 {
+	font-size: 2.28rem;
+	font-weight: normal;
+    line-height: 110%;
+    color: rgba(0,0,0,0.87);
+}
+
+.blog-wrapper .date-time {
+	font-size: 14px;
+	font-weight: normal;
+    padding-bottom: 20px;
+	color: rgba(0,0,0,0.87);
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-wrapper .date-time .username {
+	font-weight: normal;
+	font-style: italic;
+	color: rgba(0,0,0,0.87);
+}
+
+.blog-wrapper .tags {
+    margin-top: 10px;
+}
+
+.blog-wrapper .tags .tag_label {
+    color: #377dff;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-bottom: 0px;
+    margin-bottom: 1rem;
+}
+
+.blog-wrapper .tags ul,
+.blog-wrapper .tags ul li {
+	list-style: none;
+	list-style-image: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.blog-wrapper .tags ul li {
+	margin: 0px 10px 10px 0px;
+    display: inline-block;
+	vertical-align: middle;
+}
+
+.blog-wrapper .tags ul li a {
+	border-radius: 36px;
+    text-transform: capitalize;
+    color: #1e2022;
+    background-color: #f8fafd;
+    margin-right: 0;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    padding: 0.4375rem 0.9375rem;
+}
+
+.blog-wrapper .tags ul li a:hover {
+    background-color: #dae5f5;
+}
+
+.blog-wrapper .body {
+    font-size: 15px;
+    color: rgba(0,0,0,0.87);
+    font-weight: normal;
+    line-height: 23px;
+    margin-bottom: 25px;
+}
+
+.blog-wrapper .comments form.comment-form {
+    margin-left: -30px;
+}
+
+.blog-wrapper .comments form.comment-form .form-actions {
+    margin-left: 15px;
+}
+
+
+#content .blog-wrapper .comments .comment-wrapper h2.comment-form__title {
+    margin-bottom: 15px;
+}
+
+.blog-wrapper .comments .comment-wrapper .field--name-langcode {
+	display: none;
+}

@@ -1,20 +1,13 @@
 {#
 /**
  * @file
- * Default theme implementation to display a node.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
- *   Only method names starting with "get", "has", or "is" and a few common
- *   methods such as "id", "label", and "bundle" are available. For example:
- *   - node.getCreatedTime() will return the node creation timestamp.
- *   - node.hasField('field_example') returns TRUE if the node bundle includes
- *     field_example. (This does not indicate the presence of a value in this
- *     field.)
- *   - node.isPublished() will return whether the node is published or not.
- *   Calling other methods, such as node.delete(), will result in an exception.
- *   See \Drupal\node\Entity\Node for a full list of public properties and
- *   methods for the node object.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
  * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
@@ -63,49 +56,46 @@
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
  *
+ * @ingroup templates
+ *
  * @see template_preprocess_node()
  *
  * @todo Remove the id attribute (or make it a class), because if that gets
  *   rendered twice on a page this is invalid CSS for example: two lists
  *   in different view modes.
- *
- * @ingroup themeable
  */
 #}
-
-{{ attach_library('openapi_ui_redoc/redoc') }}
-{{ attach_library('openapi_ui_redoc/redoc_attr') }}
-
-{% block content %}
-<div class="documentation-detail-wrapper"> 
-    
-    {% if content.field_domain_image|render %}
-        <div class="field_domain_image"> {{ content.field_domain_image }} </div>
-    {% endif %}
-    
-    <div class="title">
-        <h4>{{ label }}</h4>
-    </div>
-
-    {% if content.field_domains|render %}
-        <div class="field_tags label"> 
-            <ul class="list-inline mb-0"> 
-            {% for key, item in content.field_domains if key|first != '#' %}
-                {% set text = item['#url']|render %}
-                    <li class="list-inline-item g-mb-10"><a class="btn btn-xs btn-gray btn-pill text-primary" href='/apis?field_domains_target_id={{ text|replace({"/taxonomy/term/" : ""}) }}'> {{ item['#title'] }}</a></li>
-            {% endfor %}
-         </ul>
+<div class="blog-wrapper">
+    {% if content.field_image|render %}
+        <div class="image">
+            {{ content.field_image }}
         </div>
     {% endif %}
-    
+     <div class="title">
+         <h4>{{ label }}</h4>
+     </div>
+     <div class="date-time">
+      <i class="fa fa-clock-o"></i> {{ node.createdtime | date('j M, Y') }} <i class="fa fa-user-circle"></i>{{ author_name }}
+  </div>
+   {% if node.field_tags.entity.tid.value %}
+	 <div class="tags">
+		<div class="tag_label">Tags</div>
+		<ul>
+		{% for key, value in node.field_tags %}
+			<li><a href="/blogs/{{ node.field_tags[key].entity.id() }}">{{ node.field_tags[key].entity.name.value }}</a></li>
+		{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+
     {% if content.body|render %}
-      <div class="body"> {{ content.body }} </div>
+        <div class="body">
+            {{ content.body }}
+        </div>
     {% endif %}
-    
-    {% if content.field_swagger|render %}
-      {% set base_url = render_var(url('<front>'))  %}
-      {%  set specUrl = base_url|trim('/', 'right')~file_url(node.field_swagger.entity.uri.value) %}
-      <div class="field_swagger"> <redoc spec-url='{{ specUrl }}'></redoc> </div>
-    {% endif %} 
+    {% if content.comment|render %}
+        <div class="comments">
+            {{ content.comment }}
+        </div>
+    {% endif %}
 </div>
-{% endblock %} 

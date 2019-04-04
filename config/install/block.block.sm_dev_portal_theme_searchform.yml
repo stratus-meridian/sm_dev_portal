@@ -23,6 +23,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      article: article
       documentation: documentation
       page: page
     negate: true

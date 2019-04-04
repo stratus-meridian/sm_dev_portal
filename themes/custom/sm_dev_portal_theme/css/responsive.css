@@ -326,6 +326,38 @@
 
 @media (max-width: 767px) {
 
+#toolbar-administration {
+    display: none;
+}
+
+.admin_user .navbar {
+    margin-top: 0px;
+}
+
+.navbar-brand.logo-margin.scrollto {
+    width: 90px;
+}
+
+.navbar-nav {
+    margin: 7.5px 0px;
+}
+
+.top-menu1 {
+    margin-left: 0px;
+}
+
+ul.navbar-nav.ml-auto {
+    margin-left: -15px !important;
+}
+
+.navbar-nav>li>a.btn-login {
+	margin-left: 4px;
+}
+
+#main {
+    padding-top: 110px;
+}
+
 
 .documentation_wrapper .documentation-detail-wrapper {
 	text-align: center;
@@ -335,7 +367,10 @@
     width: 100%;
 	margin-top: 20px;
     margin-right: 0px;
+}
 
+body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
+    top: 89px !important;
 }
 
 }
