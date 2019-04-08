@@ -373,4 +373,86 @@ body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
     top: 89px !important;
 }
 
+#wrapper-article-comment .comment__content {
+    margin: 0px 2% 0px;
+    width: 96%;
+}
+
+#wrapper-article-comment .comment__content:before {
+    content: '';
+    position: absolute;
+    right: auto;
+    top: -40px;
+    border-top: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #d3d7d9;
+    border-left: 20px solid transparent;
+    left: 20px;
+}
+
+#wrapper-article-comment .comment__content:after {
+    content: '';
+    position: absolute;
+    right: auto;
+    top: -38px;
+    border-top: 20px solid transparent;
+    border-right: 19px solid transparent;
+    border-bottom: 18px solid #fff;
+    margin-right: -1px;
+    border-left: 20px solid transparent;
+    left: 20px;
+}
+
+#wrapper-article-comment .comment__content:before,
+#wrapper-article-comment .comment__content:after {
+	display: none;
+}
+
+#search_area .row {
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+#search_area {
+    margin-left: 15px !important;
+}
+
+#main.page_article_detials {
+	padding-top: 80px;
+}
+
+#search_area .block-search .search-form {
+    width: 100%;
+}
+
+#search_area .block-search .container-inline div,
+#search_area .block-search .container-inline label {
+    display: block;
+}
+
+#search_area .block-search .search-form.open .form-group.form-type-search {
+    width: 75%;
+}
+
+#search_area .block-search .search-form .form-group.form-actions {
+    width: 50px;
+}
+
+#search_area .block-search .search-form.open .form-group.form-actions {
+    width: 25%;
+}
+
+#search_area .block-search .search-form .form-group.form-type-search .form-search {
+	width: 100%;
+}
+
+#search_area .block-search .search-form .form-group.form-actions .form-submit {
+    width: 80%;
+}
+
+#content #block-sm-dev-portal-theme-content .list-group li .right_content {
+	padding: 0px 35px 20px;
+}
+
 }

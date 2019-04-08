@@ -14,8 +14,16 @@
                 {{ page.primary_menu }}
 
             {% endif %}
+            {% if page.search_area %}
+	        
+            {% endif %}
          
            <ul class="navbar-nav ml-auto">
+		{% if page.search_area %}
+		<li class="nav-item search_button">
+		  <div id="search_area" class="ml-auto">{{ page.search_area }}</div>
+		</li>
+                {% endif %}
                 {% if user %}
                     <li class="nav-item mr-2">
                       <a class="btn btn-signup" href="{{ base_path }}/user/logout">Logout</a>

@@ -104,7 +104,7 @@
     
     {% if content.field_swagger|render %}
       {% set base_url = render_var(url('<front>'))  %}
-      {%  set specUrl = base_url|trim('/', 'right')~file_url(node.field_swagger.entity.uri.value) %}
+      {%  set specUrl = file_url(node.field_swagger.entity.uri.value) %}
       <div class="field_swagger"> <redoc spec-url='{{ specUrl }}'></redoc> </div>
     {% endif %} 
 </div>

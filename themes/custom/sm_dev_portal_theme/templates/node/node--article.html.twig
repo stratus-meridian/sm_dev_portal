@@ -65,12 +65,15 @@
  *   in different view modes.
  */
 #}
-<div class="blog-wrapper">
-    {% if content.field_image|render %}
-        <div class="image">
-            {{ content.field_image }}
-        </div>
-    {% endif %}
+
+<div id="blog-details-wrapper">
+{% if content.field_image|render %}
+	<div class="image">
+		{{ content.field_image }}
+	</div>
+{% endif %}
+<div class="blog-wrapper container">
+    
      <div class="title">
          <h4>{{ label }}</h4>
      </div>

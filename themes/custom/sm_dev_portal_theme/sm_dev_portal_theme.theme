@@ -115,3 +115,16 @@ function sm_dev_portal_theme_theme_suggestions_page_alter(array &$suggestions, a
     $suggestions[] = 'page__'.$content_type;
   }
 }
+
+
+function sm_dev_portal_theme_preprocess_search_result(&$variables) {
+
+  //global $base_url;
+  //$result = $variables['result'];
+  //if (isset($variables['info_split']['date'])) {
+    //$node = $variables['result']['node'];
+    //$node_obj = \Drupal::entityTypeManager()->getStorage('node')->load($node->id());
+  //}
+  $variables['info_split']['image'] = 'public://default_images/default.png';
+
+}

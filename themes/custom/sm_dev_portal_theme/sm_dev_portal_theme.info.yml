@@ -12,6 +12,7 @@ libraries:
 regions:
   logo: 'Logo , Site Branding'
   header: Header
+  search_area: 'Search Area'
   banner: Banner
   promo: Promo Area
   subscription: Subscription Area

@@ -23,7 +23,30 @@ $(window).on('load', function () {
             $("body.path-frontpage #navbar-main").addClass("bg-transparent");
         }
     });
+	$("#search-block-form").addClass("close");
+    $('#search-block-form').submit(function () {
+		var textVal = $("#search_area .form-search").val();
+		if((textVal !== 'undefined') && textVal.length > 0){
+			$("#search-block-form").removeClass("open");
+			$("#search-block-form").addClass("close");
+			return true;
+		}else{
+			$("#search-block-form").removeClass("close");
+			$("#search-block-form").addClass("open");
+			return false;
+		}
+	});
+	
+	$(document).click(function(event) {
+		if ( !$(event.target).parents().hasClass('search-form')) {
+            $("#search-block-form").addClass("close");
+			$("#search-block-form").removeClass("open");	
+		}
+	});
+
+
  });
+
 
 })(jQuery);
 
@@ -100,8 +123,7 @@ $(document).ready(function() {
       event.preventDefault();
     });
   }
-
-
+  
   /* ===========================================================
      BOOTSTRAP FIX FOR IE10 in Windows 8 and Windows Phone 8
   ============================================================== */
