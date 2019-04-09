@@ -70,19 +70,18 @@
 {% if content.field_image|render %}
 	<div class="image">
 		{{ content.field_image }}
-	</div>
+        <div class="blog-title">{{ label }}</div>
+    </div>
 {% endif %}
 <div class="blog-wrapper container">
     
-     <div class="title">
-         <h4>{{ label }}</h4>
-     </div>
-     <div class="date-time">
-      <i class="fa fa-clock-o"></i> {{ node.createdtime | date('j M, Y') }} <i class="fa fa-user-circle"></i>{{ author_name }}
-  </div>
-   {% if node.field_tags.entity.tid.value %}
+     <div class="date-time">{{ node.createdtime | date('F d, Y') }}</div>
+    {% if content.body|render %}
+        <div class="body"> {{ content.body }}</div>
+    {% endif %}
+    
+	{% if node.field_tags.entity.tid.value %}
 	 <div class="tags">
-		<div class="tag_label">Tags</div>
 		<ul>
 		{% for key, value in node.field_tags %}
 			<li><a href="/blogs/{{ node.field_tags[key].entity.id() }}">{{ node.field_tags[key].entity.name.value }}</a></li>
@@ -91,11 +90,6 @@
 	</div>
 	{% endif %}
 
-    {% if content.body|render %}
-        <div class="body">
-            {{ content.body }}
-        </div>
-    {% endif %}
     {% if content.comment|render %}
         <div class="comments">
             {{ content.comment }}

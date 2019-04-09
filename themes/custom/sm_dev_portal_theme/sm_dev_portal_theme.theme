@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Drupal\Component\Render\FormattableMarkup;
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
@@ -87,6 +88,16 @@ function sm_dev_portal_theme_form_alter(array &$form, FormStateInterface $form_s
   if (strpos($form_id, 'contact_message_') !== FALSE) {
     $form['actions']['preview']['#access'] = FALSE;
   }
+  
+  if ($form_id == 'search_block_form') {
+    //dpm($form['actions']);
+    $form['keys']['#attributes']['placeholder'][] = t('Search');
+    $form['actions']['submit']['#value'] = '';
+  }
+  
+  
+
+
 }
 
 function sm_dev_portal_theme_preprocess_field(&$variables) {

@@ -2335,24 +2335,39 @@ body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
 	padding-top: 125px;
 }
 
-.blog-wrapper .title h4 {
-	font-size: 2.28rem;
-	font-weight: normal;
-    line-height: 110%;
-    color: rgba(0,0,0,0.87);
+#blog-details-wrapper .image {
+	position: relative;
 }
 
 #blog-details-wrapper .image img {
     width: 100%;
     height: auto;
+	margin-bottom: 0px;
+}
+
+#blog-details-wrapper .blog-title {
+    font-size: 3.5rem;
+    font-weight: normal;
+    line-height: 110%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+}
+
+#blog-details-wrapper .blog-wrapper {
+	margin-top: 35px;
 }
 
 .blog-wrapper .date-time {
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: normal;
     padding-bottom: 20px;
-	color: rgba(0,0,0,0.87);
-    border-bottom: 1px solid #ccc;
+	color: #8c98a4;
 }
 
 .blog-wrapper .date-time .username {
@@ -2363,14 +2378,7 @@ body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
 
 .blog-wrapper .tags {
     margin-top: 10px;
-}
-
-.blog-wrapper .tags .tag_label {
-    color: #377dff;
-    font-weight: 600;
-    font-size: 1.25rem;
-    border-bottom: 0px;
-    margin-bottom: 1rem;
+	text-align: center;
 }
 
 .blog-wrapper .tags ul,
@@ -2403,8 +2411,8 @@ body.scrolled .documentation_wrapper [sticky-sidebar][_ngcontent-c0] {
 }
 
 .blog-wrapper .body {
-    font-size: 15px;
-    color: rgba(0,0,0,0.87);
+    font-size: 18px;
+    color: #77838f;
     font-weight: normal;
     line-height: 23px;
     margin-bottom: 25px;
@@ -2480,35 +2488,37 @@ ul li.nav-item.search_button {
 
 #search_area .block-search .search-form .form-group.form-type-search .form-search {
 	width: 100%;
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 5px 10px;
     margin: 0px;
     height: 41px;
-    border: 1px solid #d5dae2;
-    border-left: 0px;
-}
-
-#search_area .block-search .search-form.open .form-group.form-type-search .form-search {
-    border-radius: 4px 0px 0px 4px;
-}
-
-#search_area .block-search .search-form .form-group.form-type-search .form-search:focus {
-    border-color: transparent;
+    border: 0px
 }
 
 #search_area .block-search .search-form .form-group.form-actions .form-submit {
-	width: 100%;
+    width: 100%;
     height: 41px;
     margin: 0px;
     padding: 0px;
-	font-size: 0px;
-    border: 1px solid #d5dae2;
-    border-radius: 4px 4px 4px 4px;
-    background: #fff url(../images/search-btn.png) no-repeat 50% 50%;
+	font-size: 16px;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+	transition: all 0.5s linear;
+}
+
+#search_area .block-search .search-form .form-group.form-actions .form-submit:focus {
+    box-shadow: none;
+    outline: none;
+	background-color: #fff;
+    color: #007bff;
 }
 
 #search_area .block-search .search-form.open .form-group.form-actions .form-submit {
-    border-radius: 0px 4px 4px 0px;
+    background-color: #fff;
+    color: #007bff;
 }
 
 body.path-comment h1.title,
@@ -2582,6 +2592,7 @@ body.path-comment h1.title,
 }
 
 #wrapper-article-comment .comment__content h3 {
+	font-size: 17px;
     margin-top: 10px;
     margin-bottom: 0px;
 }
@@ -2595,7 +2606,7 @@ body.path-comment h1.title,
     line-height: 1.2;
     font-size: 20px;
     font-weight: normal;
-    text-transform: none;
+	text-transform: capitalize;
 }
 
 #wrapper-article-comment .comment__meta .comment__author .username {
@@ -2670,11 +2681,14 @@ body.path-comment h1.title,
     background: #fff url(../images/search-btn.png) no-repeat 50% 50%;
 }
 
+body.path-search section {
+    overflow: visible;
+}
+
 #content #block-sm-dev-portal-theme-content .search-form details.form-wrapper {
     border: 1px solid #d5dae2;
     overflow: hidden;
     padding: 15px;
-	margin-left: 15px;
 }
 
 #content #block-sm-dev-portal-theme-content .search-form details.form-wrapper summary {
@@ -2685,14 +2699,11 @@ body.path-comment h1.title,
     margin-bottom: -1px;
 }
 
-#content #block-sm-dev-portal-theme-content .list-group {
-    margin: 0px 13px;
-}
-
 body.path-search #main-wrapper h1.title,
-#content #blog-details-wrapper .comments .comment-wrapper h2 {
+#content #blog-details-wrapper .comments .comment-wrapper h2,
+#block-sm-dev-portal-theme-content .content h2 {
     margin: 10px 0px 25px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: normal;
 }
