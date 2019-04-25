@@ -92,7 +92,7 @@ function sm_dev_portal_theme_form_alter(array &$form, FormStateInterface $form_s
   if ($form_id == 'search_block_form') {
     //dpm($form['actions']);
     $form['keys']['#attributes']['placeholder'][] = t('Search');
-    $form['actions']['submit']['#value'] = '';
+    $form['actions']['submit']['#value'] = 'Search';
   }
   
   

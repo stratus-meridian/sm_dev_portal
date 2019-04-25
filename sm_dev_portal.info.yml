@@ -63,6 +63,7 @@ install:
 - ctools
 - pathauto
 - token
+- apigee_edge
 - admin_toolbar
 - adminimal_admin_toolbar
 - better_exposed_filters

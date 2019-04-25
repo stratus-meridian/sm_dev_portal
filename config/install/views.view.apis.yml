@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_domain_image
+    - image.style.api_310x206
     - node.type.documentation
     - taxonomy.vocabulary.domains
   module:
@@ -297,7 +298,7 @@ display:
           click_sort_column: target_id
           type: image_url
           settings:
-            image_style: ''
+            image_style: api_310x206
           group_column: ''
           group_columns: {  }
           group_rows: true

@@ -50,12 +50,12 @@ function sm_dev_portal_install() {
       }
     }
   }
-  //Updating alias of node
-  sm_dev_portal_update_entity_alias();
   // Enable the default content module. This can't be specified as a dependency
   \Drupal::service('module_installer')->install(['sm_dev_portal_default_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/node/12')->save();
+  //Updating alias of node
+  sm_dev_portal_update_entity_alias();
 }
 
 /**
@@ -110,11 +110,3 @@ function sm_dev_portal_update_entity_alias() {
   }
 }
 
-/**
- * Rebuild routes to mitigate issue 2938884.
- *
- * @see https://www.drupal.org/project/admin_toolbar/issues/2938884
- */
-function sm_dev_portal_update_8001() {
-  sm_dev_portal_update_entity_alias();
-}

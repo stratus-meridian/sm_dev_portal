@@ -10,4 +10,11 @@
  * @see template_preprocess_input()
  */
 #}
-<button{{ attributes }}><i class="fa fa-search"></i>  {{ attributes.value }}</button>{{ children }}
+<button{{ attributes }}>
+  {% if attributes.value == 'Search' %}
+    <i class="fa fa-search"></i>
+  {% else %}
+    {{attributes.value}}
+  {% endif %}
+</button>
+{{ children }}

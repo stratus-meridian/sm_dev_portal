@@ -23,10 +23,7 @@
 }
 
 .page-user-login .user-login-form{
-    position: fixed;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 .page-user-login .user-login-form .description{
     display: none;
@@ -39,46 +36,96 @@
 .page-user-login .user-login-form .form-group input{
     border-radius: unset;
 }
-.user-login-form .signup_wrapper p{
-    float: left;
-    margin-right: 10px;
-}
-.page-user-login .user-login-form .signup_wrapper{
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 2%;
-}
+
 .user-login-form .signup_wrapper{
-    position: unset;
-    left: unset;
-    transform: unset;
-    margin-top: unset;
+	text-align: center;
 }
-.forgot_pass{
-    float: right;
-    margin-right: 20px;
+
+.user-login-form .signup_wrapper p {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
+.forgot_pass {
+    float: left;
+    margin-left: 15px;
+}
+
 .page-user-login .user-login-form .form-group{
     position: unset;
 }
-.user-register-form{
-    width: 45%;
-    transform: translate(60%, 2%);
+
+.path-user #page-wrapper h1.title {
+    font-size: 32px;
+    line-height: 35px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+}
+
+.page-user-login main .region-content,
+.page-user-password main .region-content {
+    padding: 0px 25px;
+}
+
+.page-user-register #page-wrapper h1.title {
+    padding: 0px 30px;
+}
+
+.page-user-login #page-wrapper h1.title {
+    padding: 0px 37px;
+}
+
+.page-user-password #page-wrapper h1.title {
+    padding: 0px 22px;
+}
+
+.user-register-form {
+    max-width: 400px;
+	margin: auto;
 }
 .user-register-form .description{
     display: none;
 }
-.user-register-form .form-group input{
-    border-radius: unset;
+.user-register-form .form-group input,
+.user-pass .form-group input,
+.contact-form .form-group input,
+.contact-form .form-textarea {
+    border-radius: 0px;
+    resize: none;
 }
+
+.contact-form .form-group,
 .user-register-form .form-type-password {
     padding-right: 0px;
     padding-left: 0px;
 }
-.user-register-form .form-actions{
+
+.user-register-form .form-actions,
+.user-pass .form-actions {
+	width: 100%;
+	padding: 0px;
+	margin-top: 20px;
     float: right;
 }
+
+.user-register-form .form-actions {
+	padding: 0px 30px;
+}
+
+.user-register-form .form-actions .form-submit,
+.user-pass .form-actions .form-submit {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.contact-form  .form-actions .form-submit {
+    border-radius: 0px;
+}
+
 .user-pass .form-item-name{
     padding-right: 0px;
     padding-left: 0px;
@@ -2764,4 +2811,22 @@ body.path-search #main-wrapper h1.title,
 
 #content #block-sm-dev-portal-theme-content .list-group li .username a {
     color: #343434;
+}
+
+.btn-faqs {
+    margin-bottom: 0px;
+}
+
+.path-apis .views-element-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.user-register-form .image-widget-data {
+    width: 100%;
+}
+
+.user-register-form .form-type-password-confirm,
+.user-register-form .form-item-pass-pass2 {
+    margin-bottom: 0px;
 }
