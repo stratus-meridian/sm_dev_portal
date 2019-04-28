@@ -17,7 +17,24 @@ use Drupal\Component\Render\FormattableMarkup;
  * Example on how to alter theme settings form
  *
  */
-function sm_dev_portal_theme_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+function sm_dev_portal_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+// documentation.
+  $form['documentation'] = array(
+    '#type' => 'details',
+    '#title' => t('Documentation'),
+    '#group' => 'bootstrap',
+  );
+  $form['documentation']['openapi_ui'] = array(
+    '#type' => 'radios',
+    '#title' => t('Openapi UI'),
+    '#description' => t('Select a option to use on documentation page.'),
+    '#default_value' => !empty(theme_get_setting('openapi_ui')) ? theme_get_setting('openapi_ui') : 'openapi_ui_redoc',
+    '#options' => [
+      'openapi_ui_redoc' => 'Openapi ui redoc',
+      'openapi_ui_swagger' => 'Openapi ui swagger',
+    ],
+  );
+
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
       'bg-primary' => t('Primary'),
       'bg-secondary' => t('Secondary'),
@@ -63,11 +80,12 @@ function sm_dev_portal_theme_preprocess_html(&$variables) {
 }
 
 function sm_dev_portal_theme_preprocess_node(&$variable) {
-
-   if ($variable['node']->getType() == 'front_layout') {
-        $variable['node_type'] = "front_layout";
-   }
-
+  if ($variable['node']->getType() == 'front_layout') {
+    $variable['node_type'] = "front_layout";
+  }
+  if ($variable['node']->getType() == 'documentation') {
+    $variable['openapi_ui_type'] = !empty(theme_get_setting('openapi_ui')) ? theme_get_setting('openapi_ui') : 'openapi_ui_redoc';
+  }
 }
 
 function sm_dev_portal_theme_form_alter(array &$form, FormStateInterface $form_state, $form_id) {

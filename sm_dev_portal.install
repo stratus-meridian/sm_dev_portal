@@ -50,12 +50,57 @@ function sm_dev_portal_install() {
       }
     }
   }
+  // Copy swagger-ui library to /libraries/.
+  $dest = \Drupal::root().'/libraries/swagger-ui/';
+  if (file_prepare_directory($dest, FILE_CREATE_DIRECTORY)) {
+    $libraries_path = drupal_get_path('profile', 'sm_dev_portal') . '/resources/libraries/swagger-ui/';
+    if(is_dir($libraries_path)){
+      apigee_devportal_kickstart_copy_dir($libraries_path, $dest);
+    }
+  }
   // Enable the default content module. This can't be specified as a dependency
   \Drupal::service('module_installer')->install(['sm_dev_portal_default_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/node/12')->save();
   //Updating alias of node
   sm_dev_portal_update_entity_alias();
+}
+
+/**
+ * Implements copy directory function.
+ */
+function apigee_devportal_kickstart_copy_dir($source, $dest)
+{
+    // Check for symlinks
+    if (is_link($source)) {
+        return symlink(readlink($source), $dest);
+    }
+    
+    // Simple copy for a file
+    if (is_file($source)) {
+        return copy($source, $dest);
+    }
+
+    // Make destination directory
+    if (!is_dir($dest)) {
+        mkdir($dest);
+    }
+
+    // Loop through the folder
+    $dir = dir($source);
+    while (false !== $entry = $dir->read()) {
+        // Skip pointers
+        if ($entry == '.' || $entry == '..') {
+            continue;
+        }
+
+        // Deep copy directories
+        apigee_devportal_kickstart_copy_dir("$source/$entry", "$dest/$entry");
+    }
+
+    // Clean up
+    $dir->close();
+    return true;
 }
 
 /**
