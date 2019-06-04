@@ -227,6 +227,19 @@
   .p-b-0 {
     padding-bottom: 15px !important;
   }
+  .apigee-edge-developer-app-analytics #edit-controls #edit-since, 
+  .apigee-edge-developer-app-analytics #edit-controls #edit-until {
+	  width: 49%;
+  }
+  .apigee-edge-developer-app-analytics #edit-controls #edit-date-separator-container {
+    display: none;
+   }
+  .apigee-edge-developer-app-analytics #edit-controls fieldset {
+	  width: 100%;
+  }
+  .apigee-edge-app-analytics .form-group {
+    text-align: left;
+  }
 }
 
 
@@ -583,6 +596,16 @@ body.path-frontpage #main-wrapper .region-banner .banner {
 
 .set-ctaheading {
     width: 100% !important;
+}
+.field {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0px;
+}
+
+.col-auto {
+    padding: 0px;
 }
 
 }

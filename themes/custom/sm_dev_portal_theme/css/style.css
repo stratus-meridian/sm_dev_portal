@@ -61,9 +61,6 @@
     line-height: 35px;
     text-align: left;
     margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 400px;
 }
 
 .page-user-login main .region-content,
@@ -138,7 +135,7 @@
     margin-top: 0px;
     min-height: 85vh;
 }
-.admin_user .navbar{
+.adminimal-admin-toolbar .navbar{
     margin-top: 78px;
     z-index: 99;
 }
@@ -1984,7 +1981,6 @@ input:checked + .slider:before {
 
 .developer-app-edit-for-developer-form{
     width: 80%;
-    transform: translate(12%, 2%);
 }
 
 .developer-app-edit-for-developer-form .checkbox .option{
@@ -1997,12 +1993,27 @@ input:checked + .slider:before {
 }
 
 .developer-app-edit-for-developer-form .fieldset-legend{
-    margin-left: 14px;
     font-size: 18px;
+}
+.developer-app-edit-for-developer-form #edit-credential fieldset fieldset {
+	padding-left: 0;
+}
+.developer-app-edit-for-developer-form #edit-credential .fieldset-wrapper {
+	margin-top: 15px;
+}
+.developer-app-edit-for-developer-form  #edit-credential fieldset fieldset .fieldset-wrapper {
+	padding-left: 20px;
 }
 
 .developer-app-edit-for-developer-form .checkbox .form-check{
     padding-left: 0rem;
+}
+.developer-app-edit-for-developer-form .form-actions {
+	padding-left: 30px;
+}
+.developer-app-edit-for-developer-form label,
+.developer-app-edit-for-developer-form .fieldset-legend {
+	font-weight: 600;
 }
 
 @media (min-width:300px) and (max-width: 767px){
@@ -2016,68 +2027,68 @@ input:checked + .slider:before {
 
 /**************************MyApp Page*************************/
 
-#app-list .section .field--name-status{
+.table--app-list .section .field--name-status{
     display: flex;
 }
 
-#app-list .section .field__label{
+.table--app-list .section .field__label{
     font-weight: 600;
     width: 160px;
 }
 
-#app-list .section .item-property{
+.table--app-list .section .item-property{
     display: table;
 }
 
-#app-list .section .item-property label{
+.table--app-list .section .item-property label{
     margin-right: 15px;
     font-weight: 600;
     width: 150px;
 }
 
-#app-list .section .wrapper--secondary label{
+.table--app-list .section .wrapper--secondary label{
     font-weight: 600;
     margin-bottom: 0rem;
 }
 
-#app-list .section .wrapper--secondary .api-product-list-row{
+.table--app-list .section .wrapper--secondary .api-product-list-row{
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-#app-list .section .wrapper--secondary .api-product-list-row .api-product-name{
+.table--app-list .section .wrapper--secondary .api-product-list-row .api-product-name{
     font-weight: 600;
     width: 150px;
 }
 
-#app-list .section .items--inline legend{
+.table--app-list .section .items--inline legend{
     font-weight: 600;
     font-size: 20px;
 }
 
-#app-list .section .col-auto fieldset{
+.table--app-list .section .col-auto fieldset{
     width: 70%;
     float: right;
     margin-top: -180px;
 }
 
-#app-list .section .col-auto fieldset .fieldset-wrapper{
+.table--app-list .section .col-auto fieldset .fieldset-wrapper{
     border: 2px solid #80808047;
     width: 45%;
 }
 
-#app-list .dropbutton-widget {
+.table--app-list .dropbutton-widget {
 	width: 35%;
 	float: right;
 }
 
-#app-list .dropbutton-wrapper{
-    padding-right: 0em;
-    margin-right: 0em;
+.table--app-list .dropbutton-wrapper{
+	padding-right: 0em !important;
+	margin-right: 0em !important;
 }
 
-#app-list tr th {
+.table--app-list tr th {
 	background-color: #fff;
 	border-color: #e7eaf3;
 	color: #1e2022;
@@ -2086,50 +2097,53 @@ input:checked + .slider:before {
 	font-size: 1rem;
 }
 
-#app-list tr th:nth-child(2),
-#app-list tr td:nth-child(2) {
+.table--app-list tr th:nth-child(2),
+.table--app-list tr td:nth-child(2) {
 	text-align: center;
 }
-#app-list tr th:last-child {
+.table--app-list tr th:last-child {
 	text-align: end;
 }
 
-#app-list thead th a {
+.table--app-list thead th a {
 	vertical-align: middle !important;
 	color: #1e2022;
 }
 
-#app-list tr td {
+.table--app-list tr td {
 	font-size: 16px;
 	font-weight: 400;
 	background: #fff;
 	padding: 6px .75rem;
+    border: 1px solid #dee2e6;
 }
-#app-list tr td a {
+.table--app-list tr td a {
 	color: #377dff;
 	text-transform: capitalize;
 	font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
 
-#app-list tr td .wrapper--status {
+.table--app-list tr td .wrapper--status {
 	float: none;
 	padding: 0.25rem 1rem;
 }
 
-#app-list .section{   
+.table--app-list .section{   
     text-align: left;
     border: none;
 }
-
+.wrapper--secondary .api-product-list-row {
+	padding-left: 0;
+}
 @media (max-width:991px){
 
-    #app-list .section .col-auto fieldset{
+    .table--app-list .section .col-auto fieldset{
         width: unset;
         float: unset;
         margin-top: 20px;
     }
 
-    #app-list .dropbutton-widget{
+    .table--app-list .dropbutton-widget{
         width: 100%;
     }
 
@@ -2137,11 +2151,11 @@ input:checked + .slider:before {
         padding-top: 90px;
     }
 
-    #app-list .section .col-auto fieldset .fieldset-wrapper {
+    .table--app-list .section .col-auto fieldset .fieldset-wrapper {
         width: 100%;
     }
 
-    #app-list .section .item-property {
+    .table--app-list .section .item-property {
         display: flex;
         padding-right: 0px;
         padding-left: 0px;
@@ -2151,11 +2165,11 @@ input:checked + .slider:before {
 
 @media (min-width: 992px) and (max-width: 1500px){
 
-    #app-list .section .col-auto fieldset .fieldset-wrapper {
+    .table--app-list .section .col-auto fieldset .fieldset-wrapper {
         width: 85%;
     }
 
-    #app-list .section .col-auto fieldset {
+    .table--app-list .section .col-auto fieldset {
         width: 62%;
     }
 }
@@ -2184,8 +2198,17 @@ input:checked + .slider:before {
     margin-right: 15px;
     font-weight: 600;
     width: 150px;
+	margin-right: 15px;
+	font-weight: 600;
+	width: 150px;
+	vertical-align: top;
 }
-
+.wrapper--status.indicator-status-ok {
+	background-color: #00c9a7;
+}
+.wrapper--status {
+	padding: 1px 15px 3px 15px;
+ }
 .page-user-1 .section .wrapper--secondary .api-product-list-row .api-product-name{
     font-weight: 600;
     width: 150px;
@@ -2829,4 +2852,102 @@ body.path-search #main-wrapper h1.title,
 .user-register-form .form-type-password-confirm,
 .user-register-form .form-item-pass-pass2 {
     margin-bottom: 0px;
+}
+.apigee-edge--form .button.button--danger {
+	color: #A11808;
+	border: 1px solid #A11808;
+	border-radius: 5px;
+	font-size: 18px;
+	background-color: transparent;
+	padding: .5rem 1.25rem;
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: 700;
+}
+.apigee-edge--form .button.button--danger:hover {
+	color: #FFF;
+	background-color: #A11808;
+	border: 1px solid #A11808;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .05), 0 4px 10px rgba(255, 27, 0, 0.25);
+}
+/*********** App Analytics *************/
+.apigee-edge-developer-app-analytics #edit-controls fieldset{
+	width: 50%;
+	margin: 0;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-since, 
+.apigee-edge-developer-app-analytics #edit-controls #edit-until {
+	width: 23%;
+	margin: 0;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-until {
+	text-align: right;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-date-separator-container {
+	display: inline-block;
+	vertical-align: text-bottom;
+	padding: 0 13px;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-since fieldset, 
+.apigee-edge-developer-app-analytics #edit-controls #edit-until fieldset {
+	width: 100%;
+	display: block;
+	margin: 10px 0;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-submit {
+	display: block;
+	margin-top: 25px;
+}
+.apigee-edge-developer-app-analytics #edit-controls #edit-until fieldset #edit-until-date,
+.apigee-edge-developer-app-analytics #edit-controls #edit-since fieldset #edit-since-date {
+	padding: .5rem 1.4rem;
+}
+
+.developer-app-add-for-developer-form {
+	width: 100%;
+	transform: none;
+}
+
+.developer-app-form .form-group,
+.apigee-edge-app-analytics .form-group,
+.developer-app-add-for-developer-form .form-group,
+.developer-app-confirm-form .form-group {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.developer-app-edit-for-developer-form label,
+.developer-app-edit-for-developer-form .fieldset-legend,
+.developer-app-form .form-group label,
+.apigee-edge-app-analytics .form-group label,
+.developer-app-form .form-group .fieldset-legend,
+.apigee-edge-app-analytics .form-group .fieldset-legend {
+	font-weight: 600;
+}
+
+.developer-app-confirm-form #edit-cancel {
+    padding: 10px 10px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.form-check-input {
+    margin-top: 8px;
+}
+
+.developer-app-form .form-check {
+    padding-left: 20px;
+}
+
+.developer-app-form .form-check .form-check {
+    padding-left: 0px;
+}
+
+.developer-app-add-for-developer-form .fieldset-legend {
+    margin-left: 0px;
+}
+
+#block-primaryadminactions nav li.nav-link {
+	padding: 0px;
 }
