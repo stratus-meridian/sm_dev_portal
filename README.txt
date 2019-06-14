@@ -11,7 +11,7 @@ TABLE OF CONTENTS
 INTRODUCTION
 ------------
  
- Stratus Meridian offers a unique selection of APIs in FinTech which you could consume and build your apps from.
+ Stratus Meridian developer portal distribution will help with acceleration of your API program. 
 
  * For a full description of the profile, visit the project page:
    https://www.drupal.org/project/sm_dev_portal 
@@ -20,9 +20,8 @@ REQUIREMENTS
 ------------
  
  * Drupal 8
- * Apigee Edge module connect a Drupal 8 site to Apigee Edge in order to build a developer portal https://www.drupal.org/project/apigee_edge
+ * Apigee Edge module as a connector to Apigee Edge. https://www.drupal.org/project/apigee_edge
  * Barrio Theme for base theme for this project. https://www.drupal.org/project/bootstrap_barrio
- * Shards for custom theme markup inspiration. https://designrevision.com/downloads/shards
  
 INSTALLATION
 ------------
