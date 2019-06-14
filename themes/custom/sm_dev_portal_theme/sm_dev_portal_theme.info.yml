@@ -2,7 +2,7 @@ name: Stratus Meridian Developer Portal Theme
 type: theme
 description: 'Basic structure for a Bootstrap Barrio sm_dev_portal_theme SubTheme.'
 # version: VERSION
-# core: 8.x
+core: 8.x
 base theme: bootstrap_barrio
 
 libraries:
