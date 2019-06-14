@@ -63,12 +63,10 @@ install:
 - ctools
 - pathauto
 - token
-- apigee_edge
 - admin_toolbar
 - adminimal_admin_toolbar
 - better_exposed_filters
 - openapi_ui_redoc
-- openapi_ui_swagger
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.

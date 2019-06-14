@@ -160,7 +160,7 @@
   top: 50%;
   left: 100%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   box-shadow: 0 13px 25px rgba(0, 0, 0, 0.05), 0 60px 100px rgba(192, 192, 192, 0.5);
 }
 
@@ -169,7 +169,7 @@
     display: table;
     position: static;
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
     margin: 0 auto;
   }
 }
@@ -208,7 +208,8 @@
 }
 
 @media (max-width: 767.98px) {
-  .shards-app-promo-page--1 .subscribe input, .shards-app-promo-page--1 .subscribe button {
+  .shards-app-promo-page--1 .subscribe input,
+  .shards-app-promo-page--1 .subscribe button {
     width: 100%;
   }
 }

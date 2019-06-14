@@ -73,13 +73,9 @@
  */
 #}
 
+{{ attach_library('openapi_ui_redoc/redoc') }}
+{{ attach_library('openapi_ui_redoc/redoc_attr') }}
 
-{% if openapi_ui_type == 'openapi_ui_swagger' %}
-  {{ attach_library('openapi_ui_swagger/swagger_ui_integration') }}
-{% else %}
-  {{ attach_library('openapi_ui_redoc/redoc') }}
-  {{ attach_library('openapi_ui_redoc/redoc_attr') }}
-{% endif %}
 {% block content %}
 <div class="documentation-detail-wrapper"> 
     
@@ -105,22 +101,11 @@
     {% if content.body|render %}
       <div class="body"> {{ content.body }} </div>
     {% endif %}
-     {%  set specUrl = '' %}
+    
     {% if content.field_swagger|render %}
-      {%  set base_url = render_var(url('<front>'))  %}
+      {% set base_url = render_var(url('<front>'))  %}
       {%  set specUrl = file_url(node.field_swagger.entity.uri.value) %}
+      <div class="field_swagger"> <redoc spec-url='{{ specUrl }}'></redoc> </div>
     {% endif %} 
-    {% if node.field_swagger_file_url.value is not empty %}
-      {%  set specUrl = node.field_swagger_file_url.value %}
-    {% endif %}
-    {% if specUrl %}
-      <div class="field_swagger">
-        {% if openapi_ui_type == 'openapi_ui_swagger' %}
-          <div data-openapi-ui-url='{{ specUrl }}' id="swagger-ui" class="swagger-ui-wrap"></div>
-        {% else %}
-	  <redoc spec-url='{{ specUrl }}'></redoc>
-        {% endif %}
-      </div>
-    {% endif %}
 </div>
 {% endblock %} 

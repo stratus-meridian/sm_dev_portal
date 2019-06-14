@@ -9,7 +9,7 @@ bootstrap_barrio_sidebar_first_width: 4
 bootstrap_barrio_sidebar_first_offset: 0
 bootstrap_barrio_sidebar_second_width: 3
 bootstrap_barrio_sidebar_second_offset: 0
-openapi_ui: 'openapi_ui_redoc'
+
 # Container
 # --------------
 bootstrap_barrio_fluid_container: 0

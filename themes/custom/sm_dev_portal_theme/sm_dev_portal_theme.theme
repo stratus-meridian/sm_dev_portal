@@ -6,154 +6,134 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Drupal\Component\Render\FormattableMarkup;
+
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
  * Replace Barrio setting options with subtheme ones.
  *
  * Example on how to alter theme settings form
- *
  */
-function sm_dev_portal_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-// documentation.
-  $form['documentation'] = array(
-    '#type' => 'details',
-    '#title' => t('Documentation'),
-    '#group' => 'bootstrap',
-  );
-  $form['documentation']['openapi_ui'] = array(
-    '#type' => 'radios',
-    '#title' => t('Openapi UI'),
-    '#description' => t('Select a option to use on documentation page.'),
-    '#default_value' => !empty(theme_get_setting('openapi_ui')) ? theme_get_setting('openapi_ui') : 'openapi_ui_redoc',
-    '#options' => [
-      'openapi_ui_redoc' => 'Openapi ui redoc',
-      'openapi_ui_swagger' => 'Openapi ui swagger',
-    ],
-  );
-
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
-  );
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
-  );
+function sm_dev_portal_theme_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
 }
 
+/**
+ * Implements hook_preprocess_page().
+ */
 function sm_dev_portal_theme_preprocess_page(&$variables) {
-
   global $base_url;
   $variables['base_path'] = $base_url;
   $variables['user'] = \Drupal::currentUser()->isAuthenticated();
 
   $message = \Drupal::entityTypeManager()
-      ->getStorage('contact_message')
-      ->create(array('contact_form' => 'feedback', //ID(Machine name) of form
-    ));
+    ->getStorage('contact_message')
+    ->create(['contact_form' => 'feedback']);
   $form = \Drupal::service('entity.form_builder')->getForm($message);
   $variables['contact'] = $form;
-
 }
 
+/**
+ * Implements hook_preprocess_html().
+ */
 function sm_dev_portal_theme_preprocess_html(&$variables) {
-
   if (\Drupal::currentUser()->isAnonymous()) {
     $variables['attributes']['class'][] = 'shards-landing-page--1';
   }
-  else{
+  else {
     $variables['attributes']['class'][] = 'shards-landing-page--1 admin_user';
   }
-
 }
 
+/**
+ * Implements hook_preprocess_node().
+ */
 function sm_dev_portal_theme_preprocess_node(&$variable) {
   if ($variable['node']->getType() == 'front_layout') {
     $variable['node_type'] = "front_layout";
   }
-  if ($variable['node']->getType() == 'documentation') {
-    $variable['openapi_ui_type'] = !empty(theme_get_setting('openapi_ui')) ? theme_get_setting('openapi_ui') : 'openapi_ui_redoc';
-  }
 }
 
+/**
+ * Implements hook_form_alter().
+ */
 function sm_dev_portal_theme_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-
   if ($form_id == 'user_login_form') {
     $form['pass']['#suffix'] = '<a class="forgot_pass" href="/user/password">Forgot Password?</a>';
     $form['name']['#attributes']['placeholder'] = t('Username');
     $form['pass']['#attributes']['placeholder'] = t('Password');
     $form['actions']['#suffix'] = '<div class="signup_wrapper"><p>Do not have an account? </p><a class="signup_login" href="/user/register">Signup</a></div>';
   }
+
   if ($form_id == 'user_register_form') {
     $form['account']['mail']['#attributes']['placeholder'] = t('Email');
     $form['account']['name']['#attributes']['placeholder'] = t('Username');
   }
+
   // Look for any form provided by the contact module.
   // If you want to target a specific form you'll use the whole form ID
   // (e.g. Website feedback = 'contact_message_feedback_form').
   if (strpos($form_id, 'contact_message_') !== FALSE) {
     $form['actions']['preview']['#access'] = FALSE;
   }
-  
+
   if ($form_id == 'search_block_form') {
-    //dpm($form['actions']);
     $form['keys']['#attributes']['placeholder'][] = t('Search');
-    $form['actions']['submit']['#value'] = 'Search';
+    $form['actions']['submit']['#value'] = t('Search');
   }
-  
-  
-
-
 }
 
+/**
+ * Implements hook_preprocess_field().
+ */
 function sm_dev_portal_theme_preprocess_field(&$variables) {
-  if($variables['field_name'] == 'field_faq'){
-    foreach($variables['items'] as $idx => $item) {
+  if ($variables['field_name'] == 'field_faq') {
+    foreach ($variables['items'] as $idx => $item) {
       $variables['items'][$idx]['content']['#paragraph']->index = $idx;
     }
   }
 
-  if($variables['field_name'] == 'field_tabs'){
-    foreach($variables['items'] as $idx => $item) {
+  if ($variables['field_name'] == 'field_tabs') {
+    foreach ($variables['items'] as $idx => $item) {
       $variables['items'][$idx]['content']['#paragraph']->index = $idx;
     }
   }
-  if($variables['field_name'] == 'field_info_3_boxes'){
-    foreach($variables['items'] as $idx => $item) {
+
+  if ($variables['field_name'] == 'field_info_3_boxes') {
+    foreach ($variables['items'] as $idx => $item) {
       $variables['items'][$idx]['content']['#paragraph']->index = $idx;
     }
   }
 }
 
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
 function sm_dev_portal_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $content_type = $node->bundle();
-    $suggestions[] = 'page__'.$content_type;
+    $suggestions[] = 'page__' . $content_type;
   }
 }
 
-
+/**
+ * Implements hook_preprocess_search_result().
+ */
 function sm_dev_portal_theme_preprocess_search_result(&$variables) {
-
-  //global $base_url;
-  //$result = $variables['result'];
-  //if (isset($variables['info_split']['date'])) {
-    //$node = $variables['result']['node'];
-    //$node_obj = \Drupal::entityTypeManager()->getStorage('node')->load($node->id());
-  //}
   $variables['info_split']['image'] = 'public://default_images/default.png';
-
 }
