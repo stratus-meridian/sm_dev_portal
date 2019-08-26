@@ -24,7 +24,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_swagger": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/api-specs\/2018-11\/jyothi-test.json"
+                "href": "http:\/\/default\/sites\/default\/files\/api-specs\/2018-11\/apigee-test.json"
             }
         ]
     },
@@ -117,7 +117,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/api-specs\/2018-11\/jyothi-test.json"
+                        "href": "http:\/\/default\/sites\/default\/files\/api-specs\/2018-11\/apigee-test.json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/api-specs\/jyothi-test.json"
+            "href": "http:\/\/default\/sites\/default\/files\/api-specs\/apigee-test.json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -48,13 +48,13 @@
     },
     "filename": [
         {
-            "value": "jyothi-test.json"
+            "value": "apigee-test.json"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/api-specs\/jyothi-test.json",
-            "url": "\/sites\/default\/files\/api-specs\/jyothi-test.json"
+            "value": "public:\/\/api-specs\/apigee-test.json",
+            "url": "\/sites\/default\/files\/api-specs\/apigee-test.json"
         }
     ],
     "filemime": [
