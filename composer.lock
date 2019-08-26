@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a7613847a3b95a875d1c6fab78ea399",
+    "content-hash": "107cf0a8b09b41064fab641af692ed77",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -1398,6 +1398,71 @@
             }
         },
         {
+            "name": "drupal/claro",
+            "version": "1.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/claro.git",
+                "reference": "8.x-1.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/claro-8.x-1.0-alpha4.zip",
+                "reference": "8.x-1.0-alpha4",
+                "shasum": "151906eaef0fa2ade0cbffb2248565066544055a"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha4",
+                    "datestamp": "1564677185",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "balsama",
+                    "homepage": "https://www.drupal.org/user/223087"
+                },
+                {
+                    "name": "ckrina",
+                    "homepage": "https://www.drupal.org/user/1206650"
+                },
+                {
+                    "name": "huzooka",
+                    "homepage": "https://www.drupal.org/user/281301"
+                },
+                {
+                    "name": "lauriii",
+                    "homepage": "https://www.drupal.org/user/1078742"
+                },
+                {
+                    "name": "saschaeggi",
+                    "homepage": "https://www.drupal.org/user/1999056"
+                }
+            ],
+            "description": "A clean, accessible and powerful Drupal administration theme.",
+            "homepage": "https://www.drupal.org/project/claro",
+            "support": {
+                "source": "https://git.drupalcode.org/project/claro",
+                "docs": "https://www.drupal.org/docs/8/modules/claro",
+                "issues": "https://www.drupal.org/project/issues/claro"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.7.6",
             "source": {
@@ -1939,65 +2004,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/key",
                 "issues": "http://drupal.org/project/key"
-            }
-        },
-        {
-            "name": "drupal/material_admin",
-            "version": "1.0.0-alpha7",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/material_admin.git",
-                "reference": "8.x-1.0-alpha7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/material_admin-8.x-1.0-alpha7.zip",
-                "reference": "8.x-1.0-alpha7",
-                "shasum": "58943c015c315559f820ca4ec4ce1a5d9bdbf243"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha7",
-                    "datestamp": "1543440180",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Bcwald",
-                    "homepage": "https://www.drupal.org/user/215794"
-                },
-                {
-                    "name": "e0ipso",
-                    "homepage": "https://www.drupal.org/user/550110"
-                },
-                {
-                    "name": "rlnorthcutt",
-                    "homepage": "https://www.drupal.org/user/116893"
-                },
-                {
-                    "name": "samuel.mortenson",
-                    "homepage": "https://www.drupal.org/user/2582268"
-                }
-            ],
-            "description": "Material Design Admin Theme",
-            "homepage": "https://www.drupal.org/project/material_admin",
-            "support": {
-                "source": "https://git.drupalcode.org/project/material_admin"
             }
         },
         {
@@ -7477,8 +7483,8 @@
         "drupal/apigee_edge": 20,
         "drupal/better_exposed_filters": 15,
         "drupal/blog": 20,
+        "drupal/claro": 15,
         "drupal/default_content": 15,
-        "drupal/material_admin": 15,
         "drupal/openapi_ui": 5,
         "drupal/openapi_ui_redoc": 5
     },
