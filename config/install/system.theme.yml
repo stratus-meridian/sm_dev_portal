@@ -1,4 +1,2 @@
-admin: material_admin
+admin: claro
 default: sm_dev_portal_theme
-_core:
-  default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg

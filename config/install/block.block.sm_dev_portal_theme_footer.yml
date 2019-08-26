@@ -1,4 +1,3 @@
-uuid: 3723f821-b123-480d-8c3d-93ea7215e14a
 langcode: en
 status: true
 dependencies:
@@ -21,4 +20,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

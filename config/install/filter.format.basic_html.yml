@@ -1,11 +1,8 @@
-uuid: 6aff4b4c-0e66-444d-9167-641231191308
 langcode: en
 status: true
 dependencies:
   module:
     - editor
-_core:
-  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
 format: basic_html
 weight: 0

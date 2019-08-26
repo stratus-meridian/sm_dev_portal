@@ -1,11 +1,9 @@
-uuid: 94d5a4dd-86e5-435a-a2cb-2a5366b7dac4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_image
-    - field.storage.node.field_tags
     - node.type.article
   module:
     - image

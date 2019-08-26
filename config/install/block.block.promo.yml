@@ -1,17 +1,13 @@
-uuid: e0f9fd5f-216e-42b6-9a67-73851090b9f8
 langcode: en
-status: true
+status: false
 dependencies:
-  content:
-    - 'block_content:basic:e3663901-bb01-4daa-bde2-351050355c84'
   module:
-    - block_content
     - system
   theme:
     - sm_dev_portal
 id: promo
 theme: sm_dev_portal
-region: promo
+region: ''
 weight: 0
 provider: null
 plugin: 'block_content:e3663901-bb01-4daa-bde2-351050355c84'

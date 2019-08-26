@@ -1,11 +1,6 @@
-uuid: 8a224e1e-bcf0-4d89-ae5d-875cdf7484d3
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:6bc9e566-7f83-462b-bce8-5b539acdb3bc'
-  module:
-    - block_content
   theme:
     - sm_dev_portal_theme
 id: sm_dev_portal_theme_socialiconsinheader_2

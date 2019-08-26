@@ -1,11 +1,6 @@
-uuid: 03490ae5-9296-4a7d-b08c-8ce0332d4d0e
 langcode: en
 status: false
 dependencies:
-  content:
-    - 'block_content:basic:6355ddba-5fee-4ce2-84a2-d9afab8c62b7'
-  module:
-    - block_content
   theme:
     - sm_dev_portal_theme
 id: sm_dev_portal_theme_footerlogodesigninfootersection

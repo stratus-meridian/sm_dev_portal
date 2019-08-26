@@ -16,8 +16,6 @@ bootstrap_barrio_navbar_top_color: navbar-dark
 bootstrap_barrio_navbar_position: fixed-top
 bootstrap_barrio_navbar_color: navbar-dark
 bootstrap_barrio_table_hover: 1
-_core:
-  default_config_hash: LdPjc1VCTO3_q56LqMexIbDmRvhlTEdTFHajPe4laUs
 features:
   node_user_picture: 1
   comment_user_picture: 1

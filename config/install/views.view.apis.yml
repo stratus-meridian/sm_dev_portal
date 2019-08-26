@@ -1,11 +1,9 @@
-uuid: 266fe28e-0de8-441c-b4cb-8227644fee72
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_domain_image
-    - image.style.api_310x206
     - node.type.documentation
     - taxonomy.vocabulary.domains
   module:
@@ -298,7 +296,7 @@ display:
           click_sort_column: target_id
           type: image_url
           settings:
-            image_style: api_310x206
+            image_style: ''
           group_column: ''
           group_columns: {  }
           group_rows: true

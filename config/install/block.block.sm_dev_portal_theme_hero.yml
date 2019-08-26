@@ -1,11 +1,7 @@
-uuid: 7a957aa3-8fc0-4b30-a129-699e193b94a5
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:2f5d3ae0-5133-4450-ad41-537fd59cabbd'
   module:
-    - block_content
     - system
   theme:
     - sm_dev_portal_theme

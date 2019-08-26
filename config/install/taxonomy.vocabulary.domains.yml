@@ -1,9 +1,7 @@
-uuid: 710e63d3-4112-4f27-a3b4-3a3c8a0b094c
 langcode: en
 status: true
 dependencies: {  }
 name: Domains
 vid: domains
 description: ''
-hierarchy: 0
 weight: 0

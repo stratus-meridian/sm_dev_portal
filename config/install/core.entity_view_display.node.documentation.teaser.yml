@@ -1,10 +1,12 @@
-uuid: 1f6c070a-e896-4727-9cb7-81751ad51c67
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.documentation.body
+    - field.field.node.documentation.field_domain_image
+    - field.field.node.documentation.field_domains
+    - field.field.node.documentation.field_swagger
     - node.type.documentation
   module:
     - text
@@ -27,4 +29,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_domain_image: true
+  field_domains: true
+  field_swagger: true
