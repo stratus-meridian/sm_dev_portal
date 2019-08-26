@@ -60,7 +60,6 @@ install:
 - search
 - serialization
 - shortcut
-- sm_dev_portal_default_content
 - system
 - taxonomy
 - text
