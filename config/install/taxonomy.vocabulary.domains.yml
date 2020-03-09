@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Domains
-vid: domains
-description: ''
-weight: 0
