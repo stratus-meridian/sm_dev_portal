@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_tabs.field_background_image
+    - field.field.paragraph.content_tabs.field_description
+    - field.field.paragraph.content_tabs.field_tab_block
+    - field.field.paragraph.content_tabs.field_title
+    - paragraphs.paragraphs_type.content_tabs
+  module:
+    - paragraphs
+id: paragraph.content_tabs.default
+targetEntityType: paragraph
+bundle: content_tabs
+mode: default
+content:
+  field_tab_block:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_background_image: true
+  field_description: true
+  field_title: true
+  status: true

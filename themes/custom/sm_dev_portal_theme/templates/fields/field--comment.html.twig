@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Template for the comment field.
+ */
+#}
+<section{{ attributes.addClass('smdp-comment-wrapper','comment-wrapper','mt-5') }}>
+	{{ title_prefix }}
+	{{ title_suffix }}
+
+	{{ comments }}
+
+	{% if comment_form %}
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#smdpCommentForm">
+			{{ ('Add comments') }}
+		</button>
+
+		{{ comment_form }}
+	{% endif %}
+</section>

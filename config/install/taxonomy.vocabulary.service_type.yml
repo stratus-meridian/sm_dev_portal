@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'API Category'
+vid: service_type
+description: 'Category for the API Document'
+weight: 0

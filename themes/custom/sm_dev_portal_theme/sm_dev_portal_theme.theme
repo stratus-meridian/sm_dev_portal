@@ -1,0 +1,278 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Stratus Meridian Developer Portal Theme.
+ */
+
+use Drupal\Core\Url;
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+	require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+function sm_dev_portal_theme_preprocess(&$variables, $hook) {
+	global $base_url;
+
+	$user = \Drupal::currentUser();
+	$user_auth = $user->isAuthenticated();
+
+	$variables['base_url'] = $base_url;
+	$variables['base_path'] = base_path();
+
+	if($user_auth == 1) {
+		$variables['user_auth'] = 'authenticated';
+		if ($user->id()) $variables['user_id'] = $user->id();
+	} else {
+		$variables['user_auth'] = 'not-authenticated';
+	}
+}
+
+function sm_dev_portal_theme_preprocess_html(&$variables) {
+	$http_equiv = [
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => [
+			'http-equiv' => 'x-ua-compatible',
+			'content' => 'ie=edge',
+		],
+	];
+
+	$variables['page']['#attached']['html_head'][] = [$http_equiv, 'http-equiv'];
+}
+
+function sm_dev_portal_theme_preprocess_page(&$variables) {
+	$request = \Drupal::routeMatch();
+
+	//Only for Teams
+	if (($request->getRouteName() == 'entity.team.edit_form')
+		|| ($request->getRouteName() == 'entity.team.delete_form')
+		|| ($request->getRouteName() == 'entity.team.canonical')) {
+
+		$variables['additional_tabs'] = [];
+		$variables['teamRouteName'] = $request->getRouteName();
+
+		if ($request->getRawParameter('team')) $teamId = $request->getRawParameter('team');
+
+		$variables['team_id'] = $teamId;
+		$canonical_route_name = 'entity.team.canonical';
+
+		$route_parameters = [
+			'team' => $teamId,
+		];
+
+		if ($tasks = Drupal::service('plugin.manager.menu.local_task')->getLocalTasks($canonical_route_name)) {
+			foreach ($tasks['tabs'] as $tab) {
+				$link = $tab['#link'];
+
+				/** @var \Drupal\Core\Url $url */
+				$url = $link['url'];
+				if ($url->getRouteName() !== $canonical_route_name) {
+					$url->setRouteParameters($route_parameters);
+
+					$variables['additional_tabs'][] = [
+						'title' => $link['title'],
+						'url' => $url,
+					];
+				}
+			}
+		}
+	}
+
+	//Only for Teams Apps
+	if (($request->getRouteName() == 'entity.team_app.collection_by_team')
+		|| ($request->getRouteName() == 'entity.team_app.canonical')
+		|| ($request->getRouteName() == 'entity.team_app.add_form_for_team')
+		|| ($request->getRouteName() == 'entity.team_app.edit_form')
+		|| ($request->getRouteName() == 'entity.team_app.delete_form')
+		|| ($request->getRouteName() == 'entity.team_app.analytics')) {
+		if ($request->getRawParameter('team')) {
+			if ($request->getRawParameter('team')) $teamId = $request->getRawParameter('team');
+
+			$variables['team_id'] = $teamId;
+
+			if ($request->getRawParameter('app')) {
+				$teamApp_appName = $request->getRawParameter('app');
+				$variables['teamapp_app_id'] = $teamApp_appName;
+			}
+		}
+	}
+
+	//Only for Team Member
+	if (($request->getRouteName() == 'entity.team.add_members')
+		|| ($request->getRouteName() == 'entity.team.members')
+		|| ($request->getRouteName() == 'entity.team.member.remove')
+		|| ($request->getRouteName() == 'entity.team.member.edit')) {
+
+		$additional_tabs = array();
+
+		if ($request->getRawParameter('entity_type_id')) {
+			$team_entityTypeId = $request->getRawParameter('entity_type_id');
+			$variables['team_entityTypeId'] = $team_entityTypeId;
+		}
+
+		if ($request->getRawParameter('team')) {
+			$teamId = $request->getRawParameter('team');
+			$variables['team_id'] = $teamId;
+		}
+
+		if ($request->getRawParameter('developer')) {
+			$team_developer = $request->getRawParameter('developer');
+			$variables['team_developer'] = $team_developer;
+		}
+
+		array_push($additional_tabs, array(
+			'title' => 'Members',
+			'url' => Url::fromRoute('entity.team.members', ['entity_type_id' => $team_entityTypeId, 'team' => $teamId]),
+		),array(
+			'title' => 'Edit',
+			'url' => Url::fromRoute('entity.team.member.edit', ['entity_type_id' => $team_entityTypeId, 'team' => $teamId, 'developer' => $team_developer])
+		),array(
+			'title' => 'Delete',
+			'url' => Url::fromRoute('entity.team.member.remove', ['entity_type_id' => $team_entityTypeId, 'team' => $teamId, 'developer' => $team_developer])
+		));
+
+		$variables['teamMemberRouteName'] = $request->getRouteName();
+		$variables['additional_tabs'] = $additional_tabs;
+	}
+
+	//Only for App Forms
+	if ($request->getParameter('app') !== null) {
+		if (($request->getParameter('app')->getEntityTypeId() == 'developer_app') || ($request->getParameter('app')->getEntityTypeId() == 'team_app')) {
+
+			$appEntityTypeID = $request->getParameter('app')->getEntityTypeId();
+
+			$appRouteName = $request->getRouteName();
+
+			if ($appEntityTypeID == 'developer_app') {
+				if ($request->getRawParameter('user')) $appOwner = $request->getRawParameter('user');
+			} else {
+				if ($request->getRawParameter('team')) $appOwner = $request->getRawParameter('team');
+			}
+
+			if (($appRouteName != 'entity.developer_app.add_form_for_developer') || ($appRouteName != 'entity.team_app.add_form_for_team')) {
+				if ($request->getRawParameter('app')) $appName = $request->getRawParameter('app');
+
+				// Add local tasks on the app canonical route as additional tabs.
+				$variables['additional_tabs'] = [];
+				$variables['appRouteName'] = $appRouteName;
+				$variables['appName'] = $appName;
+
+				switch ($appEntityTypeID) {
+					case 'team_app':
+						$canonical_route_name = 'entity.team_app.canonical';
+						$route_parameters = [
+							'team' => $appOwner,
+							'app' => $appName,
+						];
+						break;
+
+					default:
+						$canonical_route_name = "entity.{$appEntityTypeID}.canonical_by_" . str_replace('_app', '', $appEntityTypeID);
+						$route_parameters = [
+							'user' => $appOwner,
+							'app' => $appName,
+						];
+						break;
+				}
+
+				if ($tasks = Drupal::service('plugin.manager.menu.local_task')->getLocalTasks($canonical_route_name)) {
+					foreach ($tasks['tabs'] as $tab) {
+						$link = $tab['#link'];
+
+						/** @var \Drupal\Core\Url $url */
+						$url = $link['url'];
+						if ($url->getRouteName() !== $canonical_route_name) {
+							$url->setRouteParameters($route_parameters);
+
+							$variables['additional_tabs'][] = [
+								'title' => $link['title'],
+								'url' => $url,
+							];
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+function sm_dev_portal_theme_preprocess_form(&$variables) {
+	$request = \Drupal::routeMatch();
+
+	if ($request->getRouteName() == 'entity.team.add_members') {
+		if ($request->getRawParameter('team')) $teamId = $request->getRawParameter('team');
+		$variables['team_id'] = $teamId;
+	}
+}
+
+function sm_dev_portal_theme_preprocess_form_element(&$variables) {
+	$element = $variables['element'];
+
+	if (isset($element['#array_parents'])) {
+		$array_parents = $element['#array_parents'];
+
+		foreach($array_parents as $parents) {
+			if ($parents == 'field_service_type_target_id') {
+				$variables['api_catalog_color_category'] = _color_api_classification();
+				return;
+			}
+		}
+	}
+}
+
+function sm_dev_portal_theme_preprocess_paragraph__content_tabs(&$variables) {
+	$tab_blocks_count = $variables['elements']['field_tab_block']['#weight'];
+
+	if ($tab_blocks_count > 0) {
+		$variables['field_icon'] = [];
+		for($i = 0; $i <= $tab_blocks_count - 1; $i++) {
+			if ($variables['elements']['field_tab_block'][$i]['#paragraph']->get('field_icon')->getValue()) {
+				$file_id = $variables['elements']['field_tab_block'][$i]['#paragraph']->get('field_icon')->getValue();
+			}
+
+			if ($file_id) {
+				foreach($file_id as $fid) {
+					$file = \Drupal\file\Entity\File::load($fid['target_id']);
+					$path = $file->getFileUri();
+					$variables['field_icon'][] = [
+						'uri' => $path,
+					];
+				}
+			}
+		}
+	}
+}
+
+function sm_dev_portal_theme_page_attachments_alter(array &$page) {
+	$viewport = [
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => [
+			'name' => 'viewport',
+			'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no',
+		],
+	];
+
+	$page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
+
+function _color_api_classification() {
+	$vid = 'service_type';
+	$terms = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadTree($vid);
+
+	if(isset($terms)) {
+		foreach ($terms as $term) {
+			$term_data[] = array(
+				'id' => $term->tid,
+				'name' => $term->name,
+				'color' => \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_color_identification')->getValue()[0]['color'],
+			);
+		}
+
+		return $term_data;
+	}
+}
+

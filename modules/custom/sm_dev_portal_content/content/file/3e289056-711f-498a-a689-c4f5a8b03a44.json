@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-02\/analytics_0.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 64
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3e289056-711f-498a-a689-c4f5a8b03a44"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ace46248-ab0f-41fc-bf16-5ffd87ba753d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "analytics_0.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/analytics_0.png",
+            "url": "\/sites\/default\/files\/2020-02\/analytics_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 52616
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-21T00:13:14+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-21T00:13:23+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

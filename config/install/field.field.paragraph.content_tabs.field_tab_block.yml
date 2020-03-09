@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_block
+    - paragraphs.paragraphs_type.content_tab_block
+    - paragraphs.paragraphs_type.content_tabs
+  module:
+    - entity_reference_revisions
+id: paragraph.content_tabs.field_tab_block
+field_name: field_tab_block
+entity_type: paragraph
+bundle: content_tabs
+label: 'Tab Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content_tab_block: content_tab_block
+    target_bundles_drag_drop:
+      banner:
+        weight: 6
+        enabled: false
+      card_count:
+        weight: 7
+        enabled: false
+      card_count_block:
+        weight: 8
+        enabled: false
+      content_tabs:
+        weight: 9
+        enabled: false
+      content_tab_block:
+        enabled: true
+        weight: 10
+      title_and_link:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

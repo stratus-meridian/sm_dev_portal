@@ -1,0 +1,141 @@
+/**
+ * Stratus Meridian Developer Portal Theme - SASS
+@*/
+
+label.smdp-form-label,
+label {
+	font-weight: 450;
+}
+
+input, textarea, select {
+	font-weight: 350;
+}
+
+input.btn + .btn,
+a.btn + .btn {
+	margin-left: 0.80rem;
+}
+
+input[type="checkbox"] {
+	&:disabled {
+		opacity: 0!important;
+	}
+}
+
+button.close {
+	outline: 0;
+}
+
+.smdp-forms {
+	.smdp-form-group {
+		input, textarea, select {
+			font-weight: 350;
+		}
+	}
+
+	.form-required::after {
+		content: '';
+		vertical-align: super;
+		display: inline-block;
+		background-image: url(../../sm_dev_portal/assets/images/required.svg);
+		background-repeat: no-repeat;
+		background-size: 7px 7px;
+		width: 7px;
+		height: 7px;
+		margin: 0 0.3em;
+	}
+}
+
+.form-item-metrics,
+.form-item-quick-date-picker {
+	margin-right: 0;
+}
+
+//BS Multiselect
+div.dashboardcode-bsmultiselect {
+	ul.form-control {
+		-webkit-border-radius: .2rem;
+		border-radius: .2rem;
+
+		&:hover, &:focus &.focus {
+			border-color: #007bff!important;
+		}
+
+		.select-list-item {
+			font-size: 1rem;
+			font-weight: 350;
+		}
+	}
+}
+
+/************************** User Register Form **************************/
+.smdp-password-suggestions {
+	ul {
+		list-style: initial;
+		font-style: italic;
+		margin: 0;
+		padding: 0 0 0 18px;
+	}
+}
+
+
+input[type="submit"] {
+	width: auto;
+}
+
+input[type="submit"],
+button,
+.btn {
+	-webkit-border-radius: 2.5px;
+	border-radius: 2.5px;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning,
+.btn-outline-danger,
+.btn-outline-light,
+.btn-outline-dark {
+	border-width: 2.5px;
+	font-weight: $base-font-weight;
+}
+
+@media only screen and (min-width: 768px) {
+	form.smdp-forms {
+		a.button--danger {
+			width: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	form.smdp-forms {
+		width: 50%!important;
+	}
+
+	/*** User Login Form ***/
+	form.smdp-user-login-form {
+		width: 80%!important;
+	}
+
+	/*** User Register Form ***/
+	form.smdp-user-register-form {
+		width: 95%!important;
+	}
+
+	/*** User Apigee Edge Analytics form ***/
+	form.smdp-apigee-edge-developer-app-analytics,
+	form.smdp-apigee-edge-teams-team-app-analytics {
+		width: 100%!important;
+	}
+
+	/*** Comment Form ***/
+	div.smdp-modal {
+		form.comment-form {
+			width: 100%!important;
+		}
+	}
+}
+

@@ -1,0 +1,45 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/path_alias\/path_alias"
+        }
+    },
+    "id": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e8ce699d-ff82-4b36-a4ec-01c28c9c55eb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 13
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "path": [
+        {
+            "value": "\/taxonomy\/term\/6"
+        }
+    ],
+    "alias": [
+        {
+            "value": "\/tags\/apigee"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ]
+}

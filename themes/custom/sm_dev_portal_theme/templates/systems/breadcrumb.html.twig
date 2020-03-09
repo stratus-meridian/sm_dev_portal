@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% if breadcrumb %}
+  <nav role="navigation" aria-label="breadcrumb" class="smdp-breadcrumb-wrapper">
+    <ol class="breadcrumb bg-transparent p-0 mb-0">
+    {% for item in breadcrumb %}
+      {% if item.url %}
+        <li class="breadcrumb-item">
+          <a href="{{ item.url }}" class="text-decoration-none">{{ item.text }}</a>
+        </li>
+      {% else %}
+        <li class="breadcrumb-item {{ ((item.text|lower == 'add app') or (item.text|lower == 'add team app') or (item.text|lower == 'add team') or (item.text|lower == 'add members') or (item.text|lower == 'add partner team')) ? 'br-item-exemption' }} active">
+          {{ item.text|raw }}
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/banners\/2020-02\/developer-community.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/26?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 40
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1dfb8243-513d-4c96-8f9b-ee38784054ff"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/26?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "719575b1-9f62-442b-8181-3cd71d8ac94e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "developer-community.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/banners\/2020-02\/developer-community.png",
+            "url": "\/sites\/default\/files\/banners\/2020-02\/developer-community.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 18225
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-11T05:08:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-11T05:09:28+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% if element['#lazy_builder_built'] == true %}
+	<div class="modal fade smdp-modal" id="smdpCommentForm" tabindex="-1" role="dialog" aria-labelledby="smdpCommentFormTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content rounded-sm">
+				<form{{ attributes }}>
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle">{{ ('Add new comment')|t }}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						{{ element.subject }}
+						{{ element.form_build_id }}
+						{{ element.form_token }}
+						{{ element.form_id }}
+						{{ element.author }}
+						{{ element.comment_body }}
+						{{ element.langcode }}
+						{{ element.footer }}
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Close</button>
+						{{ element.actions.preview }}
+						{{ element.actions.submit }}
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% else %}
+	<form{{ attributes }}>
+		{{ children }}
+	</form>
+{% endif %}

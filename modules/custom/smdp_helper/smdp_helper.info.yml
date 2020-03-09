@@ -1,0 +1,6 @@
+name: Stratus Meridian Developer Portal - Helper Module
+description: Module for altering Drupal components being used by Stratus Meridian Developer Portal theme
+package: Stratus Meridian
+type: module
+version: 1.x
+core: 8.x

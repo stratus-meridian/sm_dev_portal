@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/uber.json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 51
+        }
+    ],
+    "uuid": [
+        {
+            "value": "dadf724a-04ae-421c-9fef-fdeb99b9f7da"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ace46248-ab0f-41fc-bf16-5ffd87ba753d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "uber.json"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/apidoc_specs\/uber.json",
+            "url": "\/sites\/default\/files\/apidoc_specs\/uber.json"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 11679
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-20T21:35:40+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-20T21:36:07+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

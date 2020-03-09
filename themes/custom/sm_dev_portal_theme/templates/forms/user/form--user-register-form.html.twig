@@ -1,0 +1,86 @@
+{% extends "form.html.twig" %}
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form_contents %}
+	{{ element.administer_users }}
+	{{ element.form_build_id }}
+	{{ element.form_id }}
+
+	{% if element.first_name['#processed'] == true or element.last_name['#processed'] == true %}
+		<div class="row">
+			{% if element.first_name['#processed'] == true %}
+				<div class="col-12 {{ (element.last_name['#processed'] == true) ? 'col-md-6' }}">
+					{{ element.first_name }}
+				</div>
+			{% endif %}
+
+			{% if element.last_name['#processed'] == true %}
+				<div class="col-12 {{ (element.first_name['#processed'] == true) ? 'col-md-6' }}">
+					{{ element.last_name }}
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{% if element.account.mail['#processed'] == true or element.account.name['#processed'] == true %}
+		<div class="row">
+			{% if element.account.mail['#processed'] == true %}
+				<div class="col-12 {{ (element.account.name['#processed'] == true) ? 'col-md-6' }}">
+					{{ element.account.mail }}
+				</div>
+			{% endif %}
+
+			{% if element.account.name['#processed'] == true %}
+				<div class="col-12 {{ (element.account.mail['#processed'] == true) ? 'col-md-6' }}">
+					{{ element.account.name }}
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{% if element.account.pass.pass1['#processed'] == true or element.account.pass.pass2['#processed'] %}
+		<div class="row">
+			{% if element.account.pass.pass1['#processed'] == true %}
+				{{ element.account.pass.pass1 }}
+			{% endif %}
+
+			{% if element.account.pass.pass2['#processed'] == true %}
+				{{ element.account.pass.pass2 }}
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{{ element.account.status }}
+	{{ element.account.roles }}
+	{{ element.account.notify }}
+	{{ element.path }}
+	{{ element.footer }}
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center">
+		{{ element.actions.submit }}
+
+		<a href="{{ path('user.login') }}" class="btn btn-secondary">
+			{{ ('Back To Login')|t }}
+		</a>
+	</div>
+
+	<script type="text/javascript">
+		var fieldset_password = document.getElementsByClassName('form-type-password');
+		fieldset_password[0].classList.add('col-12');
+		fieldset_password[0].classList.add('col-md-6');
+		fieldset_password[1].classList.add('col-12');
+		fieldset_password[1].classList.add('col-md-6');
+	</script>
+{% endblock %}

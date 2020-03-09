@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content_background_image:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
+  module:
+    - apigee_kickstart_enhancement
+    - block_content
+    - system
+  theme:
+    - sm_dev_portal_theme
+id: content_background_image
+theme: sm_dev_portal_theme
+region: content
+weight: -3
+provider: null
+plugin: 'block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
+settings:
+  id: 'block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
+  label: 'Join over 2000 developers using our APIs'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  block_type:
+    id: block_type
+    uuid: 3d23e8e6-d9d9-4b76-8987-a11a22f8e452
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/apis\r\n/api/*"
+    negate: false
+    context_mapping: {  }

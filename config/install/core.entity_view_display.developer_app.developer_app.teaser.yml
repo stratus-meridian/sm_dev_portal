@@ -1,0 +1,91 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.developer_app.teaser
+  module:
+    - apigee_edge
+id: developer_app.developer_app.teaser
+targetEntityType: developer_app
+bundle: developer_app
+mode: teaser
+content:
+  appId:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  callbackUrl:
+    label: inline
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: uri_link
+  createdAt:
+    type: timestamp_ago
+    label: inline
+    weight: 5
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  credentials:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  description:
+    label: inline
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  displayName:
+    label: inline
+    weight: 2
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  lastModifiedAt:
+    type: timestamp_ago
+    label: inline
+    weight: 7
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  status:
+    label: inline
+    type: status_property
+    weight: 3
+    region: content
+    settings:
+      indicator_status_ok: approved
+      indicator_status_warning: ''
+      indicator_status_error: revoked
+    third_party_settings: {  }
+hidden:
+  appFamily: true
+  createdBy: true
+  developerId: true
+  lastModifiedBy: true
+  scopes: true

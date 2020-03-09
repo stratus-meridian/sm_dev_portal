@@ -1,0 +1,26 @@
+{% extends 'form.html.twig' %}
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form_contents %}
+	{{ element.description }}
+	{{ element.confirm }}
+	{{ element.form_build_id }}
+	{{ element.form_token }}
+	{{ element.form_id }}
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center mt-3">
+		{{ element.actions.submit }}
+	</div>
+{% endblock %}

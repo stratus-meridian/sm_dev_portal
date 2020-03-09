@@ -1,0 +1,122 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+	set classes = [
+		'paragraph',
+		'paragraph--type--' ~ paragraph.bundle|clean_class,
+		view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+		not paragraph.isPublished() ? 'paragraph--unpublished',
+		'smdp-content-tabs',
+		'py-5'
+	]
+%}
+
+{% set countObj = paragraph.field_tab_block.getvalue()|length %}
+
+{% block paragraph %}
+	{% if countObj or content.field_title.0 or content.field_description.0 %}
+		<section{{ attributes.addClass(classes) }}>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						{% if content.field_title.0 or content.field_description.0 %}
+							<div class="sic-heading-description mx-auto text-center mb-5">
+								{% if content.field_title.0 %}
+									<h2>{{ content.field_title.0 }}</h2>
+								{% endif %}
+
+								{% if content.field_description.0 %}
+									{{ content.field_description.0 }}
+								{% endif %}
+							</div>
+						{% endif %}
+
+						{% if countObj > 0 %}
+							<div class="s-inner-content">
+								<div class="row">
+									<div class="col-12">
+
+										<ul class="nav nav-tabs smdp-nav-tabs nav-justified border-0 shadow-sm rounded" id="myTab" role="tablist">
+
+											{% for obj in 0..countObj - 1 %}
+												<li class="nav-item">
+													<a class="nav-link {{ loop.index0 == 0 ? 'active'}} py-4 z-depth-0 rounded-0"
+														id="{{ content.field_tab_block[obj]['#paragraph'].field_tab_title.value|lower }}-tab" data-toggle="tab"
+														href="#{{ content.field_tab_block[obj]['#paragraph'].field_tab_title.value|lower }}"
+														role="tab" aria-controls="{{ content.field_tab_block[obj]['#paragraph'].field_tab_title.value|lower }}"
+														aria-selected="true">
+
+														{% if field_icon[obj].uri %}
+															<img class="d-none d-md-inline-block" src="{{ file_url(field_icon[obj].uri) }}" />
+														{% endif %}
+
+														<h6 class="d-inline-block ml-0 ml-md-3 mb-0 mt-2 mt-md-0">{{ content.field_tab_block[obj]['#paragraph'].field_tab_title.value }}</h6>
+													</a>
+												</li>
+											{% endfor %}
+										</ul>
+
+										<div class="tab-content smdp-tab-content" id="myTabContent"
+											{% if content.field_background_image['#items'].entity.uri.value %}
+												style="background-image: url({{ file_url(content.field_background_image['#items'].entity.uri.value) }})"
+											{% endif %}>
+
+											{% for obj1 in 0..countObj - 1 %}
+												<div class="tab-pane fade {{ loop.index0 == 0 ? 'show active'}}"
+														id="{{ content.field_tab_block[obj1]['#paragraph'].field_tab_title.value|lower }}"
+														role="tabpanel"
+														aria-labelledby="{{ content.field_tab_block[obj1]['#paragraph'].field_tab_title.value|lower }}-tab">
+
+													{{ content.field_tab_block[obj1] }}
+												</div>
+											{% endfor %}
+
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endblock paragraph %}

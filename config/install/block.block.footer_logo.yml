@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:logo_blocks:9619a6c6-9672-4dfa-8675-c036d2bdb1c6'
+  module:
+    - block_content
+  theme:
+    - sm_dev_portal_theme
+id: footer_logo
+theme: sm_dev_portal_theme
+region: footer_left
+weight: 0
+provider: null
+plugin: 'block_content:9619a6c6-9672-4dfa-8675-c036d2bdb1c6'
+settings:
+  id: 'block_content:9619a6c6-9672-4dfa-8675-c036d2bdb1c6'
+  label: 'Footer Logo'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

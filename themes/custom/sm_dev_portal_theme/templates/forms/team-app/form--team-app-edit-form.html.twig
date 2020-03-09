@@ -1,0 +1,42 @@
+{% extends 'form.html.twig' %}
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form_contents %}
+	{% set extract_credential_key = '' %}
+
+	{% for key, item in element.credential['#groups'] %}
+		{% if loop.last %}
+			{% set extract_credential_key = key %}
+		{% endif %}
+	{% endfor %}
+
+	{% set split_credential_key = extract_credential_key|split('][') %}
+	{% set credential_key = split_credential_key[1] %}
+
+	{{ element.owner }}
+	{{ element.displayName }}
+	{{ element.name }}
+	{{ element.form_build_id }}
+	{{ element.form_token }}
+	{{ element.form_id }}
+	{{ element.callbackUrl }}
+	{{ element.description }}
+	{{ element.credential[credential_key].api_products }}
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center">
+		{{ element.actions.submit }}
+	</div>
+{% endblock %}
+

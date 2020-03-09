@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_kickstart_enhancement
+    - system
+  theme:
+    - sm_dev_portal_theme
+id: site_branding
+theme: sm_dev_portal_theme
+region: hidden
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility:
+  block_type:
+    id: block_type
+    uuid: bf6159c0-f93c-40c1-92de-c0133569cf50
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for the Example Profile install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function sm_dev_portal_install() {
+	// First, do everything that is done in the standard profile.
+	include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+	standard_install();
+
+	// Copy favicon from resources to public folder
+	$file_favicon = 'favicon.ico';
+	$image = file_get_contents(drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $file_favicon);
+	file_save_data($image, 'public://'.$file_favicon, FILE_EXISTS_REPLACE);
+
+	// Copy image from resources to public folder.
+	$folder_names = [
+		'apidoc_specs',
+		'banners',
+		'content_images',
+		'icons',
+		'inline-images',
+		'media',
+		'media-icons',
+		'vector_images',
+	];
+
+	foreach ($folder_names as $folder_name) {
+		$path = 'public://' . $folder_name . '/';
+
+		if ($folder_name == 'content_images') $path = 'public://' . $folder_name . '/articles/';
+		if ($folder_name == 'media') $path = 'public://' . $folder_name . '/image/';
+		if ($folder_name == 'media-icons') $path = 'public://' . $folder_name . '/generic/';
+
+		if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+			$original = drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $folder_name;
+			$files = file_scan_directory($original, '/.*/');
+			if (!empty($files)) {
+				foreach ($files as $file) {
+					if (!empty($file->uri)) {
+						file_unmanaged_copy($file->uri, $path, FILE_EXISTS_REPLACE);
+					}
+				}
+			}
+		}
+	}
+
+  // Enable the default content module. This can't be specified as a dependency.
+  \Drupal::service('module_installer')->install(['sm_dev_portal_content'], TRUE);
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('page.front', '/node/1')->save();
+}

@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_section
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.card_count
+    - paragraphs.paragraphs_type.content_background_image
+    - paragraphs.paragraphs_type.content_tabs
+    - paragraphs.paragraphs_type.title_and_link
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_page_section
+field_name: field_page_section
+entity_type: node
+bundle: landing_page
+label: 'Page Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card_count: card_count
+      title_and_link: title_and_link
+      content_background_image: content_background_image
+      content_tabs: content_tabs
+    target_bundles_drag_drop:
+      banner:
+        weight: 4
+        enabled: false
+      card_count:
+        enabled: true
+        weight: 5
+      card_count_block:
+        weight: 6
+        enabled: false
+      title_and_link:
+        enabled: true
+        weight: 8
+      content_tab_block:
+        weight: 10
+        enabled: false
+      content_background_image:
+        enabled: true
+        weight: 11
+      content_tabs:
+        enabled: true
+        weight: 11
+field_type: entity_reference_revisions

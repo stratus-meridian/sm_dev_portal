@@ -1,0 +1,107 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/logo_blocks"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_blocks\/field_logo": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/icons\/logo-footer.png"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9619a6c6-9672-4dfa-8675-c036d2bdb1c6"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "logo_blocks"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-10-31T04:38:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Footer Logo",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-25T03:12:31+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_footer_label": [
+        {
+            "value": "Copyright 2020. Stratus Meridian"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_blocks\/field_logo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/icons\/logo-footer.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52ff09a4-7c15-441a-b525-f3f5b8e31193"
+                    }
+                ]
+            }
+        ]
+    }
+}

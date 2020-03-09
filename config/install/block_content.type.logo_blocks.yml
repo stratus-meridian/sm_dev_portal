@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: logo_blocks
+label: 'Logo Blocks'
+revision: 0
+description: 'Basic blocks for uploading Logos and vector images.'

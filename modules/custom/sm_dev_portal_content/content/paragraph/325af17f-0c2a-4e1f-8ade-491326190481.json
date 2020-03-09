@@ -1,0 +1,158 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/content_tab_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content_tab_block\/field_icon": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/icons\/learn.svg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content_tab_block\/field_vector_image": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/vector_images\/learn.svg"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "325af17f-0c2a-4e1f-8ade-491326190481"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 10
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "content_tab_block"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-11-04T03:17:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "13"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_tab_block"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_description": [
+        {
+            "value": "<p>Extensive documentation is available along with examples and use cases for the APIs in the catalogue.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Extensive documentation is available along with examples and use cases for the APIs in the catalogue.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content_tab_block\/field_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/icons\/learn.svg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "dc188bff-d646-4e0b-be2a-67ac0a82d352"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content_tab_block\/field_vector_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/vector_images\/learn.svg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c06b3375-3b06-4b85-ac93-0d2ce87a3d89"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_list": [
+        {
+            "value": "API Docs, Swagger, Re-doc - Works out of the box"
+        },
+        {
+            "value": "Interactive API Documentation"
+        },
+        {
+            "value": "Supports Authorization"
+        }
+    ],
+    "field_tab_title": [
+        {
+            "value": "Learn"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Explore, Test and Learn using API Documentation",
+            "lang": "en"
+        }
+    ]
+}

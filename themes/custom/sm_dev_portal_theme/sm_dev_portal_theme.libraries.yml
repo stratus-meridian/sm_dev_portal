@@ -1,0 +1,47 @@
+global-styling:
+  version: VERSION
+  js:
+    assets/js/popper.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/BsMultiSelect.min.js: {}
+    assets/js/shards.min.js: {}
+    assets/js/scripts.js: {}
+  css:
+    component:
+      assets/css/bootstrap.min.css: {}
+      assets/css/shards.min.css: {}
+      assets/css/shards-extras.min.css: {}
+      assets/css/styles.min.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+color-module:
+  version: VERSION
+  css:
+    theme:
+      color/colors.css: {}
+swagger-extend:
+  version: VERSION
+  js:
+    assets/js/swagger-extend.js: {}
+  dependencies:
+    - core/jquery
+font-icons:
+  css:
+    component:
+      //use.fontawesome.com/releases/v5.8.2/css/all.css: { external: true }
+apps-extend:
+  version: VERSION
+  js:
+    assets/js/secret.js: {}
+  dependencies:
+    - core/jquery
+letter-avatar:
+  version: VERSION
+  js:
+    assets/js/letteravatar.js: {}
+  dependencies:
+    - core/jquery

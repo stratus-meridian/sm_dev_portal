@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_background_image
+    - field.field.block_content.content_background_image.field_background_image
+    - field.field.block_content.content_background_image.field_description
+    - field.field.block_content.content_background_image.field_link
+    - image.style.thumbnail
+  module:
+    - link_attributes
+    - svg_image
+    - text
+id: block_content.content_background_image.default
+targetEntityType: block_content
+bundle: content_background_image
+mode: default
+content:
+  field_background_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_description:
+    weight: 2
+    settings:
+      rows: 4
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        class: true
+        id: false
+        name: false
+        rel: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: serviuce
+label: 'Service Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'service-type/[term:name]'
+selection_criteria:
+  aa5d82e1-07e9-4eba-a11a-6b1535568208:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      service_type: service_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: aa5d82e1-07e9-4eba-a11a-6b1535568208
+selection_logic: and
+weight: -5
+relationships: {  }

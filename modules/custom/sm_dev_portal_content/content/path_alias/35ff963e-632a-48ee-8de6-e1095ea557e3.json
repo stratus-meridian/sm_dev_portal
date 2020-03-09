@@ -1,0 +1,45 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/path_alias\/path_alias"
+        }
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "35ff963e-632a-48ee-8de6-e1095ea557e3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 16
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "path": [
+        {
+            "value": "\/taxonomy\/term\/9"
+        }
+    ],
+    "alias": [
+        {
+            "value": "\/tags\/apigee-teams"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ]
+}

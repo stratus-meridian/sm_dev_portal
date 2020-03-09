@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:071cfbfa-8780-481b-9983-0c19e51136f3'
+  module:
+    - apigee_kickstart_enhancement
+    - block_content
+  theme:
+    - sm_dev_portal_theme
+id: api_catalog_description
+theme: sm_dev_portal_theme
+region: hidden
+weight: -5
+provider: null
+plugin: 'block_content:071cfbfa-8780-481b-9983-0c19e51136f3'
+settings:
+  id: 'block_content:071cfbfa-8780-481b-9983-0c19e51136f3'
+  label: 'API Catalog Description (Page: API Catalog)'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  block_type:
+    id: block_type
+    uuid: 96016c74-fa9f-4e90-a06a-b82ce99f4a13
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }

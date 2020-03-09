@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_count
+label: 'Card Count'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

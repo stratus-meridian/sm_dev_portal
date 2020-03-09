@@ -1,0 +1,111 @@
+{#
+/**
+ * @file
+ * Theme override to display a table.
+ *
+ * Available variables:
+ * - attributes: HTML attributes to apply to the <table> tag.
+ * - caption: A localized string for the <caption> tag.
+ * - colgroups: Column groups. Each group contains the following properties:
+ *   - attributes: HTML attributes to apply to the <col> tag.
+ *     Note: Drupal currently supports only one table header row, see
+ *     https://www.drupal.org/node/893530 and
+ *     http://api.drupal.org/api/drupal/includes!theme.inc/function/theme_table/7#comment-5109.
+ * - header: Table header cells. Each cell contains the following properties:
+ *   - tag: The HTML tag name to use; either 'th' or 'td'.
+ *   - attributes: HTML attributes to apply to the tag.
+ *   - content: A localized string for the title of the column.
+ *   - field: Field name (required for column sorting).
+ *   - sort: Default sort order for this column ("asc" or "desc").
+ * - sticky: A flag indicating whether to use a "sticky" table header.
+ * - rows: Table rows. Each row contains the following properties:
+ *   - attributes: HTML attributes to apply to the <tr> tag.
+ *   - data: Table cells.
+ *   - no_striping: A flag indicating that the row should receive no
+ *     'even / odd' styling. Defaults to FALSE.
+ *   - cells: Table cells of the row. Each cell contains the following keys:
+ *     - tag: The HTML tag name to use; either 'th' or 'td'.
+ *     - attributes: Any HTML attributes, such as "colspan", to apply to the
+ *       table cell.
+ *     - content: The string to display in the table cell.
+ *     - active_table_sort: A boolean indicating whether the cell is the active
+				 table sort.
+ * - footer: Table footer rows, in the same format as the rows variable.
+ * - empty: The message to display in an extra row if table does not have
+ *   any rows.
+ * - no_striping: A boolean indicating that the row should receive no striping.
+ * - header_columns: The number of columns in the header.
+ *
+ * @see template_preprocess_table()
+ */
+#}
+
+{% if rows %}
+	{% for row in rows %}
+		<div class="col-12 col-md-6 col-lg-4">
+			<div {{ row.attributes.addClass('smdp-app-cards','smdp-teams-card','position-relative','card','mb-4','rounded-sm') }}>
+				<div class="card-body">
+					{% if row.cells.name.content['#title'] %}
+						<h4 {{ row.cells.name.attributes.addClass('card-title','mb-0') }}>
+							{{ row.cells.name.content['#title'] }}
+
+							{# {% if row.cells.status.content['#indicator_status'] == 'indicator_status_ok' %}
+								<i class="fas fa-check-circle wrapper--status indicator-status-ok ml-2"></i>
+							{% elseif row.cells.status.content['#indicator_status'] == 'indicator_status_warning' %}
+								<i class="fas fa-exclamation-circle wrapper--status indicator-status-warning ml-2"></i>
+							{% elseif row.cells.status.content['#indicator_status'] == 'indicator_status_error' %}
+								<i class="fas fa-times-circle wrapper--status indicator-status-error ml-2"></i>
+							{% endif %} #}
+						</h4>
+					{% endif %}
+
+					<div class="status mt-3">
+						<label class="label mb-0">{{ ('Status:')|t }}</label>
+						{% if row.cells.status.content['#indicator_status'] == 'indicator_status_ok' %}
+							<span class="text-success">{{ row.cells.status.content['#value'] }}</span>
+						{% elseif row.cells.status.content['#indicator_status'] == 'indicator_status_warning' %}
+							<span class="text-warning">{{ row.cells.status.content['#value'] }}</span>
+						{% elseif row.cells.status.content['#indicator_status'] == 'indicator_status_error' %}
+							<span class="text-danger">{{ row.cells.status.content['#value'] }}</span>
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="card-footer pt-0 card-link bg-transparent">
+					<ul class="ul-links">
+						<li class="my-2">
+							<a href="{{ row.cells.name.content['#url'] }}" class="text-uppercase text-dark">
+								{{ ('Details')|t }} <i class="fas fa-angle-right ml-2"></i>
+							</a>
+						</li>
+
+						<li class="my-2">
+							<div class="row">
+								<div class="col-6">
+									<a href="{{ row.cells.operations.content['#links'].apps.url }}" class="text-uppercase">{{ row.cells.operations.content['#links'].apps.title }} <i class="fas fa-angle-right ml-2"></i></a>
+								</div>
+
+								<div class="col-6">
+									<a href="{{ row.cells.operations.content['#links'].members.url }}" class="text-uppercase">{{ row.cells.operations.content['#links'].members.title }} <i class="fas fa-angle-right ml-2"></i></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% elseif empty %}
+	<div class="col-12">
+		<div class="smdp-app-cards smdp-teams-card smdp-no-app-cards position-relative">
+			<div class="position-absolute text-center">
+				<h6>
+					You don't have any {{ drupal_title() }} right now.
+					<a href="{{ path('entity.team.add_form', {'entity_type_id': 'team'}) }}">
+						<strong>Start by creating one.</strong>
+					</a>
+				</h6>
+			</div>
+		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,587 @@
+/**
+* @file
+* SM Dev Portal theme specific css.
+* Authored by: Mer Alvin A. Grita
+* Author Email: meralvingrita24@gmail.com
+*/
+
+/** imports **/
+
+@import "typography";
+@import "forms";
+@import "dropbutton";
+@import "swagger";
+@import "secret";
+
+/************************** General Overrides **************************/
+body {
+	color: #2a2c2d;
+	font-family: $font-family-base;
+	font-weight: $base-font-weight;
+}
+
+.table {
+	color: #2a2c2d;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	outline: none!important;
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+	color: #0d5cff;
+}
+
+a.smdp-button-link {
+	font-weight: $font500-font-weight;
+	font-size: 1.20rem;
+}
+
+input:hover, input:focus,
+textarea:hover, textarea:focus,
+select:hover, select:focus,
+.form-control:hover, .form-control:focus {
+	outline: none!important;
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+}
+
+.btn { margin: 0 }
+
+.rounded-sm-left {
+	border-top-left-radius: .2rem!important;
+	border-bottom-left-radius: .2rem!important;
+}
+
+.rounded-sm-right {
+	border-top-right-radius: .2rem!important;
+	border-bottom-right-radius: .2rem!important;
+}
+
+.rounded-sm-top {
+	border-top-left-radius: .2rem!important;
+	border-top-right-radius: .2rem!important;
+}
+
+.rounded-sm-bottom {
+	border-bottom-left-radius: .2rem!important;
+	border-bottom-right-radius: .2rem!important;
+}
+
+table.smdp-table-list {
+	thead {
+		tr {
+			th {
+				font-weight: $font500-font-weight;
+				color: var(--dark);
+
+				a {
+					text-decoration: none;
+					color: var(--dark);
+				}
+			}
+		}
+	}
+}
+
+table.table-striped {
+	tbody {
+		tr {
+			&:nth-of-type(odd) {
+				background-color: #f7f8fb;
+			}
+
+			td {
+				&:last-child {
+					width: 12rem;
+				}
+			}
+		}
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	font-size: 1.25rem;
+	font-weight: $font500-font-weight;
+}
+
+div.indented {
+	margin-left: 1.5rem;
+
+	article.smdp-comments {
+		.comment-links {
+			ul > li.comment-reply {
+				display: none!important;
+			}
+		}
+	}
+}
+
+.modal-backdrop {
+	background-color: #000;
+	&.show {
+		opacity: .60;
+	}
+}
+
+.page-title-icon {
+	vertical-align: sub;
+	width: 35px;
+	height: 30px;
+}
+
+.wrapper--status {
+	&.indicator-status-ok {
+		background-color: var(--success);
+	}
+
+	&:not(.status-value-enabled) {
+		color: var(--success);
+		background-color: transparent;
+	}
+
+	&.indicator-status-warning {
+		color: var(--warning);
+		color: transparent;
+	}
+
+	&.indicator-status-error {
+		background-color: var(--danger);
+
+		&:not(.status-value-disabled) {
+			color: var(--danger);
+			background-color: transparent;
+		}
+	}
+}
+
+.api-status {
+	display: inline-block;
+	padding: .75rem 1.25rem;
+	font-size: .875rem;
+	line-height: 1.125;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+
+	&.api-status-approved {
+		background-color: #17c67140;
+		border-color: var(--success);
+	}
+
+	&.api-status-pending {
+		background-color: #ffb40040;
+		border-color: var(--warning);
+	}
+
+	&.api-status-revoked {
+		background-color: #c4183c40;
+		border-color: var(--danger);
+	}
+}
+
+.center-block {
+	display: block!important;
+	margin-left: auto!important;
+	margin-right: auto!important;
+}
+
+.mat-raised-button {
+	color: var(--dark)!important;
+}
+
+/************************** Navigation **************************/
+nav.smdp-navigation {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	background-color: #fffffe;
+
+	a.navbar-brand {
+		font-family: $font-family-system-first;
+		font-weight: $base-font-weight;
+
+		img {
+			width: 195px;
+		}
+	}
+
+	.smdp-navbar-collapse {
+		ul.navbar-nav {
+			li.nav-item {
+				a.nav-link {
+					color: #0a0a0a;
+					font-weight: normal;
+
+					&:hover, &:focus {
+						color: #0757fc;
+					}
+				}
+			}
+		}
+	}
+
+	button.navbar-toggler {
+		border-radius: 2.5px;
+		-webkit-border-radius: 2.5px;
+	}
+}
+
+/************************** Footer **************************/
+footer.smdp-footer {
+	background-color: #f8f9fa;
+
+	.s-inner-content {
+		.logo-blocks img {
+			width: 80px;
+		}
+
+		nav#block-footer {
+			ul.nav {
+				li.nav-item {
+					a.nav-link {
+						color: #0a0a0a;
+						font-weight: normal;
+
+						&:hover, &:focus {
+							color: #0757fc;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/************************** Main Content **************************/
+main.smdp-main-gen {
+	min-height: 600px;
+}
+
+/************************** Page Banner **************************/
+section.smdp-banner-section {
+	min-height: 475px;
+	max-height: 575px;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+
+	&:after {
+		position: absolute;
+		z-index: 0;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: .25;
+		background-color: #000;
+	}
+
+	.s-inner-content {
+		z-index: 10;
+	}
+
+	h4 {
+		font-weight: 350!important;
+		font-size: 1.45rem;
+	}
+
+	a.smdp-button {
+		font-weight: 400;
+	}
+}
+
+/************************** Content Tabs **************************/
+section.smdp-content-tabs {
+	.s-inner-content {
+		ul.smdp-nav-tabs {
+			li.nav-item {
+				a.nav-link {
+					border: 3px solid transparent!important
+				}
+
+				a.nav-link.active {
+					border-bottom-color: var(--primary)!important;
+					h6 {
+						color: var(--primary);
+						font-weight: 450;
+					}
+				}
+			}
+		}
+
+		div.smdp-tab-content {
+			-webkit-background-size: 65%;
+			background-size: 65%;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+
+			.smdp-content-tab-block {
+				ul {
+					padding: 0;
+					margin-left: 1.5rem;
+
+					li {
+						i {
+							font-size: 0.70rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/***************** Content with Background Image *****************/
+section.smdp-content-with-background-image {
+	width: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	min-height: 215px;
+	max-height: 415px;
+
+	&:after {
+		position: absolute;
+		z-index: 0;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: .25;
+		background-color: #000;
+	}
+
+	.s-inner-content {
+		z-index: 10;
+	}
+}
+
+/***************** Card Count *****************/
+section.smdp-card-count {
+	.sic-heading-description {
+		.row .col-12 {
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/***************** API Landing Page *****************/
+div.smdp-apis {
+	.card-icon {
+		i {
+			font-size: 1.75rem;
+
+			&:last-child {
+				margin-left: 0.25rem;
+			}
+		}
+	}
+
+	.card-body {
+		.card-title {
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+
+		.card-text {
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.card-link {
+			bottom: 0;
+			margin-bottom: 1.875rem;
+		}
+	}
+}
+
+/***************** API Documentation Page *****************/
+article.smdp-api-documentation {
+	.api-service-type {
+		.service-type {
+			-webkit-border-radius: 190px;
+			border-radius: 190px;
+		}
+	}
+
+	.api-description {
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/***************** Apps Page *****************/
+section.smdp-app-list {
+	div.smdp-app-cards {
+		&.smdp-no-app-cards {
+			min-height: 300px;
+			.position-absolute {
+				margin: 0;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%,-50%);
+				-o-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+				width: 100%;
+			}
+		}
+
+		&.smdp-teams-card {
+			.card-footer {
+				a {
+					font-weight: $menu-font-weight;
+
+					&:hover, &:focus {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		.card-body {
+			.card-title {
+				&:after {
+					content: '';
+					display: block;
+					margin-top: 2px;
+					height: 2px;
+					width: 25px;
+					background: var(--primary);
+				}
+			}
+
+			.card-text {
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&:not(.smdp-teams-card) {
+			.card-footer {
+				a {
+					font-size: 1rem;
+					font-weight: $base-font-weight;
+
+					&:first-child {
+						-webkit-border-bottom-left-radius: .2rem!important;
+						border-bottom-left-radius: .2rem!important;
+					}
+
+					&:last-child {
+						margin-left: -4px;
+						-webkit-border-bottom-right-radius: .2rem!important;
+						border-bottom-right-radius: .2rem!important;
+						border-width: 1px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/***************** Apps Detail Page *****************/
+article.smdp-app-details {
+	.card-header {
+		.card-text {
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		i.wrapper--status {
+			font-size: 1.75rem;
+			vertical-align: top;
+		}
+	}
+
+	.card-footer {
+		span.api-status+.api-status {
+			margin-left: 0.75rem;
+		}
+	}
+}
+
+/***************** Apps Detail Page *****************/
+article.comments {
+	&.smdp-comments {
+		mark {
+			top: 0;
+			right: 0;
+		}
+	}
+}
+
+/************************** Breakpoints **************************/
+@media only screen and (min-width: 576px) {
+	/***Apps Page ***/
+	div.smdp-app-wrapper  {
+		a.smdp-btn-create-app {
+			top: 0;
+			right: 0;
+			position: absolute;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	/*** General Overrides ***/
+	.block-page-title {
+		width: 60%;
+	}
+
+	.sic-heading-description {
+		max-width: 45rem;
+
+		&.not-centered  {
+			max-width: initial;
+		}
+	}
+
+	div.indented {
+		margin-left: 2.5rem;
+	}
+
+	div.smdp-app-wrapper  {
+		.smdp-app-local-action {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 99;
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.block-page-title {
+		width: 75%;
+	}
+}

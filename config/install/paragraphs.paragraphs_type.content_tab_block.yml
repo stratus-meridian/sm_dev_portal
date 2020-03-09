@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_tab_block
+label: 'Content Tab Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

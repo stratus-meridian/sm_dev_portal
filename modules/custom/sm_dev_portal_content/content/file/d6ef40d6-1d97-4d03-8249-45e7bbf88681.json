@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/media\/image\/logo.svg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/26?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 45
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d6ef40d6-1d97-4d03-8249-45e7bbf88681"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/26?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "719575b1-9f62-442b-8181-3cd71d8ac94e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "logo.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/media\/image\/logo.svg",
+            "url": "\/sites\/default\/files\/media\/image\/logo.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 13670
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-13T23:55:27+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-13T23:55:45+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

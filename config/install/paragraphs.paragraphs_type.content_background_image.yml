@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_background_image
+label: 'Content Background Image'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

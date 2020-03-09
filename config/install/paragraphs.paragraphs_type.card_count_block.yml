@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_count_block
+label: 'Card Count Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

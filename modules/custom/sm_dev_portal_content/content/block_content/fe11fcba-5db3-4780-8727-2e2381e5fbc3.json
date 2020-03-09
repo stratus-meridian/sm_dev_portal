@@ -1,0 +1,115 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/content_background_image"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_background_image\/field_background_image": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/banners\/developer-community_0.png"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fe11fcba-5db3-4780-8727-2e2381e5fbc3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 4
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "content_background_image"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-02-12T03:49:15+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Join over 2000 developers using our APIs",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-25T03:12:12+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_background_image\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/banners\/developer-community_0.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0990525c-4674-40cc-a757-d53856433000"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link": [
+        {
+            "uri": "internal:#",
+            "title": "Get started now",
+            "options": {
+                "attributes": {
+                    "class": [
+                        ""
+                    ]
+                }
+            }
+        }
+    ]
+}

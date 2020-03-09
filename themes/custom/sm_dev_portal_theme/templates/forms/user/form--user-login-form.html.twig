@@ -1,0 +1,31 @@
+{% extends "form.html.twig" %}
+
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form_contents %}
+	{{ element.form_build_id }}
+	{{ element.form_id }}
+	{{ element.name }}
+	{{ element.pass }}
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center">
+		{{ element.actions.submit }}
+
+		<a href="{{ base_url }}/user/password" class="btn btn-link px-3 ml-0">
+			<strong>{{ 'Forgot Password?' }}</strong>
+		</a>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_count_block.field_count
+    - field.field.paragraph.card_count_block.field_label
+    - field.field.paragraph.card_count_block.field_suffix
+    - paragraphs.paragraphs_type.card_count_block
+id: paragraph.card_count_block.default
+targetEntityType: paragraph
+bundle: card_count_block
+mode: default
+content:
+  field_count:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_label:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_suffix:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

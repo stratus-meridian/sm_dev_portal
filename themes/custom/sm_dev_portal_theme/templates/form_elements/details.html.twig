@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Theme override for a details element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the details element.
+ * - errors: (optional) Any errors for this details element, may not be set.
+ * - title: (optional) The title of the element, may not be set.
+ * - description: (optional) The description of the element, may not be set.
+ * - children: (optional) The children of the element, may not be set.
+ * - value: (optional) The value of the element, may not be set.
+ *
+ * @see template_preprocess_details()
+ */
+#}
+<div{{ attributes.addClass('accordion','my-3') }}>
+	<div class="card rounded-0 shadow-none border">
+		{%- if title -%}
+			<div class="card-header px-4 py-2 rounded-0" id="headingDetails" {{ summary_attributes }}>
+				<h2 class="mb-0">
+					<button class="btn btn-link px-0" type="button" data-toggle="collapse" data-target="#collapseDetails" aria-expanded="true" aria-controls="collapseDetails">
+						{{ title }}
+					</button>
+				</h2>
+			</div>
+		{%- endif -%}
+
+		<div id="collapseDetails" class="collapse" aria-labelledby="headingDetails" data-parent="#edit-author">
+			<div class="card-body px-4">
+				{% if errors %}
+					<div class="alert alert-danger" role="alert">
+						<strong>{{ errors }}</strong>
+					</div>
+				{% endif %}
+				{%- if description -%}
+					<small class="details-description text-muted font-italic d-block">{{ description }}</small>
+				{%- endif -%}
+				{%- if children -%}
+					{{ children }}
+				{%- endif -%}
+				{%- if value -%}
+					{{ value }}
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</div>

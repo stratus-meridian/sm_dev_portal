@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.cards
+label: Cards
+targetEntityType: node
+cache: true

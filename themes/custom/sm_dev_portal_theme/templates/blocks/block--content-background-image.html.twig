@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% if label or content.field_description.0 or content.field_link.0['#title'] or content.field_background_image['#items'].entity.uri.value %}
+	<section{{ attributes.addClass('smdp-content-with-background-image','d-flex','align-items-center','position-relative') }}
+		{% if content.field_background_image['#items'].entity.uri.value %}
+			style="background-image: url({{ file_url(content.field_background_image['#items'].entity.uri.value) }});"
+		{% endif %}
+	>
+		{{ title_suffix }}
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="s-inner-content position-relative py-5 mx-auto text-white">
+							<div class="row d-flex align-items-center">
+								{% if label or content.field_description.0 %}
+									<div class="col-12 col-md-7 col-lg-8 col-xl-9">
+										{% if label %}
+											<h2 class="mb-0 text-white text-center text-md-left {{ (content.field_description.0 ) ? 'mb-3' }}">{{ label }}</h2>
+										{% endif %}
+
+										{% if content.field_description.0 %}
+											{{ content.field_description.0 }}
+										{% endif %}
+									</div>
+								{% endif %}
+
+								{% if content.field_link.0 %}
+									<div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center mt-4 mt-md-0 text-md-right">
+										{{ content.field_link }}
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+{% endif %}

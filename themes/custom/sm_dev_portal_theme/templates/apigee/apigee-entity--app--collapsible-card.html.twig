@@ -1,0 +1,118 @@
+{% extends 'apigee-entity.html.twig' %}
+
+{#
+/**
+ * @file
+ * Generic theme implementation to display a developer- or team app entity.
+
+ * Available variables:
+ * - entity: The entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in an exception.
+ *   See \Drupal\apigee_edge\Entity\EdgeEntityInterface for a full list of
+ *   methods.
+ * - label: The title of the entity.
+ * - content: All rendered field items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - url: Direct URL of the current entity.
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see \Drupal\apigee_edge\Entity\EdgeEntityViewBuilder::getBuildDefaults()
+ * @see \Drupal\Core\Entity\EntityViewBuilder::getBuildDefaults()
+ * @see template_preprocess_apigee_entity()
+ * @see https://www.drupal.org/project/drupal/issues/2808481
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if entity.getEntityTypeId in ['developer_app', 'team_app'] %}
+  {% set classes = [
+    'apigee-entity--app',
+    'apigee-entity--app--view-mode-' ~ view_mode|clean_class
+  ] %}
+{% endif %}
+
+{% set attributes = attributes.addClass('smdp-app-cards','position-relative','card','mb-4','rounded-sm',classes) %}
+
+{% block apigee_entity %}
+	{% if entity.getEntityTypeId == 'developer_app' %}
+		<div class="col-12 col-md-6 col-lg-4">
+			<div {{ attributes|without('role').addClass(classes) }}>
+				<div class="card-body">
+					{% if content.displayName.0 %}
+						<h4 class="card-title mb-0">{{ content.displayName.0 }}</h4>
+					{% endif %}
+
+					{% if content.description.0 %}
+						<div class="card-text mt-3 mb-0">
+							<p>{{ content.description.0 }}</p>
+						</div>
+					{% endif %}
+				</div>
+
+				<div class="card-footer card-link p-0 bg-transparent">
+					<a href="{{ path('entity.developer_app.canonical_by_developer', {'user': user_id, 'app': content.name.0['#context'].value}) }}"
+						class="btn btn-lg btn-primary w-50 rounded-0 text-uppercase"
+					>
+						{{ ('Details')|t }}
+					</a>
+
+					<a href="{{ path('entity.developer_app.analytics_for_developer', {'user': user_id, 'app': content.name.0['#context'].value}) }}"
+						class="btn btn-lg btn-outline-light w-50 rounded-0 text-secondary text-uppercase"
+					>
+						{{ ('Analytics')|t }}
+					</a>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		{% set attributes = attributes.addClass('smdp-team-app-cards') %}
+		<div class="col-12 col-md-6 col-lg-4">
+			<div {{ attributes|without('role').addClass(classes) }}>
+				<div class="card-body">
+					{% if content.displayName.0 %}
+						<h4 class="card-title mb-0">{{ content.displayName.0 }}</h4>
+					{% endif %}
+
+					{% if content.description.0 %}
+						<div class="card-text mt-3 mb-0">
+							<p>{{ content.description.0 }}</p>
+						</div>
+					{% endif %}
+				</div>
+
+				<div class="card-footer card-link p-0 bg-transparent">
+					<a href="{{ path('entity.team_app.canonical', {'team': content.companyName.0['#context'].value, 'app': content.name.0['#context'].value}) }}"
+						class="btn btn-lg btn-primary w-50 rounded-0 text-uppercase"
+					>
+						{{ ('Details')|t }}
+					</a>
+
+					<a href="{{ path('entity.team_app.analytics', {'team': content.companyName.0['#context'].value, 'app': content.name.0['#context'].value}) }}"
+						class="btn btn-lg btn-outline-light w-50 rounded-0 text-secondary text-uppercase"
+					>
+						{{ ('Analytics')|t }}
+					</a>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
+

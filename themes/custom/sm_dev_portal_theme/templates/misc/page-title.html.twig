@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override for page titles.
+ *
+ * Available variables:
+ * - title_attributes: HTML attributes for the page title element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title: The page title, for use in the actual content.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ */
+#}
+
+{{ title_prefix }}
+{% if title %}
+	{% if title['#markup'].__toString() and title['#markup'].__toString()|lower == 'api catalog' %}
+		<img src="{{ base_path ~ directory }}/assets/images/api-catalog-logo.svg" class="d-none d-sm-inline-block mr-3 page-title-icon">
+		{% set classes = 'd-sm-inline-block' %}
+	{% endif %}
+
+	{% if title and title|lower == 'os services' %}
+		<img src="{{ base_path ~ directory }}/assets/images/api-product-detail-logo.svg" class="d-none d-sm-inline-block mr-3 page-title-icon">
+		{% set classes = 'd-sm-inline-block' %}
+	{% endif %}
+
+	<h3{{ title_attributes.addClass('text-primary',classes) }}>{{ title }}</h3>
+{% endif %}
+{{ title_suffix }}

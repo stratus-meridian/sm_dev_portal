@@ -1,0 +1,111 @@
+name: 'Stratus Meridian Developer Portal Content'
+description: 'Default contents setup for Stratus Meridian Developer Portal.'
+type: module
+core: 8.x
+package: Stratus Meridian Developer Portal
+dependencies:
+  - default_content:default_content
+  - drupal:node
+  - drupal:block_content
+
+default_content:
+  apidoc:
+    - b705525a-ccae-4a52-91e3-24071c09d7c1
+    - b2842572-37bf-4a8a-af90-47c5e18ab873
+    - be84a981-a232-44f8-933c-ac7cf6611caa
+    - e90c9b3f-f77b-4b9f-ae58-bfa189fb076c
+  block_content:
+    - 071cfbfa-8780-481b-9983-0c19e51136f3
+    - 9619a6c6-9672-4dfa-8675-c036d2bdb1c6
+    - f5c346dd-ce1f-4e06-9e1a-a92b829c4db4
+    - fe11fcba-5db3-4780-8727-2e2381e5fbc3
+  comment:
+    - be8992bf-8030-4906-848e-a405a817f0df
+  file:
+    - 1dfb8243-513d-4c96-8f9b-ee38784054ff
+    - 3e289056-711f-498a-a689-c4f5a8b03a44
+    - 4fa0d097-5374-4000-9208-1090ae4e02f8
+    - 5fe3017c-39a1-416f-b53a-d1025da7671d
+    - 6b2b6a50-bcf6-40a2-854a-183d9360ac34
+    - 6fcdaa56-e6c6-4fd1-aa6e-08fb82013a29
+    - 7b5e8e83-9cd2-4e16-8119-b33e3294fcd6
+    - 8c3de1b9-1b7f-479d-a894-b1a0c8451fd5
+    - 8c7a8d40-da02-4cb5-b37f-ae9727d9910b
+    - 8f6cba92-f32c-4896-bc23-b9210f6d0a72
+    - 9b59bacd-061d-4150-b1c8-0a47d2336122
+    - 9e18a203-fa92-4655-a0b2-f517a183d5d5
+    - 9edf1e51-82f4-430f-9e53-94144be2416e
+    - 14ff1a3c-73a6-4c65-933d-fef624e0e889
+    - 38bede07-3470-45a8-96c1-5d54708d1172
+    - 49e00a7b-6bf4-4f01-80ec-2d82d28386a9
+    - 52ff09a4-7c15-441a-b525-f3f5b8e31193
+    - 859d439c-1d4d-4153-abf6-c2cff0cd51b6
+    - 907fd44c-8025-4207-9573-6381aeec2694
+    - 27021dfa-707d-4862-bd29-cf52690433c7
+    - 801507d6-ed6e-4934-a1c5-e994f3fab9b1
+    - 0990525c-4674-40cc-a757-d53856433000
+    - 22663464-1b8e-4d8f-94d8-2f0558c53727
+    - b7267d7a-d061-4b84-b9d7-b9798138bb35
+    - c06b3375-3b06-4b85-ac93-0d2ce87a3d89
+    - d6ef40d6-1d97-4d03-8249-45e7bbf88681
+    - d150f085-e822-464b-bd1a-91d69a822765
+    - dadf724a-04ae-421c-9fef-fdeb99b9f7da
+    - dc188bff-d646-4e0b-be2a-67ac0a82d352
+    - ddf759aa-c0f8-4df4-92ff-2a65c97593f7
+    - de9fda1e-9cca-42df-860a-430b1df8c2e9
+  media:
+    - 521a02d8-dc93-43e7-a1de-cd5ce1810442
+  menu_link_content:
+    - 0015f488-21e8-47d0-a48a-b9f3e8cdccdb
+    - 259a481a-f2b0-43a9-a224-46248208b038
+    - cc27fa7f-7d1b-4f98-9a37-4c6dce370f4c
+    - e5f42730-b6ae-402c-ac37-b88be1e90f21
+    - e390ada0-1178-4cdf-b5e2-cceab59ba397
+  node:
+    - 8b9c40ab-8975-461e-a6ac-ab8515f4ec00
+    - 876a415b-d22d-45dd-80f2-df07cd3200b1
+    - 10344c40-c5aa-4138-ad8f-eac1a99a3f57
+    - 33283826-5b06-40c6-943b-19fb4d1b260d
+    - e70e316d-138d-4fd4-8f40-0d00477e72e6
+  paragraph:
+    - 2cb23fbe-b21d-4aea-aab2-0ab54a6e5881
+    - 7a5ba8a9-d5f0-49b3-a97a-e058f8624f41
+    - 8a205edc-208a-406e-9108-6eb06076ce84
+    - 38c4ff5a-29f9-4bb4-a2b4-9af330b9cd5a
+    - 325af17f-0c2a-4e1f-8ade-491326190481
+    - 632a6c69-7387-459d-adef-2aef4fce2d71
+    - 1764d9a3-c4e0-4e10-a696-eb49a1197a59
+    - 6820c7db-f503-4c16-b174-df75759adb67
+    - 7785bf5a-5562-4f9f-a990-e633c73c3f72
+    - 2141003b-443d-471e-9383-92b195828646
+    - 7248977e-7391-4604-8348-7e34ff85b1f3
+    - 61925640-e413-4fe4-86ff-6459d894cb82
+    - d2261668-467a-43e7-b46f-5443c065c4d8
+    - db81efcb-a018-4201-a400-138f3f0b310e
+    - e62221a4-56f6-4c51-b612-c4919b2bc13f
+    - fa6e5c12-a659-4a03-ac89-bdd522be9e4e
+  path_alias:
+    - 3d01922a-b0c8-4645-b9a3-6785712df676
+    - 6b5add82-b74b-4372-a281-5062419af605
+    - 7c3d8938-5855-491b-a436-e2d4e60bef1a
+    - 35ff963e-632a-48ee-8de6-e1095ea557e3
+    - 36db33c3-56f5-4b8b-bc0a-176a5e69bf85
+    - 66bc4152-72a8-4efd-a3c1-95fd6d5bc681
+    - 74fab954-f620-458f-9586-fb6a92fd06bc
+    - 79d7d8f2-ff58-4211-a2a9-82aada821191
+    - 86a76644-ef11-4451-b673-0203f3fb8873
+    - 7327b9eb-bcf3-462b-be54-67cf7ae1d927
+    - badde47e-0d61-4c90-99cd-75d0f072359f
+    - be36696d-12d9-4595-909b-ae011f3b56b0
+    - c3a841fc-b84c-48cd-9689-0d73cf8dca29
+    - e8ce699d-ff82-4b36-a4ec-01c28c9c55eb
+  taxonomy_term:
+    - 8b8a4a11-45d8-4b21-bff7-170d062f8478
+    - 013ea5c4-54d5-4e9d-aebd-2d33ece10d5b
+    - 7546d794-38ed-4793-ba45-64703cdbd42e
+    - 9569f01d-d55b-4560-9627-2619c88e6a24
+    - 81595d26-e887-4d05-bc96-5b5b99844039
+    - a2ebd126-c42b-46d0-b918-6ec7a2db6d53
+    - b03d9829-f063-4f09-9d30-34f7cb7009ba
+    - bcfcd287-d805-495f-9140-6ca2b9e1ec8e
+    - f78f399f-08af-48f8-934a-244ca0f57915

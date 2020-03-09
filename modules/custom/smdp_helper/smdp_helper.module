@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Functions, hook alters to support theming for Stratus Meridian Developer Portal theme
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+function smdp_helper_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+	$authenticate_user = \Drupal::currentUser()->isAuthenticated();
+
+	if (isset($form)) {
+	  if ((isset($form['#attributes']['data-drupal-selector']))) {
+	  	$form['#attributes']['class'][] = 'smdp-' . $form['#attributes']['data-drupal-selector'];
+	  } else {
+	    $form['#attributes']['class'][] = 'smdp-' . str_replace('_','-',$form['#form_id']);
+	  }
+  }
+
+	$form['#attributes']['class'][] = 'smdp-forms';
+	$form['#attributes']['class'][] = 'w-100';
+}
+
+function smdp_helper_preprocess_form_element(&$variables) {
+	if($variables['element']['#type'] == 'checkbox' || $variables['element']['#type'] == 'radio') {
+		if (isset($variables['label']['#title'])) {
+			$variables['label']['#attributes']['class'][] = 'custom-control-label';
+		}
+	}
+}
+
+function smdp_helper_preprocess_input(&$variables) {
+	if(($variables['element']['#type'] <> 'submit') and ($variables['element']['#type'] <> 'checkbox') and ($variables['element']['#type'] <> 'radio')) {
+		$variables['attributes']['class'][] = 'rounded-sm';
+	} else {
+		if($variables['element']['#type'] == 'submit') {
+			$css_classes = $variables['element']['#attributes']['class'];
+			foreach($css_classes as $css_class) {
+				if($css_class == 'js-hide') {
+					return;
+				}
+			}
+
+			$variables['attributes']['class'][] = 'btn';
+			$variables['attributes']['class'][] = 'btn-primary';
+			$variables['attributes']['class'][] = 'd-inline';
+		}
+	}
+
+	if(($variables['element']['#type'] == 'checkbox') || ($variables['element']['#type'] == 'radio')) {
+		$variables['attributes']['class'][] = 'custom-control-input';
+	}
+}
+
+function _kprint($array) {
+	echo "<pre>";
+	$krint = print_r($array);
+	echo "</pre>";
+	return $kprint;
+}

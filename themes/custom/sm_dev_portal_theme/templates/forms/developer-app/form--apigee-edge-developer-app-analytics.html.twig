@@ -1,0 +1,96 @@
+{% extends 'form.html.twig' %}
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+
+{% block form_contents %}
+	{% if element.timezone['#value'] %}
+		<div class="row">
+			<div class="col-12">
+				<p class="text-danger mb-2"><em>{{ element.timezone['#value'] }}</em></p>
+			</div>
+		</div>
+	{% endif %}
+
+	{{ element.controls.label_container  }}
+	<div class="row">
+		<div class="col-12 col-lg-6">
+			<label class="smdp-form-label mb-2">{{ ('Metrics')|t }}</label>
+			{{ element.controls.metrics }}
+
+			<label class="smdp-form-label mb-2">{{ ('Quick Date Range') }}</label>
+			{{ element.controls.quick_date_picker }}
+		</div>
+
+		<div class="col-12 col-lg-6">
+			<div class="accordion" id="accordionDateRange">
+				<div class="card rounded-sm">
+					<div class="card-header px-4" id="headingDateRange">
+						<a type="button" data-toggle="collapse" data-target="#collapseDateRange" aria-expanded="true" aria-controls="collapseDateRange">
+							<strong>{{ ('Date Range')|t }}</strong>
+						</a>
+					</div>
+
+					<div id="collapseDateRange" class="collapse show" aria-labelledby="headingDateRange" data-parent="#accordionDateRange">
+						<div class="card-body px-4 pb-3">
+							<div class="row">
+								<div class="col-12">
+									<label class="smdp-form-label mb-2">{{ ('Date/Time From') }}</label>
+								</div>
+
+								<div class="col-12 col-lg-6">
+									{{ element.controls.since.date }}
+								</div>
+
+								<div class="col-12 col-lg-6">
+									{{ element.controls.since.time }}
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-12">
+									<label class="smdp-form-label mb-2">{{ ('Date/Time To') }}</label>
+								</div>
+
+								<div class="col-12 col-lg-6">
+									{{ element.controls.until.date }}
+								</div>
+
+								<div class="col-12 col-lg-6">
+									{{ element.controls.until.time }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center">
+		{{ element.controls.submit }}
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="app-analytics-result mt-5">
+				{{ element.export_csv }}
+				{{ element.chart }}
+				{{ element.form_build_id }}
+				{{ element.form_token }}
+				{{ element.form_id }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
