@@ -77,10 +77,8 @@
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
-    "require-dev": {
-    },
     "conflict": {
-        "drupal/drupal": "*"
+        "drupal/pathauto": "<1.6"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -88,56 +86,4 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-install-cmd": [
-            "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-create-project-cmd": [
-            "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library","type:bower-asset","type:npm-asset"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/libraries/swagger_ui": ["bower-asset/swagger-ui"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
-        },
-        "installer-types": ["bower-asset", "npm-asset"],
-        "build-env": {
-            "install-cms": [
-                "drush site-install standard --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
-            ],
-            "export-configuration": "drush config-export --yes"
-        },
-        "drupal-core-project-message": {
-            "include-keys": ["homepage", "support"],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
-        }
-    }
-}
+  }
