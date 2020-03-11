@@ -1,12 +1,12 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 8 projects with a relocated document root",
-    "type": "project",
+    "name": "stratus-meridian/sm_dev_portal",
+    "description": "Stratus Meridian Developer portal for Google Cloud Apigee.",
+    "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
+    "homepage": "https://www.drupal.org/project/sm_dev_portal",
     "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
+        "docs": "https://support.stratusmeridian.com",
+        "chat": "https://www.stratusmeridian.com"
     },
     "repositories": [
         {
