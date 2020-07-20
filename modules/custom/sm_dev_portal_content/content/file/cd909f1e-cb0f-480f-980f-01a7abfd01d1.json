@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/2020-01\/nasa-43567-unsplash.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/uber.json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -12,14 +12,9 @@
             }
         ]
     },
-    "fid": [
-        {
-            "value": 22
-        }
-    ],
     "uuid": [
         {
-            "value": "859d439c-1d4d-4153-abf6-c2cff0cd51b6"
+            "value": "cd909f1e-cb0f-480f-980f-01a7abfd01d1"
         }
     ],
     "langcode": [
@@ -48,23 +43,23 @@
     },
     "filename": [
         {
-            "value": "nasa-43567-unsplash.jpg"
+            "value": "uber.json"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/2020-01\/nasa-43567-unsplash.jpg",
-            "url": "\/sites\/default\/files\/2020-01\/nasa-43567-unsplash.jpg"
+            "value": "public:\/\/apidoc_specs\/uber.json",
+            "url": "\/sites\/default\/files\/apidoc_specs\/uber.json"
         }
     ],
     "filemime": [
         {
-            "value": "image\/jpeg"
+            "value": "application\/octet-stream"
         }
     ],
     "filesize": [
         {
-            "value": 10861
+            "value": 12048
         }
     ],
     "status": [
@@ -74,13 +69,13 @@
     ],
     "created": [
         {
-            "value": "2020-01-30T09:39:34+00:00",
+            "value": "2020-07-16T05:46:41+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-01-30T09:39:50+00:00",
+            "value": "2020-07-16T05:46:47+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ]

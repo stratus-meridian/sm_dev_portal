@@ -2,17 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.apidoc.field_service_type
+    - field.storage.node.field_service_type
+    - node.type.apidoc
     - taxonomy.vocabulary.service_type
-  module:
-    - apigee_api_catalog
-id: apidoc.apidoc.field_service_type
+id: node.apidoc.field_service_type
 field_name: field_service_type
-entity_type: apidoc
+entity_type: node
 bundle: apidoc
 label: 'Service Type'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

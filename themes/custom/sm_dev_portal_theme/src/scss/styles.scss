@@ -73,6 +73,11 @@ select:hover, select:focus,
 }
 
 table.smdp-table-list {
+	&.smdp-font-small {
+		font-size: 85%;
+		font-weight: 300;
+	}
+
 	thead {
 		tr {
 			th {
@@ -492,6 +497,7 @@ section.smdp-app-list {
 					&:first-child {
 						-webkit-border-bottom-left-radius: .2rem!important;
 						border-bottom-left-radius: .2rem!important;
+						width: 49.89%!important;
 					}
 
 					&:last-child {

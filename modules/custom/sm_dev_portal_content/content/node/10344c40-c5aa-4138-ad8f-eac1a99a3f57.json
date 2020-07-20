@@ -44,11 +44,6 @@
             "value": "10344c40-c5aa-4138-ad8f-eac1a99a3f57"
         }
     ],
-    "vid": [
-        {
-            "value": 31
-        }
-    ],
     "langcode": [
         {
             "value": "en",
@@ -217,7 +212,7 @@
         {
             "value": "<p>One of the most important features developer portal provides is the ability to check analytics of your app's performance. From developer portal you can query to Analytics API of Apigee and get app analytics instantly.&nbsp;<\/p>\r\n\r\n<p><strong>Here is how analytics will help you<\/strong><\/p>\r\n\r\n<ul>\r\n\t<li>Helps your understand average response time from Apigee Gateway<\/li>\r\n\t<li>Find out error count<\/li>\r\n\t<li>Use date filters to find exactly what you are looking for.<\/li>\r\n\t<li>Export data to CSV<\/li>\r\n<\/ul>\r\n<img alt=\"Analytics Data\" data-align=\"center\" data-caption=\"App analytics showing ability to filter by date and time\" data-entity-type=\"file\" data-entity-uuid=\"22663464-1b8e-4d8f-94d8-2f0558c53727\" data-image-style=\"\" data-responsive-image-style=\"\" src=\"\/sites\/default\/files\/inline-images\/analytics-data.png\" \/>\r\n<p>&nbsp;<\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p>One of the most important features developer portal provides is the ability to check analytics of your app's performance. From developer portal you can query to Analytics API of Apigee and get app analytics instantly.\u00a0<\/p>\n\n<p><strong>Here is how analytics will help you<\/strong><\/p>\n\n<ul>\n\t<li>Helps your understand average response time from Apigee Gateway<\/li>\n\t<li>Find out error count<\/li>\n\t<li>Use date filters to find exactly what you are looking for.<\/li>\n\t<li>Export data to CSV<\/li>\n<\/ul>\n<figure role=\"group\" class=\"align-center\">\n<img alt=\"Analytics Data\" data-entity-type=\"file\" data-entity-uuid=\"22663464-1b8e-4d8f-94d8-2f0558c53727\" data-image-style=\"\" data-responsive-image-style=\"\" src=\"\/sites\/default\/files\/inline-images\/analytics-data.png\" \/>\n<figcaption>App analytics showing ability to filter by date and time<\/figcaption>\n<\/figure>\n\n<p>\u00a0<\/p>",
+            "processed": "<p>One of the most important features developer portal provides is the ability to check analytics of your app's performance. From developer portal you can query to Analytics API of Apigee and get app analytics instantly.\u00a0<\/p>\n\n<p><strong>Here is how analytics will help you<\/strong><\/p>\n\n<ul>\n\t<li>Helps your understand average response time from Apigee Gateway<\/li>\n\t<li>Find out error count<\/li>\n\t<li>Use date filters to find exactly what you are looking for.<\/li>\n\t<li>Export data to CSV<\/li>\n<\/ul>\n<figure role=\"group\" class=\"caption caption-img align-center\">\n<img alt=\"Analytics Data\" data-entity-type=\"file\" data-entity-uuid=\"22663464-1b8e-4d8f-94d8-2f0558c53727\" data-image-style=\"\" data-responsive-image-style=\"\" src=\"\/sites\/default\/files\/inline-images\/analytics-data.png\" \/>\n<figcaption>App analytics showing ability to filter by date and time<\/figcaption>\n<\/figure>\n\n<p>\u00a0<\/p>",
             "summary": "",
             "lang": "en"
         }

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_kickstart_enhancement
+  theme:
+    - claro
+id: claro_secondary_local_tasks
+theme: claro
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary Tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility:
+  block_type:
+    id: block_type
+    uuid: 933aa074-1282-4e2a-9dca-6b29d1a5733f
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
