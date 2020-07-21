@@ -19,6 +19,20 @@ The package installer is supposed to create all files and folders you require. T
 |**Custom Modules/ Themes**          |`/web/modules/custom/` and `/web/themes/custom/`|All your custom code should live here|
 
 
+## Running the Build Script
+
+The theme used in this installation profile (sm_dev_portal_theme) is using [GulpJS](https://gulpjs.com/) to compile and bundle SASS and JS as well as minifying it. 
+As a requirement, **Node.js** and **NPM** are needed for using the theme's build script. You need install as well **gulp** on your machine globally.
+
+To install this, run the following code on your command interface (eg: Windows Powershell or Git Bash). 
+
+`npm install -g gulp`
+
+After installing Gulp, go to theme's directory (profile_name/themes/custom/theme_name) and run the following on your command interface (eg: Windows Powershell or Git Bash)
+
+1. `gulp`
+
+
 ## Issues ?
 
 Please raise an issue here on github.

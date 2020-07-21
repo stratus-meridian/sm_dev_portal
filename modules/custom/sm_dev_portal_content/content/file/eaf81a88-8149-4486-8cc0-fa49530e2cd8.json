@@ -1,25 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yml"
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore-expanded.yaml"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
         },
         "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/user\/26?_format=hal_json"
             }
         ]
     },
-    "fid": [
-        {
-            "value": 4
-        }
-    ],
     "uuid": [
         {
-            "value": "5fe3017c-39a1-416f-b53a-d1025da7671d"
+            "value": "eaf81a88-8149-4486-8cc0-fa49530e2cd8"
         }
     ],
     "langcode": [
@@ -32,7 +27,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/user\/26?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -40,7 +35,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ace46248-ab0f-41fc-bf16-5ffd87ba753d"
+                        "value": "719575b1-9f62-442b-8181-3cd71d8ac94e"
                     }
                 ]
             }
@@ -48,13 +43,13 @@
     },
     "filename": [
         {
-            "value": "petstore.yml"
+            "value": "petstore-expanded.yaml"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/apidoc_specs\/petstore.yml",
-            "url": "\/sites\/default\/files\/apidoc_specs\/petstore.yml"
+            "value": "public:\/\/apidoc_specs\/petstore-expanded.yaml",
+            "url": "\/sites\/default\/files\/apidoc_specs\/petstore-expanded.yaml"
         }
     ],
     "filemime": [
@@ -64,7 +59,7 @@
     ],
     "filesize": [
         {
-            "value": 2573
+            "value": 5637
         }
     ],
     "status": [
@@ -74,13 +69,13 @@
     ],
     "created": [
         {
-            "value": "2019-11-01T03:21:18+00:00",
+            "value": "2020-07-16T05:45:08+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-11-01T03:21:21+00:00",
+            "value": "2020-07-16T05:45:11+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ]
