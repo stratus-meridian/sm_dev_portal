@@ -28,6 +28,11 @@
             "value": "8b9c40ab-8975-461e-a6ac-ab8515f4ec00"
         }
     ],
+    "vid": [
+        {
+            "value": 2
+        }
+    ],
     "langcode": [
         {
             "value": "en",

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/swagger.json"
+            "href": "http:\/\/default\/sites\/default\/files\/2020-02\/space-x.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -12,9 +12,14 @@
             }
         ]
     },
+    "fid": [
+        {
+            "value": 24
+        }
+    ],
     "uuid": [
         {
-            "value": "44201bc0-0d68-42f8-9672-70c7c0483296"
+            "value": "8f6cba92-f32c-4896-bc23-b9210f6d0a72"
         }
     ],
     "langcode": [
@@ -43,23 +48,23 @@
     },
     "filename": [
         {
-            "value": "swagger.json"
+            "value": "space-x.jpg"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/apidoc_specs\/swagger.json",
-            "url": "\/sites\/default\/files\/apidoc_specs\/swagger.json"
+            "value": "public:\/\/2020-02\/space-x.jpg",
+            "url": "\/sites\/default\/files\/2020-02\/space-x.jpg"
         }
     ],
     "filemime": [
         {
-            "value": "application\/octet-stream"
+            "value": "image\/jpeg"
         }
     ],
     "filesize": [
         {
-            "value": 13843
+            "value": 318163
         }
     ],
     "status": [
@@ -69,13 +74,13 @@
     ],
     "created": [
         {
-            "value": "2020-07-16T05:40:54+00:00",
+            "value": "2020-02-04T23:02:32+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-07-16T05:40:54+00:00",
+            "value": "2020-02-04T23:02:38+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ]
