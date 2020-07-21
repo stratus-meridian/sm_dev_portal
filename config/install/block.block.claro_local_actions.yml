@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_kickstart_enhancement
+  theme:
+    - claro
+id: claro_local_actions
+theme: claro
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  block_type:
+    id: block_type
+    uuid: 004e5ca2-8b6f-418a-a8cb-5f4287b7d61e
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
