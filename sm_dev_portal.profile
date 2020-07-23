@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Enables modules and site configuration for apigee_devportal_kickstart.
+ * Enables modules and site configuration for sm_dev_portal.
  */
 
 // Add any custom code here like hook implementations.
