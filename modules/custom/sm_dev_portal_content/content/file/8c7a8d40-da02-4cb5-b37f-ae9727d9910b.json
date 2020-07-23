@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/vector_images\/launch.svg"
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore-v3.0.yaml"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -14,12 +14,12 @@
     },
     "fid": [
         {
-            "value": 84
+            "value": 17
         }
     ],
     "uuid": [
         {
-            "value": "9edf1e51-82f4-430f-9e53-94144be2416e"
+            "value": "8c7a8d40-da02-4cb5-b37f-ae9727d9910b"
         }
     ],
     "langcode": [
@@ -48,23 +48,23 @@
     },
     "filename": [
         {
-            "value": "launch.svg"
+            "value": "petstore-v3.0.yaml"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/vector_images\/launch.svg",
-            "url": "\/sites\/default\/files\/vector_images\/launch.svg"
+            "value": "public:\/\/apidoc_specs\/petstore-v3.0.yaml",
+            "url": "\/sites\/default\/files\/apidoc_specs\/petstore-v3.0.yaml"
         }
     ],
     "filemime": [
         {
-            "value": "image\/svg+xml"
+            "value": "application\/octet-stream"
         }
     ],
     "filesize": [
         {
-            "value": 12581
+            "value": 2532
         }
     ],
     "status": [
@@ -74,13 +74,13 @@
     ],
     "created": [
         {
-            "value": "2020-02-25T02:07:33+00:00",
+            "value": "2019-11-11T21:36:18+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-02-25T02:08:10+00:00",
+            "value": "2019-11-11T21:36:31+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ]

@@ -37,7 +37,6 @@ After installing Gulp, go to theme's directory (profile_name/themes/custom/theme
 
 1. `gulp`
 
-
 ## Issues ?
 
 Please raise an issue here on github.
