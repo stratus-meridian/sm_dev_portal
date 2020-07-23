@@ -19,6 +19,11 @@ The package installer is supposed to create all files and folders you require. T
 |**Custom Modules/ Themes**          |`/web/modules/custom/` and `/web/themes/custom/`|All your custom code should live here|
 
 
+## Update/Upgrade to Latest version
+If you are updating/upgrading your existing Stratus Meridian Developer portal to its latest version, please read the following documentation which you can find on the profile's source code under **docs** folder. 
+
+Filename: **guides-for-updating-sm-dev-portal-to-latest-version.docx**
+
 ## Running the Build Script
 
 The theme used in this installation profile (sm_dev_portal_theme) is using [GulpJS](https://gulpjs.com/) to compile and bundle SASS and JS as well as minifying it. 
