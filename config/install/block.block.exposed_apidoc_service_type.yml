@@ -11,7 +11,7 @@ dependencies:
 id: exposed_apidoc_service_type
 theme: sm_dev_portal_theme
 region: hidden
-weight: 0
+weight: -2
 provider: null
 plugin: 'views_exposed_filter_block:apigee_api_catalog-apidoc_list'
 settings:
@@ -23,7 +23,7 @@ settings:
 visibility:
   block_type:
     id: block_type
-    uuid: afd8dafa-e024-47ff-bfed-e9bab86e8026
+    uuid: 17485ad3-41b2-4396-a133-d6d515c013f0
     bundles: {  }
     is_adjacent: 0
     negate: false

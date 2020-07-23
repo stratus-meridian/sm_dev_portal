@@ -47,6 +47,11 @@
             "value": "876a415b-d22d-45dd-80f2-df07cd3200b1"
         }
     ],
+    "vid": [
+        {
+            "value": 1
+        }
+    ],
     "langcode": [
         {
             "value": "en",
