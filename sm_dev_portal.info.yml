@@ -1,14 +1,14 @@
-name: Stratus Meridian Developer Portal For Apigee
+name: Stratus Meridian Developer Portal Kickstart
 type: profile
-description: 'A customized profile from Stratus Meridian for Apigee.'
-core: 8.x
+description: 'A customized kickstart profile for Apigee Developer Portals.'
+core_version_requirement: ^8 || ^9
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
 # The distribution_name property is used in the installer and other places as
 # a label for the software being installed.
 distribution:
-  name: Stratus Meridian Developer Portal
+  name: Stratus Meridian Developer Portal Kickstart
   # If you want your distribution to pre-select a language you can specify
   # the language code, as well. This will prevent the user from selecting
   # a language code in the user interface. While not recommended for generic
