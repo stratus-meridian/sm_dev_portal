@@ -82,14 +82,14 @@
               {{ attach_library('sm_dev_portal_theme/swagger-extend') }}
             {% endif %}
 
-            {% set count_serviceType = node.field_service_type.getvalue()|length %}
+            {% set count_serviceType = (node.field_service_type.getvalue()|length ? node.field_service_type.getvalue()|length : node.field_service_type_apidoc.getvalue()|length) %}
 
             {% if count_serviceType > 0 %}
               <div class="api-service-type mb-3">
-                <label class="mr-3 mb-2 mb-sm-0 d-block d-sm-inline"><strong>{{ content.field_service_type['#title'] }}</strong></label>
+                <label class="mr-3 mb-2 mb-sm-0 d-block d-sm-inline"><strong>{{ (content.field_service_type['#title'] ? content.field_service_type['#title'] : content.field_service_type_apidoc['#title']) }}</strong></label>
                 {% for obj in 0..count_serviceType - 1 %}
-                  {% set colorServiceType = content.field_service_type[obj]['#options'].entity.field_color_identification.value.0.color %}
-                  <span class="d-inline-block service-type px-2 {{ (loop.last == true) ? 'ml-1' }}" style="background-color: {{ colorServiceType }}">{{- content.field_service_type[obj]['#title'] -}}</span>
+                  {% set colorServiceType = (content.field_service_type[obj]['#options'].entity.field_color_identification.value.0.color ? content.field_service_type[obj]['#options'].entity.field_color_identification.value.0.color : content.field_service_type_apidoc[obj]['#options'].entity.field_color_identification.value.0.color) %}
+                  <span class="d-inline-block service-type px-2 {{ (loop.last == true) ? 'ml-1' }}" style="background-color: {{ colorServiceType }}">{{- (content.field_service_type[obj]['#title'] ? content.field_service_type[obj]['#title'] : content.field_service_type_apidoc[obj]['#title']) -}}</span>
                 {% endfor %}
               </div>
             {% endif %}

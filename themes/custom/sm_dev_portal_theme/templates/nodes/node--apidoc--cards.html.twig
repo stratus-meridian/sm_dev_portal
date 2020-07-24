@@ -75,12 +75,13 @@
 
 <div {{ attributes|without('role').addClass(classes) }}>
 	{% block content %}
-		{% set countServiceType = node.field_service_type.getvalue()|length %}
+		{% set countServiceType = (node.field_service_type.getvalue()|length ? node.field_service_type.getvalue()|length : node.field_service_type_apidoc.getvalue()|length) %}
 
 		{% if countServiceType > 0 %}
 			<div class="card-icon px-3 pt-4 pb-2">
 				{% for obj in 0..countServiceType - 1 %}
-					<i class="float-right {{ (loop.last == true and countServiceType > 1) ? 'mr-1' }}" style="background-color: {{ content.field_service_type[obj]['#options'].entity.field_color_identification.color }}; border: 1px solid {{ content.field_service_type[obj]['#options'].entity.field_color_identification.color }}; width: 35px; height: 16px; -webkit-border-radius: 190px; border-radius: 190px;"></i>
+					{% set colorServiceType = (content.field_service_type[obj]['#options'].entity.field_color_identification.value.0.color ? content.field_service_type[obj]['#options'].entity.field_color_identification.value.0.color : content.field_service_type_apidoc[obj]['#options'].entity.field_color_identification.value.0.color) %}
+					<i class="float-right {{ (loop.last == true and countServiceType > 1) ? 'mr-1' }}" style="background-color: {{ colorServiceType }}; border: 1px solid {{ colorServiceType }}; width: 35px; height: 16px; -webkit-border-radius: 190px; border-radius: 190px;"></i>
 				{% endfor %}
 			</div>
 		{% endif %}
