@@ -60,9 +60,6 @@ Next, we need to reconfigure the look and feel of the API Catalog as
 what was seen on the old installation profile. To do this, here are the
 steps:
 
-**\
-**
-
 **\* Reconfigure Service Type Field and associated configuration to API
 Doc Form and Front Display.**
 
@@ -79,8 +76,7 @@ Doc Form and Front Display.**
     field.
 
 ![A screenshot of a social media post Description automatically
-generated](.//media/image1.png){width="6.291666666666667in"
-height="2.9979527559055117in"}
+generated](.//media/image1.png)
 
 4.  On API Doc's content type **Manage Form Display (Structure \>
     Content type \> API Doc \> Manage Form Display)**, kindly re-enable
@@ -101,76 +97,54 @@ height="2.9979527559055117in"}
     that will be displayed on Cards view mode. Under the same Manage
     Display, click on Cards Tab.
 
-![](.//media/image2.png){width="6.5in" height="2.0236111111111112in"}
+![](.//media/image2.png)
 
 8.  Disable the **OpenAPI specification field**.
 
 9.  Change the format of **Description field** to **Smart Trim**. Please
     follow the configuration as seen on the screenshot.
 
-![](.//media/image3.png){width="2.0833333333333335in"
-height="2.5883847331583554in"}
+![](.//media/image3.png)
 
-[\* API Catalog views configuration and exposed form block
-re-assigning]{.ul}
+**\* API Catalog views configuration and exposed form block
+re-assigning**
 
 1.  Go to Structures \> View. Then, click Edit on API Catalog View.
 
 2.  Please see the screenshots below on the views configuration.![A
     screenshot of a computer Description automatically
-    generated](.//media/image4.png){width="5.966819772528434in"
-    height="2.7666666666666666in"}
+    generated](.//media/image4.png)
 
-    -   [Settings for Unformatted List]{.ul}
+    - Settings for Unformatted List
+        - Uncheck **Add views row classes** options
+    - Settings Exposed Field: Content: Service Type
+        - Vocabulary: API Category
+        - Selection Type: Dropdown
+        - On the Field's filter criterion select the following configuration:
+            - Filter type to expose: Single Filter
+            - Label: Service Type
+            - Check option -- Allow multiple selections
+            - **Filter Identifier - field_service_type_target_id**
+            - Check Options -- Reduce duplicates
 
-        i.  Uncheck **Add views row classes** options
+    - Settings for User Pager
+        - Select Pager: Infinite Scroll
+        - Items per page: 3
+    - Settings for Exposed Form
+        - Exposed Form style: Better Exposed Filters
+        - Enabled auto submit: Checked
+        - Hide submit button: Checked
+        - Exposed filter widget: Checkboxes/Radio Buttons
 
-    -   [Settings Exposed Field: Content: Service Type]{.ul}
-
-        i.  Vocabulary: API Category
-
-        ii. Selection Type: Dropdown
-
-        iii. On the Field's filter criterion select the following
-             configuration:
-
-             -   Filter type to expose: Single Filter
-
-             -   Label: Service Type
-
-             -   Check option -- Allow multiple selections
-
-             -   **Filter Identifier - field_service_type_target_id**
-
-             -   Check Options -- Reduce duplicates
-
-    -   [Settings for User Pager]{.ul}
-
-        i.  Select Pager: Infinite Scroll
-
-        ii. Items per page: 3
-
-    -   [Settings for Exposed Form]{.ul}
-
-        i.  Exposed Form style: Better Exposed Filters
-
-        ii. Enabled auto submit: Checked
-
-        iii. Hide submit button: Checked
-
-        iv. Exposed filter widget: Checkboxes/Radio Buttons
-
-[\* Block layout configuration for Exposed Form:
-apigee_api_catalog-apidoc_list]{.ul}
+**\* Block layout configuration for Exposed Form:
+apigee_api_catalog-apidoc_list**
 
 1.  Click **Place Block button** under **Page Hidden Region**.
 
-2.  Search for **Exposed form: apigee_api_catalog-apidoc_list** and
-    click Place block.
+2.  Search for **Exposed form: apigee_api_catalog-apidoc_list** and click Place block.
 
 3.  Uncheck **Display title option.**
 
-4.  Edit the block's machine-readable name to:
-    **exposed_apidoc_service_type**
+4.  Edit the block's machine-readable name to: **exposed_apidoc_service_type**
 
 5.  Lastly, kindly clear Drupal's cache.
