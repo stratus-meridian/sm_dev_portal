@@ -23,6 +23,7 @@ The package installer is supposed to create all files and folders you require. T
 If you are updating/upgrading your existing Stratus Meridian Developer portal to its latest version, please read the following documentation which you can find on the profile's source code under **docs** folder. 
 
 Filename: **guides-for-updating-sm-dev-portal-to-latest-version.docx**
+Link: [guides-for-updating-sm-dev-portal-to-latest-version](https://support.stratusmeridian.com/hc/en-us/articles/360051452954-Upgrading-your-Stratus-Meridian-Developer-Portal-to-its-latest-update-)
 
 ## Running the Build Script
 
