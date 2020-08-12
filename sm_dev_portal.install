@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Component\Serialization\Yaml;
+
 /**
  * @file
  * Install, update and uninstall hooks for the Example Profile install profile.
@@ -58,4 +60,61 @@ function sm_dev_portal_install() {
   \Drupal::service('module_installer')->install(['sm_dev_portal_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/node/1')->save();
+}
+
+/**
+ * Update to apigee_api_catalog 2.x.
+ */
+function sm_dev_portal_update_8009() {
+  $moduleHandler = \Drupal::moduleHandler();
+  if (!$moduleHandler->moduleExists('apigee_api_catalog')) {
+    return;
+  }
+
+  $configPath = drupal_get_path('profile', 'sm_dev_portal') . '/config/install';
+	$configPath_update = drupal_get_path('profile', 'sm_dev_portal') . '/config_update/install';
+
+	if ($moduleHandler->moduleExists('field')) {
+		$configToImports = [
+			'field.field.node.apidoc.field_service_type_apidoc',
+			'field.storage.node.field_service_type_apidoc',
+		];
+
+		foreach($configToImports as $configToImport) {
+			$raw = file_get_contents("$configPath_update/$configToImport.yml");
+			$data = Yaml::decode($raw);
+			\Drupal::configFactory()
+				->getEditable($configToImport)
+				->setData($data)
+				->save(TRUE);
+		}
+	}
+
+	if ($moduleHandler->moduleExists('apigee_api_catalog')) {
+		$configToImports = [
+			'core.entity_form_display.node.apidoc.default',
+			'core.entity_view_display.node.apidoc.default',
+			'core.entity_view_display.node.apidoc.cards',
+		];
+
+		foreach($configToImports as $configToImport) {
+			$raw = file_get_contents("$configPath_update/$configToImport.yml");
+			$data = Yaml::decode($raw);
+			\Drupal::configFactory()
+				->getEditable($configToImport)
+				->setData($data)
+				->save(TRUE);
+		}
+	}
+
+  if ($moduleHandler->moduleExists('views')) {
+    $configToImport = 'views.view.apigee_api_catalog';
+    $raw = file_get_contents("$configPath_update/$configToImport.yml");
+    $data = Yaml::decode($raw);
+    \Drupal::configFactory()
+      ->getEditable($configToImport)
+      ->setData($data)
+      ->save(TRUE);
+  }
+
 }
