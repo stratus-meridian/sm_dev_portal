@@ -4,7 +4,7 @@ use Drupal\Component\Serialization\Yaml;
 
 /**
  * @file
- * Install, update and uninstall hooks for the Example Profile install profile.
+ * Enables modules and site configuration for sm_dev_portal.
  */
 
 /**
@@ -63,57 +63,57 @@ function sm_dev_portal_install() {
 }
 
 /**
- * Update to apigee_api_catalog 2.x.
+ * Update Apigee API Catalog to latest patch (2.x).
  */
-function sm_dev_portal_update_8009() {
-  $moduleHandler = \Drupal::moduleHandler();
-  if (!$moduleHandler->moduleExists('apigee_api_catalog')) {
+function sm_dev_portal_update_8001() {
+  $module_handler = \Drupal::moduleHandler();
+  if (!$module_handler->moduleExists('apigee_api_catalog')) {
     return;
   }
 
-  $configPath = drupal_get_path('profile', 'sm_dev_portal') . '/config/install';
-	$configPath_update = drupal_get_path('profile', 'sm_dev_portal') . '/config_update/install';
+  $config_path = drupal_get_path('profile', 'sm_dev_portal') . '/config/install';
+	$config_path_update = drupal_get_path('profile', 'sm_dev_portal') . '/config_update/install';
 
-	if ($moduleHandler->moduleExists('field')) {
-		$configToImports = [
+	if ($module_handler->moduleExists('field')) {
+		$config_to_imports = [
 			'field.field.node.apidoc.field_service_type_apidoc',
 			'field.storage.node.field_service_type_apidoc',
 		];
 
-		foreach($configToImports as $configToImport) {
-			$raw = file_get_contents("$configPath_update/$configToImport.yml");
-			$data = Yaml::decode($raw);
+		foreach($config_to_imports as $config_to_import) {
+			$raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+			$decode_data = Yaml::decode($raw_data);
 			\Drupal::configFactory()
-				->getEditable($configToImport)
-				->setData($data)
+				->getEditable($config_to_import)
+				->setData($decode_data)
 				->save(TRUE);
 		}
 	}
 
-	if ($moduleHandler->moduleExists('apigee_api_catalog')) {
-		$configToImports = [
+	if ($module_handler->moduleExists('apigee_api_catalog')) {
+		$config_to_imports = [
 			'core.entity_form_display.node.apidoc.default',
 			'core.entity_view_display.node.apidoc.default',
 			'core.entity_view_display.node.apidoc.cards',
 		];
 
-		foreach($configToImports as $configToImport) {
-			$raw = file_get_contents("$configPath_update/$configToImport.yml");
-			$data = Yaml::decode($raw);
+		foreach($config_to_imports as $config_to_import) {
+			$raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+			$decode_data = Yaml::decode($raw_data);
 			\Drupal::configFactory()
-				->getEditable($configToImport)
-				->setData($data)
+				->getEditable($config_to_import)
+				->setData($decode_data)
 				->save(TRUE);
 		}
 	}
 
-  if ($moduleHandler->moduleExists('views')) {
-    $configToImport = 'views.view.apigee_api_catalog';
-    $raw = file_get_contents("$configPath_update/$configToImport.yml");
-    $data = Yaml::decode($raw);
+  if ($module_handler->moduleExists('views')) {
+    $config_to_import = 'views.view.apigee_api_catalog';
+    $raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+    $decode_data = Yaml::decode($raw_data);
     \Drupal::configFactory()
-      ->getEditable($configToImport)
-      ->setData($data)
+      ->getEditable($config_to_import)
+      ->setData($decode_data)
       ->save(TRUE);
   }
 
