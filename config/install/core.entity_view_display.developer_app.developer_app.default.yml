@@ -12,22 +12,22 @@ content:
     type: string
     weight: 0
     region: content
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   callbackUrl:
-    label: inline
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
     type: uri_link
-  createdAt:
-    type: timestamp_ago
-    label: inline
     weight: 5
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  createdAt:
+    type: timestamp_ago
+    weight: 6
+    region: content
+    label: hidden
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
@@ -39,14 +39,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   description:
-    label: inline
-    weight: 6
+    label: hidden
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
     type: basic_string
   displayName:
-    label: inline
+    label: hidden
     weight: 2
     region: content
     settings:
@@ -55,9 +55,9 @@ content:
     type: string
   lastModifiedAt:
     type: timestamp_ago
-    label: inline
     weight: 7
     region: content
+    label: hidden
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
@@ -67,19 +67,22 @@ content:
     type: string
     weight: 1
     region: content
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   status:
-    label: inline
-    type: status_property
+    type: string
     weight: 3
     region: content
+    label: hidden
     settings:
-      indicator_status_ok: approved
-      indicator_status_warning: ''
-      indicator_status_error: revoked
+      link_to_entity: false
+    third_party_settings: {  }
+  warnings:
+    weight: 12
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   appFamily: true
