@@ -38,9 +38,6 @@ install:
   - block_content
   - block_field
   - breakpoint
-  - chosen
-  - chosen_field
-  - chosen_lib
   - ckeditor
   - color
   - color_field
@@ -111,7 +108,6 @@ install:
   - views
   - paragraphs
   - login_redirect_per_role
-  - apigee_kickstart_enhancement
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.

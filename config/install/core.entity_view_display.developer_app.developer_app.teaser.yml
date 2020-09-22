@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.developer_app.teaser
@@ -89,3 +89,4 @@ hidden:
   developerId: true
   lastModifiedBy: true
   scopes: true
+  warnings: true

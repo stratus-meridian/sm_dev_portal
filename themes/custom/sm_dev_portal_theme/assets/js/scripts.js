@@ -41,15 +41,22 @@
 		});
 	});
 
-
 	if ($('form.smdp-user-register-form').length) {
 		var user_register_form = $('form.smdp-user-register-form');
 	}
 
-	if ($('input.smdp-input-date').length) {
-		$('input.smdp-input-date').datepicker({
-			format: 'yyyy-mm-dd',
-			startDate: '-1y'
+	if ($('div.smdp-credential-revoked').length) {
+		let $accordion = $('div.smdp-credential-revoked').find('.accordion');
+
+		$accordion.find('button[aria-controls="collapseDetails"]').on('click', function() {
+			let $accordionBodyID = '#' + $(this).attr('aria-controls');
+			let $accordionBody = $('div.smdp-credential-revoked').find($accordionBodyID);
+			
+			if($accordionBody.hasClass('show') == false) {
+				$accordionBody.addClass('show');
+			} else {
+				$accordionBody.removeClass('show');
+			}
 		});
 	}
 
@@ -210,6 +217,16 @@
 							}).resize();
 						}
 					});
+				}
+
+				if ($('article.apigee-entity--app--view-mode-full').length) {
+					$dialogBox = $('div.ui-dialog');
+					$dialogBox_buttonpane = $dialogBox.find('.ui-dialog-buttonpane');
+					$dialogBox_close = $dialogBox.find('.ui-dialog-titlebar-close');
+					$dialogBox_close.prepend('<i class="fas fa-times" style="position: absolute; top: 1.5px; right: 2.5px;"></i>')
+					if ($dialogBox_buttonpane.length) {
+						$dialogBox_buttonpane.detach();
+					}
 				}
 			});
 		}

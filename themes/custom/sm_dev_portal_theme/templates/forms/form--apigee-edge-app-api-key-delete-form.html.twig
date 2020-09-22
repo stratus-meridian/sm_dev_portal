@@ -1,0 +1,41 @@
+{% extends 'form.html.twig' %}
+
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form_contents %}
+	{{ element.description }}
+	{{ element.confirm }}
+	{{ element.form_build_id }}
+	{{ element.form_token }}
+	{{ element.form_id }}
+
+	<div data-drupal-selector="{{ element.actions['#attributes']['data-drupal-selector'] }}" id="{{ element.actions['#id'] }}" class="form-actions js-form-wrapper form-group d-md-flex align-items-md-center mt-3">
+		{{ element.actions.submit }}
+
+		{% if element.actions.cancel['#url'].getOptions().entity_type == 'developer_app' %}
+			<a href="{{ path('entity.developer_app.canonical_by_developer', {'user': user_id, 'app': element.actions.cancel['#url'].getRouteParameters().app }) }}" class="btn btn-secondary">
+		{% else %}
+			<a href="{{ path('entity.team_app.canonical', {'team': element.actions.cancel['#url'].getRouteParameters().team, 'app': element.actions.cancel['#url'].getRouteParameters().app }) }}" class="btn btn-secondary">
+		{% endif %}	
+			{{ ('Cancel')|t }}
+		</a>
+	</div>
+
+
+	<script type="text/javascript">
+		var input_submit = document.getElementsByClassName('button--primary');
+		input_submit[0].classList.remove('btn-success');
+		input_submit[0].classList.add('btn-danger');
+	</script>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends 'apigee-entity.html.twig' %}
+
+{#
+/**
+ * @file
+ * Generic theme implementation to display an Apigee entity.
+ *
+ * Drupal core does not yet provide a generic theme for entities therefore you
+ * have to implement your own entity type specific theme. This will change
+ * when http://dgo.to/2808481 gets fixed which will introduce a generic template
+ * for entities with common preprocess functions and theme suggestions.
+ *
+ * Available variables:
+ * - entity: The entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in an exception.
+ *   See \Drupal\apigee_edge\Entity\EdgeEntityInterface for a full list of
+ *   methods.
+ * - label: The title of the entity.
+ * - content: All rendered field items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - url: Direct URL of the current entity.
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see \Drupal\apigee_edge\Entity\EdgeEntityViewBuilder::getBuildDefaults()
+ * @see \Drupal\Core\Entity\EntityViewBuilder::getBuildDefaults()
+ * @see template_preprocess_apigee_entity()
+ * @see https://www.drupal.org/project/drupal/issues/2808481
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if entity.getEntityTypeId in ['developer_app', 'team_app'] %}
+	{% set classes = [
+		'apigee-entity--app',
+		'apigee-entity--app--view-mode-' ~ view_mode|clean_class
+	] %}
+{% endif %}
+
+{% set attributes = attributes.addClass(classes,'position-relative','card','smdp-app-details','rounded-0','shadow-none') %}
+
+{% block content %}
+	{{ attach_library('sm_dev_portal/apps-extend') }}
+   
+	<div class="card-header bg-transparent border-bottom px-0">
+		<div class="row">
+			<div class="col-12 col-lg-7">
+				{% if content.displayName.0 %}
+					<img src="{{ base_path ~ directory }}/assets/images/apps-logo.svg" class="d-none d-sm-inline-block mr-3 page-title-icon">
+					<h3 class="card-title d-inline mb-0 text-primary">{{ content.displayName.0 }}</h3>
+				{% endif %}
+
+				{% if content.status.0 %}
+					<div class="d-inline ml-1 mb-0">
+						{% if content.status.0['#context'].value == 'approved' or content.status.0['#context'].value == 'active'  %}
+							<i class="fas fa-check-circle wrapper--status indicator-status-ok"></i>
+						{% elseif content.status.0['#context'].value == 'revoked' %}
+							<i class="fas fa-times-circle wrapper--status indicator-status-error"></i>
+						{% elseif content.status.0['#context'].value == 'expired' or content.status.0['#context'].value == 'pending' %}
+							<i class="fas fa-exclamation-circle wrapper--status indicator-status-warning"></i>
+						{% endif %}
+					</div>
+				{% endif %}
+
+				{% if content.description.0 %}
+					<div class="card-text mt-3 mb-0">
+						<p>{{ content.description.0 }}</p>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="col-12 col-lg-5 mt-3 mt-lg-0">
+				<div class="btn-group float-lg-right">
+					<a href="{{ path('entity.developer_app.collection_by_developer', {'user': user_id}) }}" class="btn btn-outline-primary rounded-sm mr-1">
+						<i class="fas fa-arrow-left mr-1"></i> {{ ('Back to Apps List')|t }}
+					</a>
+
+					<button type="button" class="btn btn-outline-primary rounded-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+
+					<div class="dropdown-menu dropdown-menu-right rounded-0">
+						{% for tabs in additional_tabs %}
+							<a href="{{ tabs.url }}" class="dropdown-item">{{ tabs.title }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-body py-4 px-0">
+		{# First row #}
+		{% if content.callbackUrl.0 or content.createdAt.0 or content.lastModifiedAt.0 %}
+			<div class="row">
+				{% if content.callbackUrl.0 %}
+					<div class="col-12 col-md-6 col-lg-4 mb-3 mb-lg-0">
+						<div class="wrapper-app-callback-url">
+							<label class="smdp-form-label mb-1">
+								{{ content.callbackUrl['#title'] }}
+							</label>
+
+							<div class="item-property">
+								{{ content.callbackUrl.0 }}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+
+				{% if content.createdAt.0 %}
+					<div class="col-6 col-lg-4 mb-md-3 mb-lg-0">
+						<div class="wrapper-app-createdAt">
+							<label class="smdp-form-label mb-1">
+								{{ content.createdAt['#title'] }}
+							</label>
+
+							<div class="item-property">
+								{{ content.createdAt.0 }}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+
+				{% if content.lastModifiedAt.0 %}
+					<div class="col-6 col-lg-4">
+						<div class="wrapper-app-createdAt">
+							<label class="smdp-form-label mb-1">
+								{{ content.lastModifiedAt['#title'] }}
+							</label>
+
+							<div class="item-property">
+								{{ content.lastModifiedAt.0 }}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+
+		{% if content.credentials %}
+			<hr>
+			<div class="row">
+				<div class="col-6 text-left">
+					<h5 class="mt-2 mb-2">{{ "Credentials"|t }}</h5>
+				</div>
+
+				{% if content.add_keys %}
+					<div class="col-6 text-right">
+						{{ content.add_keys }}
+					</div>
+				{% endif %}
+			</div>
+
+			<hr>
+			<div class="row">
+				<div class="col-12">
+					{{ content.credentials.approved }}
+				</div>
+
+				{% if content.credentials.revoked %}
+					<div class="col-12">
+						<div class="items--inline app-credential smdp-credential smdp-credential-revoked">
+							{{ content.credentials.revoked }}
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
+

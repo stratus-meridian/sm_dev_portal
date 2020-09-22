@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - apigee_kickstart_enhancement
     - help
   theme:
     - claro
@@ -17,11 +16,4 @@ settings:
   label: Help
   provider: help
   label_display: '0'
-visibility:
-  block_type:
-    id: block_type
-    uuid: 0376b0bf-e50e-4585-9b5e-13571826925a
-    bundles: {  }
-    is_adjacent: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }

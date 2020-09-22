@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - apigee_kickstart_enhancement
   theme:
     - claro
 id: claro_primary_local_tasks
@@ -18,11 +16,4 @@ settings:
   label_display: '0'
   primary: true
   secondary: false
-visibility:
-  block_type:
-    id: block_type
-    uuid: 20e5d78c-4e13-46ac-b424-1ab08930b574
-    bundles: {  }
-    is_adjacent: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }

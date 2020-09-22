@@ -78,7 +78,6 @@ div.dashboardcode-bsmultiselect {
 	}
 }
 
-
 input[type="submit"] {
 	width: auto;
 }
@@ -128,6 +127,11 @@ button,
 	/*** User Apigee Edge Analytics form ***/
 	form.smdp-apigee-edge-developer-app-analytics,
 	form.smdp-apigee-edge-teams-team-app-analytics {
+		width: 100%!important;
+	}
+
+	/*** Add Key forms ***/
+	form.smdp-apigee-edge-app-api-key-add-form {
 		width: 100%!important;
 	}
 
