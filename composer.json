@@ -57,6 +57,7 @@
         "drupal/paragraphs": "^1.9",
         "drupal/pathauto": "^1.6",
         "drupal/redoc_field_formatter": "^1.0",
+        "drupal/sm_appdashboard_apigee": "^1.2",
         "drupal/smart_trim": "^1.2",
         "drupal/svg_image": "^1.13",
         "drupal/swagger_ui_formatter": "^2.4",
