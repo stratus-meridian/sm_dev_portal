@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.apidoc.field_service_type
     - node.type.apidoc
   module:
-    - redoc_field_formatter
+    - swagger_ui_formatter
     - text
     - user
 id: node.apidoc.default
@@ -29,9 +29,22 @@ content:
   field_apidoc_spec:
     weight: 2
     label: hidden
-    settings: {  }
+    settings:
+      validator: default
+      validator_url: ''
+      doc_expansion: list
+      show_top_bar: false
+      sort_tags_by_name: false
+      supported_submit_methods:
+        get: get
+        put: put
+        post: post
+        delete: delete
+        options: options
+        head: head
+        patch: patch
     third_party_settings: {  }
-    type: redoc_ui
+    type: swagger_ui_file
     region: content
   field_service_type:
     weight: 1
