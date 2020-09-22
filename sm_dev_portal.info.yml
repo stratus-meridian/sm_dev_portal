@@ -59,7 +59,6 @@ install:
   - field_group
   - field_ui
   - file
-  - file_link
   - filter
   - formdazzle
   - hal
