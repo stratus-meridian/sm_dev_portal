@@ -4,13 +4,14 @@ dependencies:
   config:
     - views.view.blogs
   module:
+    - apigee_kickstart_enhancement
     - views
   theme:
     - sm_dev_portal_theme
 id: exposed_blogs_tags
 theme: sm_dev_portal_theme
 region: hidden
-weight: 0
+weight: -1
 provider: null
 plugin: 'views_exposed_filter_block:blogs-blog_list'
 settings:
@@ -19,4 +20,11 @@ settings:
   provider: views
   label_display: '0'
   views_label: ''
-visibility: {  }
+visibility:
+  block_type:
+    id: block_type
+    uuid: 5a7f3164-7ee4-4104-8b7e-5c18fc0b5842
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }

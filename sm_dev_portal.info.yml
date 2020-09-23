@@ -24,88 +24,75 @@ distribution:
 
 # Modules to install to support the profile.
 install:
+  - node
+  - history
+  - block
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - comment
+  - contextual
+  - contact
+  - datetime
+  - block_content
+  - quickedit
+  - editor
+  - help
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - big_pipe
+  - taxonomy
+  - dblog
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  - media
+  - media_library
+  - responsive_image
   - admin_toolbar
   - admin_toolbar_links_access_filter
   - admin_toolbar_tools
   - adminimal_admin_toolbar
-  - apigee_api_catalog
   - apigee_edge
-  - automated_cron
-  - backup_migrate
+  - apigee_api_catalog
+  - apigee_kickstart_enhancement
   - better_exposed_filters
-  - big_pipe
-  - block
-  - block_content
-  - block_field
-  - breakpoint
-  - ckeditor
-  - color
-  - color_field
-  - comment
-  - config
-  - contact
-  - contextual
-  - ctools
-  - datetime
-  - dblog
-  - default_content
-  - dynamic_page_cache
-  - easy_breadcrumb
-  - editor
   - email_registration
-  - entity
-  - entity_reference_revisions
-  - field
+  - paragraphs
+  - pathauto
+  - block_field
+  - color_field
+  - easy_breadcrumb
   - field_group
-  - field_ui
-  - file
-  - filter
   - formdazzle
-  - hal
-  - help
-  - history
-  - image
   - inline_responsive_images
   - key
-  - link
   - link_attributes
-  - media
-  - media_library
-  - menu_ui
-  - node
   - openapi_ui
   - openapi_ui_redoc
-  - options
-  - page_cache
-  - path
   - path_alias
-  - quickedit
-  - rdf
   - redoc_field_formatter
-  - responsive_image
-  - serialization
-  - shortcut
+  - redoc_field_formatter
   - smart_trim
   - smdp_helper
   - svg_image
   - swagger_ui_formatter
-  - system
-  - taxonomy
   - term_reference_tree
-  - text
-  - token
-  - toolbar
-  - tour
   - twig_tweak
   - typed_data
-  - update
-  - user
   - views_infinite_scroll
-  - views_ui
   - menu_link_content
-  - pathauto
-  - views
-  - paragraphs
   - login_redirect_per_role
 
 # List any themes that should be installed as part of the profile installation.

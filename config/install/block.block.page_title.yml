@@ -1,12 +1,14 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - apigee_kickstart_enhancement
   theme:
     - sm_dev_portal_theme
 id: page_title
 theme: sm_dev_portal_theme
 region: content
-weight: -4
+weight: -6
 provider: null
 plugin: page_title_block
 settings:
@@ -14,4 +16,11 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  block_type:
+    id: block_type
+    uuid: c41b3334-2445-44e9-ae9d-434acaa9c520
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
