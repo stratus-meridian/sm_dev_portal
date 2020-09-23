@@ -4,7 +4,6 @@ dependencies:
   config:
     - views.view.apigee_api_catalog
   module:
-    - apigee_kickstart_enhancement
     - views
   theme:
     - sm_dev_portal_theme
@@ -20,11 +19,4 @@ settings:
   provider: views
   label_display: '0'
   views_label: Categories
-visibility:
-  block_type:
-    id: block_type
-    uuid: afd8dafa-e024-47ff-bfed-e9bab86e8026
-    bundles: {  }
-    is_adjacent: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }
