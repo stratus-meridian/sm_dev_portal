@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\File\FileSystemInterface;
 
 /**
  * @file
@@ -22,7 +23,7 @@ function sm_dev_portal_install() {
 	// Copy favicon from resources to public folder
 	$file_favicon = 'favicon.ico';
 	$image = file_get_contents(drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $file_favicon);
-	file_save_data($image, 'public://'.$file_favicon, FILE_EXISTS_REPLACE);
+	\Drupal::service('file_system')->saveData($image, 'public://'.$file_favicon, FileSystemInterface::EXISTS_REPLACE);
 
 	// Copy image from resources to public folder.
 	$folder_names = [
@@ -43,13 +44,13 @@ function sm_dev_portal_install() {
 		if ($folder_name == 'media') $path = 'public://' . $folder_name . '/image/';
 		if ($folder_name == 'media-icons') $path = 'public://' . $folder_name . '/generic/';
 
-		if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+		if (\Drupal::service('file_system')->prepareDirectory($path, FileSystemInterface::CREATE_DIRECTORY)) {
 			$original = drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $folder_name;
-			$files = file_scan_directory($original, '/.*/');
+			$files = \Drupal::service('file_system')->scanDirectory($original, '/.*/');
 			if (!empty($files)) {
 				foreach ($files as $file) {
 					if (!empty($file->uri)) {
-						file_unmanaged_copy($file->uri, $path, FILE_EXISTS_REPLACE);
+						\Drupal::service('file_system')->copy($file->uri, $path, FileSystemInterface::EXISTS_REPLACE);
 					}
 				}
 			}
