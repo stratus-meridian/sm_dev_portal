@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
  * @file
@@ -13,6 +13,7 @@ use Drupal\apigee_edge\Entity\AppInterface;
 function sm_dev_portal_theme_preprocess_apigee_entity(&$variables) {
   /** @var \Drupal\Core\Entity\EntityInterface $entity */
   $entity = $variables['entity'];
+
   // Use a common preprocess for all apps.
   if ($entity instanceof AppInterface) {
     sm_dev_portal_theme_preprocess_apigee_entity__app($variables);
@@ -32,23 +33,6 @@ function sm_dev_portal_theme_preprocess_apigee_entity(&$variables) {
 function sm_dev_portal_theme_preprocess_apigee_entity__app(array &$variables) {
   /** @var \Drupal\apigee_edge\Entity\AppInterface $app */
   $app = $variables['entity'];
-  // Preprocess the app credentials so that we can render individual fields.
-  if ($credentials = $app->getCredentials()) {
-    $credential_variables['elements']['#credential'] = reset($credentials);
-
-    template_preprocess_app_credential($credential_variables);
-
-    // Render the consumerKey and the consumerSecret as secret fields.
-    foreach (['consumerKey', 'consumerSecret'] as $field_name) {
-      $credential_variables['primary_wrapper'][$field_name]['value'] = [
-        '#type' => 'secret',
-        '#value' => $credential_variables['primary_wrapper'][$field_name]['value']['#value'],
-      ];
-    }
-
-    $credential_variables['secondary_wrapper']['title']['#title'] = t('Products');
-    $variables['content']['credentials'] = $credential_variables;
-  }
 
   // Add local tasks on the app canonical route as additional tabs.
   $variables['additional_tabs'] = [];
@@ -86,6 +70,25 @@ function sm_dev_portal_theme_preprocess_apigee_entity__app(array &$variables) {
         ];
       }
     }
+  }
+
+  if (!empty($variables['content']['add_keys'])) {
+    /** @var \Drupal\Core\Url $url */
+    $url = $variables['content']['add_keys']['#url'];
+    $attributes = $url->getOption('attributes');
+
+    // Add button classes to add_keys link.
+    $attributes['class'] = array_merge($attributes['class'], ['btn', 'btn-primary', 'rounded-sm']);
+
+    // Increase the height for the dialog.
+    $attributes['data-dialog-options'] = json_encode([
+      'width' => 500,
+      'height' => 450,
+      'draggable' => FALSE,
+      'autoResize' => FALSE,
+    ]);
+
+    $url->setOption('attributes', $attributes);
   }
 }
 
@@ -138,4 +141,20 @@ function sm_dev_portal_theme_preprocess_apigee_entity__apidoc(&$variables) {
     $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))
       ->toRenderable();
   }
+}
+
+/**
+ * Implement template_preprocess_app_credentials().
+ */
+function sm_dev_portal_theme_preprocess_app_credential(&$variables) {
+  // Render the consumerKey and the consumerSecret as secret fields.
+  foreach (['consumerKey', 'consumerSecret'] as $field_name) {
+    $variables['primary_wrapper'][$field_name]['value'] = [
+      '#type' => 'secret',
+      '#value' => $variables['primary_wrapper'][$field_name]['value']['#value'],
+    ];
+  }
+
+  // Rename title to products.
+  $variables['secondary_wrapper']['title']['#title'] = t('Products');
 }
