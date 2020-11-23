@@ -4,14 +4,13 @@ dependencies:
   config:
     - views.view.apigee_api_catalog
   module:
-    - apigee_kickstart_enhancement
     - views
   theme:
     - sm_dev_portal_theme
 id: exposed_apidoc_service_type
 theme: sm_dev_portal_theme
 region: hidden
-weight: -2
+weight: 0
 provider: null
 plugin: 'views_exposed_filter_block:apigee_api_catalog-apidoc_list'
 settings:
@@ -20,11 +19,4 @@ settings:
   provider: views
   label_display: '0'
   views_label: Categories
-visibility:
-  block_type:
-    id: block_type
-    uuid: 17485ad3-41b2-4396-a133-d6d515c013f0
-    bundles: {  }
-    is_adjacent: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }

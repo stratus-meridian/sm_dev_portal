@@ -1,14 +1,14 @@
-name: Stratus Meridian Developer Portal For Apigee
+name: Stratus Meridian Developer Portal Kickstart
 type: profile
-description: 'A customized profile from Stratus Meridian for Apigee.'
-core: 8.x
+description: 'A customized kickstart profile for Apigee Developer Portals.'
+core_version_requirement: ^8 || ^9
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
 # The distribution_name property is used in the installer and other places as
 # a label for the software being installed.
 distribution:
-  name: Stratus Meridian Developer Portal
+  name: Stratus Meridian Developer Portal Kickstart
   # If you want your distribution to pre-select a language you can specify
   # the language code, as well. This will prevent the user from selecting
   # a language code in the user interface. While not recommended for generic
@@ -24,94 +24,76 @@ distribution:
 
 # Modules to install to support the profile.
 install:
+  - node
+  - history
+  - block
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - comment
+  - contextual
+  - contact
+  - datetime
+  - block_content
+  - quickedit
+  - editor
+  - help
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - big_pipe
+  - taxonomy
+  - dblog
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  - media
+  - media_library
+  - responsive_image
   - admin_toolbar
   - admin_toolbar_links_access_filter
   - admin_toolbar_tools
   - adminimal_admin_toolbar
-  - apigee_api_catalog
   - apigee_edge
-  - automated_cron
-  - backup_migrate
+  - apigee_api_catalog
+  - apigee_kickstart_enhancement
   - better_exposed_filters
-  - big_pipe
-  - block
-  - block_content
-  - block_field
-  - breakpoint
-  - chosen
-  - chosen_field
-  - chosen_lib
-  - ckeditor
-  - color
-  - color_field
-  - comment
-  - config
-  - contact
-  - contextual
-  - ctools
-  - datetime
-  - dblog
-  - default_content
-  - dynamic_page_cache
-  - easy_breadcrumb
-  - editor
   - email_registration
-  - entity
-  - entity_reference_revisions
-  - field
+  - paragraphs
+  - pathauto
+  - block_field
+  - color_field
+  - easy_breadcrumb
   - field_group
-  - field_ui
-  - file
-  - file_link
-  - filter
   - formdazzle
-  - hal
-  - help
-  - history
-  - image
   - inline_responsive_images
   - key
-  - link
   - link_attributes
-  - media
-  - media_library
-  - menu_ui
-  - node
   - openapi_ui
   - openapi_ui_redoc
-  - options
-  - page_cache
-  - path
   - path_alias
-  - quickedit
-  - rdf
   - redoc_field_formatter
-  - responsive_image
-  - serialization
-  - shortcut
+  - redoc_field_formatter
   - smart_trim
   - smdp_helper
   - svg_image
   - swagger_ui_formatter
-  - system
-  - taxonomy
   - term_reference_tree
-  - text
-  - token
-  - toolbar
-  - tour
   - twig_tweak
   - typed_data
-  - update
-  - user
   - views_infinite_scroll
-  - views_ui
   - menu_link_content
-  - pathauto
-  - views
-  - paragraphs
   - login_redirect_per_role
-  - apigee_kickstart_enhancement
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.

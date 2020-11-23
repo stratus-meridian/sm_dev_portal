@@ -1,8 +1,11 @@
 <?php
 
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\File\FileSystemInterface;
+
 /**
  * @file
- * Install, update and uninstall hooks for the Example Profile install profile.
+ * Enables modules and site configuration for sm_dev_portal.
  */
 
 /**
@@ -20,7 +23,7 @@ function sm_dev_portal_install() {
 	// Copy favicon from resources to public folder
 	$file_favicon = 'favicon.ico';
 	$image = file_get_contents(drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $file_favicon);
-	file_save_data($image, 'public://'.$file_favicon, FILE_EXISTS_REPLACE);
+	\Drupal::service('file_system')->saveData($image, 'public://'.$file_favicon, FileSystemInterface::EXISTS_REPLACE);
 
 	// Copy image from resources to public folder.
 	$folder_names = [
@@ -41,13 +44,13 @@ function sm_dev_portal_install() {
 		if ($folder_name == 'media') $path = 'public://' . $folder_name . '/image/';
 		if ($folder_name == 'media-icons') $path = 'public://' . $folder_name . '/generic/';
 
-		if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+		if (\Drupal::service('file_system')->prepareDirectory($path, FileSystemInterface::CREATE_DIRECTORY)) {
 			$original = drupal_get_path('profile', 'sm_dev_portal') . '/resources/' . $folder_name;
-			$files = file_scan_directory($original, '/.*/');
+			$files = \Drupal::service('file_system')->scanDirectory($original, '/.*/');
 			if (!empty($files)) {
 				foreach ($files as $file) {
 					if (!empty($file->uri)) {
-						file_unmanaged_copy($file->uri, $path, FILE_EXISTS_REPLACE);
+						\Drupal::service('file_system')->copy($file->uri, $path, FileSystemInterface::EXISTS_REPLACE);
 					}
 				}
 			}
@@ -58,4 +61,61 @@ function sm_dev_portal_install() {
   \Drupal::service('module_installer')->install(['sm_dev_portal_content'], TRUE);
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/node/1')->save();
+}
+
+/**
+ * Update Apigee API Catalog to latest patch (2.x).
+ */
+function sm_dev_portal_update_8001() {
+  $module_handler = \Drupal::moduleHandler();
+  if (!$module_handler->moduleExists('apigee_api_catalog')) {
+    return;
+  }
+
+  $config_path = drupal_get_path('profile', 'sm_dev_portal') . '/config/install';
+	$config_path_update = drupal_get_path('profile', 'sm_dev_portal') . '/config_update/install';
+
+	if ($module_handler->moduleExists('field')) {
+		$config_to_imports = [
+			'field.field.node.apidoc.field_service_type_apidoc',
+			'field.storage.node.field_service_type_apidoc',
+		];
+
+		foreach($config_to_imports as $config_to_import) {
+			$raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+			$decode_data = Yaml::decode($raw_data);
+			\Drupal::configFactory()
+				->getEditable($config_to_import)
+				->setData($decode_data)
+				->save(TRUE);
+		}
+	}
+
+	if ($module_handler->moduleExists('apigee_api_catalog')) {
+		$config_to_imports = [
+			'core.entity_form_display.node.apidoc.default',
+			'core.entity_view_display.node.apidoc.default',
+			'core.entity_view_display.node.apidoc.cards',
+		];
+
+		foreach($config_to_imports as $config_to_import) {
+			$raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+			$decode_data = Yaml::decode($raw_data);
+			\Drupal::configFactory()
+				->getEditable($config_to_import)
+				->setData($decode_data)
+				->save(TRUE);
+		}
+	}
+
+  if ($module_handler->moduleExists('views')) {
+    $config_to_import = 'views.view.apigee_api_catalog';
+    $raw_data = file_get_contents("$config_path_update/$config_to_import.yml");
+    $decode_data = Yaml::decode($raw_data);
+    \Drupal::configFactory()
+      ->getEditable($config_to_import)
+      ->setData($decode_data)
+      ->save(TRUE);
+  }
+
 }

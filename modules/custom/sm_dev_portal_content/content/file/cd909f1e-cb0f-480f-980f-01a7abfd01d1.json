@@ -1,0 +1,82 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/uber.json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/26?_format=hal_json"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "cd909f1e-cb0f-480f-980f-01a7abfd01d1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/26?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "719575b1-9f62-442b-8181-3cd71d8ac94e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "uber.json"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/apidoc_specs\/uber.json",
+            "url": "\/sites\/default\/files\/apidoc_specs\/uber.json"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 12048
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-16T05:46:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-16T05:46:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

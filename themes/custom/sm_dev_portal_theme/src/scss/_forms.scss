@@ -37,7 +37,7 @@ button.close {
 		content: '';
 		vertical-align: super;
 		display: inline-block;
-		background-image: url(../../sm_dev_portal/assets/images/required.svg);
+		background-image: url(../../sm_dev_portal_theme/assets/images/required.svg);
 		background-repeat: no-repeat;
 		background-size: 7px 7px;
 		width: 7px;
@@ -77,7 +77,6 @@ div.dashboardcode-bsmultiselect {
 		padding: 0 0 0 18px;
 	}
 }
-
 
 input[type="submit"] {
 	width: auto;
@@ -128,6 +127,11 @@ button,
 	/*** User Apigee Edge Analytics form ***/
 	form.smdp-apigee-edge-developer-app-analytics,
 	form.smdp-apigee-edge-teams-team-app-analytics {
+		width: 100%!important;
+	}
+
+	/*** Add Key forms ***/
+	form.smdp-apigee-edge-app-api-key-add-form {
 		width: 100%!important;
 	}
 

@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cards
+    - field.field.node.apidoc.body
+    - field.field.node.apidoc.field_apidoc_fetched_timestamp
+    - field.field.node.apidoc.field_apidoc_file_link
+    - field.field.node.apidoc.field_apidoc_spec
+    - field.field.node.apidoc.field_apidoc_spec_file_source
+    - field.field.node.apidoc.field_apidoc_spec_md5
+    - field.field.node.apidoc.field_service_type_apidoc
+    - node.type.apidoc
+  module:
+    - smart_trim
+    - user
+id: node.apidoc.cards
+targetEntityType: node
+bundle: apidoc
+mode: cards
+content:
+  body:
+    type: smart_trim
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 78
+      trim_type: chars
+      trim_suffix: ' [...]'
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        trim_zero: true
+        text: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  field_service_type_apidoc:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_apidoc_fetched_timestamp: true
+  field_apidoc_file_link: true
+  field_apidoc_spec: true
+  field_apidoc_spec_file_source: true
+  field_apidoc_spec_md5: true

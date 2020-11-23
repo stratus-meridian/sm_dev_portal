@@ -1,0 +1,82 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore-expanded.yaml"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/26?_format=hal_json"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "eaf81a88-8149-4486-8cc0-fa49530e2cd8"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/26?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "719575b1-9f62-442b-8181-3cd71d8ac94e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "petstore-expanded.yaml"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/apidoc_specs\/petstore-expanded.yaml",
+            "url": "\/sites\/default\/files\/apidoc_specs\/petstore-expanded.yaml"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 5637
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-16T05:45:08+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-16T05:45:11+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

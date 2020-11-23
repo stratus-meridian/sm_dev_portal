@@ -20,7 +20,7 @@
  * Script for the Secret element.
  * Revised to change point of element //12-12-19
  */
-(function ($, Drupal) {
+(function ($, Drupal, drupalSettings) {
 
   'use strict';
 
@@ -30,21 +30,42 @@
       if ($secret.length) {
         $secret.each(function () {
           let $this = $(this);
+          let $el = $this.find('.secret__value');
+          let hClass = 'secret--hidden';
+          let appElWrapper = '.app-credential';
+          let $wrapper = $this.closest(appElWrapper);
+          let loader = '<img src="' + drupalSettings.path.baseUrl + 'core/misc/throbber-active.gif" border="0" />';
 
           // Hide the value.
-          $this.addClass('secret--hidden');
+          $this.addClass(hClass);
 
           // Toggle secret.
           $(this).find('.secret__toggle').on('click', function (event) {
+            let index = $(this).closest(appElWrapper).find('.secret__toggle').index(this);
+            let wrapperIndex = $wrapper.data('app-container-index');
             event.preventDefault();
-            $this.toggleClass('secret--hidden')
+            $this.toggleClass(hClass);
+            if ($this.hasClass(hClass)) {
+              $el.html('');
+            } else {
+              $el.html(loader);
+              callEndpoint($wrapper.data('team'), $wrapper.data('app'), function(data) {
+                $el.html(data[wrapperIndex][index]);
+              });
+            }
           });
 
           // Copy to clipboard.
           let $copy = $(this).find('.secret__copy');
           $copy.find('a').on('click', function (event) {
-            copyToClipboard($(this).data().value);
-            $copy.find('.badge').fadeIn().delay(1000).fadeOut();
+            let index = $(this).closest(appElWrapper).find('.secret__copy a').index(this);
+            let wrapperIndex = $wrapper.data('app-container-index');
+            console.log(index + "test");
+            console.log(wrapperIndex + "test");
+            callEndpoint($wrapper.data('team'), $wrapper.data('app'), function(data) {
+              copyToClipboard(data[wrapperIndex][index]);
+              $copy.find('.badge').fadeIn().delay(1000).fadeOut();
+            });
           })
         });
       }
@@ -77,4 +98,17 @@
     }
   }
 
-})(jQuery, Drupal);
+  /**
+   * Get credentials based on the app name.
+   */
+  function callEndpoint(teamApp,  app, callback) {
+    var endpoint = drupalSettings.path.baseUrl + 'user/' + drupalSettings.currentUser + '/apps/' + app + '/api-keys';
+    if (teamApp !== undefined && teamApp !== 0 && teamApp !== '') {
+      endpoint = drupalSettings.path.baseUrl + 'teams/' + teamApp + '/apps/' + app + '/api-keys';
+    }
+    $.get(endpoint, function(data) {
+      callback(data);
+    });
+  };
+
+})(jQuery, Drupal, drupalSettings);
