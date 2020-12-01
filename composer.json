@@ -1,83 +1,82 @@
 {
-    "name": "stratus-meridian/sm_dev_portal",
-    "description": "Stratus Meridian Developer portal for Google Cloud Apigee.",
-    "type": "drupal-profile",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/sm_dev_portal",
-    "support": {
-        "docs": "https://support.stratusmeridian.com",
-        "chat": "https://www.stratusmeridian.com"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },{
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
-    "require": {
-        "bower-asset/jquery-simple-color": "^1.2",
-        "bower-asset/spectrum": "^1.8",
-        "bower-asset/swagger-ui": "^3.24",
-        "composer/installers": "^1.7",
-        "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/admin_toolbar": "^2.0",
-        "drupal/adminimal_admin_toolbar": "^1.10",
-        "drupal/adminimal_theme": "^1.5",
-        "drupal/apigee_api_catalog": "^2.2",
-        "drupal/apigee_edge": "^1.8",
-        "drupal/better_exposed_filters": "^4.0@alpha",
-        "drupal/block_field": "^1.0@alpha",
-        "drupal/color_field": "^2.2",
-        "drupal/config_direct_save": "^1.0",
-        "drupal/console": "^1.0.2",
-        "drupal/console-extend-plugin": "0.9.3",
-        "drupal/core-recommended": "^8.8",
-        "drupal/ctools": "^3.2",
-        "drupal/default_content": "^1.0@alpha",
-        "drupal/devel_entity_updates": "^1.0",
-        "drupal/easy_breadcrumb": "^1.12",
-        "drupal/email_registration": "^1.0@RC",
-        "drupal/entity_reference_revisions": "^1.7",
-        "drupal/entity_update": "^1.2@RC",
-        "drupal/field_group": "^3.0",
-        "drupal/formdazzle": "^1.0",
-        "drupal/inline_responsive_images": "^2.1",
-        "drupal/key": "^1.12",
-        "drupal/link_attributes": "^1.9",
-        "drupal/login_redirect_per_role": "^1.7",
-        "drupal/openapi_ui": "^1.0@RC",
-        "drupal/openapi_ui_redoc": "^1.0@RC",
-        "drupal/paragraphs": "^1.9",
-        "drupal/pathauto": "^1.6",
-        "drupal/redoc_field_formatter": "^1.0",
-        "drupal/sm_appdashboard_apigee": "^1.2",
-        "drupal/smart_trim": "^1.2",
-        "drupal/svg_image": "^1.13",
-        "drupal/swagger_ui_formatter": "^2.4",
-        "drupal/term_reference_tree": "^1.0@alpha",
-        "drupal/token": "^1.6",
-        "drupal/twig_tweak": "^2.4",
-        "drupal/typed_data": "^1.0@alpha",
-        "drupal/views_infinite_scroll": "^1.6",
-        "drush-ops/behat-drush-endpoint": "^9.3",
-        "drush/drush": "^9.0.0",
-        "oomphinc/composer-installers-extender": "^1.1",
-        "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
-    },
-    "conflict": {
-        "drupal/pathauto": "<1.6"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
+  "name": "stratus-meridian/sm_dev_portal",
+  "description": "Stratus Meridian Developer portal for Google Cloud Apigee.",
+  "type": "drupal-profile",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/sm_dev_portal",
+  "support": {
+    "docs": "https://support.stratusmeridian.com",
+    "chat": "https://www.stratusmeridian.com"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },{
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "bower-asset/jquery-simple-color": "^1.2",
+    "bower-asset/spectrum": "^1.8",
+    "bower-asset/swagger-ui": "^3.24",
+    "cweagans/composer-patches": "^1.6.5",
+    "drupal/admin_toolbar": "^2.0",
+    "drupal/adminimal_admin_toolbar": "^1.10",
+    "drupal/adminimal_theme": "^1.5",
+    "drupal/apigee_api_catalog": "^2.2",
+    "drupal/apigee_edge": "^1.8",
+    "drupal/better_exposed_filters": "^4.0@alpha",
+    "drupal/block_field": "^1.0@alpha",
+    "drupal/color_field": "^2.2",
+    "drupal/config_direct_save": "^1.0",
+    "drupal/ctools": "^3.2",
+    "drupal/default_content": "^1.0@alpha",
+    "drupal/devel_entity_updates": "^1.0",
+    "drupal/easy_breadcrumb": "^1.12",
+    "drupal/email_registration": "^1.0@RC",
+    "drupal/entity_reference_revisions": "^1.7",
+    "drupal/entity_update": "^1.2@RC",
+    "drupal/field_group": "^3.0",
+    "drupal/formdazzle": "^1.0",
+    "drupal/inline_responsive_images": "^2.1",
+    "drupal/key": "^1.12",
+    "drupal/link_attributes": "^1.9",
+    "drupal/login_redirect_per_role": "^1.7",
+    "drupal/openapi_ui": "^1.0@RC",
+    "drupal/openapi_ui_redoc": "^1.0@RC",
+    "drupal/paragraphs": "^1.9",
+    "drupal/pathauto": "^1.6",
+    "drupal/redoc_field_formatter": "^1.0",
+    "drupal/sm_appdashboard_apigee": "^1.2",
+    "drupal/smart_trim": "^1.2",
+    "drupal/svg_image": "^1.13",
+    "drupal/swagger_ui_formatter": "^2.4",
+    "drupal/term_reference_tree": "^1.0@alpha",
+    "drupal/token": "^1.6",
+    "drupal/twig_tweak": "^2.4",
+    "drupal/typed_data": "^1.0@alpha",
+    "drupal/views_infinite_scroll": "^1.6"
+  },
+  "require-dev": {
+    "drupal/core-dev": "^8.7 || ^9",
+    "drush/drush": "^9.0 || ^10.0"
+  },
+  "conflict": {
+    "drupal/pathauto": "<1.6"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "patches": {
+      "drupal/default_content": {
+        "Do not import existing entities": "https://www.drupal.org/files/issues/2020-11-06/default_content-existing-entities-2698425-1-x.patch"
+      }
     }
   }
+}
