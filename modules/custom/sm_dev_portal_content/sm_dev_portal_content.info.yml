@@ -1,7 +1,7 @@
 name: 'Stratus Meridian Developer Portal Content'
 description: 'Default contents setup for Stratus Meridian Developer Portal.'
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: Stratus Meridian Developer Portal
 dependencies:
   - default_content:default_content

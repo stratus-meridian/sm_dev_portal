@@ -1,7 +1,7 @@
 name: Stratus Meridian Developer Portal Theme
 type: theme
 description: 'Custom developer portal with Bootstrap 4 and Apigee Edge Integration'
-
+base theme: false
 libraries:
   - sm_dev_portal_theme/global-styling
   - sm_dev_portal_theme/font-icons
@@ -18,4 +18,4 @@ regions:
   hidden: 'Page Hidden'
 
 # Information added by Drupal.org packaging script on 2019-02-25
-core: '8.x'
+core_version_requirement: ^8 || ^9

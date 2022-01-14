@@ -101,11 +101,15 @@
 	{% endif %}
 
 	{% if label_display == 'after' %}
-		{% if (element['#formdazzle'].form_id == 'views_exposed_form') or (element['#theme_wrappers'].form_id == 'form_element__views_exposed_form') %}
+		{% if (element['#formdazzle'].form_id == 'views_exposed_form') and (element['#formdazzle'].form_id_suggestion != 'views__apigee_api_catalog__apidoc_list') and (element['#formdazzle'].form_id_suggestion != 'views__blogs__blog_list') %}
 			<legend class="fieldset-legend">
 				<span class="fieldset-legend">{{ label['#title'] }}</span>
 			</legend>
-		{% else %}
+    {% elseif  (element['#theme_wrappers'].form_id == 'form_element__views_exposed_form') and (element['#formdazzle'].form_id_suggestion != 'views__apigee_api_catalog__apidoc_list') and (element['#formdazzle'].form_id_suggestion != 'views__blogs__blog_list') %}
+		  <legend class="fieldset-legend">
+				<span class="fieldset-legend">{{ label['#title'] }}</span>
+			</legend>
+    {% else %}
 			{{ label }}
 		{% endif %}
 	{% endif %}

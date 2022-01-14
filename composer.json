@@ -27,20 +27,19 @@
     "drupal/adminimal_theme": "^1.5",
     "drupal/apigee_api_catalog": "^2.2",
     "drupal/apigee_edge": "^1.8",
-    "drupal/better_exposed_filters": "^4.0@alpha",
+    "drupal/better_exposed_filters": "^5.0",
     "drupal/block_field": "^1.0@alpha",
     "drupal/color_field": "^2.2",
     "drupal/config_direct_save": "^1.0",
     "drupal/console": "^1.0.2",
     "drupal/console-extend-plugin": "^0.9.3",
     "drupal/ctools": "^3.2",
-    "drupal/default_content": "^2.0@alpha",
-    "drupal/easy_breadcrumb": "^1.12",
+    "drupal/default_content": "^1.0@alpha",
+    "drupal/easy_breadcrumb": "^2.0",
     "drupal/email_registration": "^1.0@RC",
     "drupal/entity_reference_revisions": "^1.7",
-    "drupal/entity_update": "^1.2@RC",
     "drupal/field_group": "^3.0",
-    "drupal/formdazzle": "^1.0",
+    "drupal/formdazzle": "^2.1",
     "drupal/inline_responsive_images": "^2.1",
     "drupal/key": "^1.12",
     "drupal/link_attributes": "^1.9",
@@ -49,11 +48,11 @@
     "drupal/openapi_ui_redoc": "^1.0@RC",
     "drupal/paragraphs": "^1.9",
     "drupal/pathauto": "^1.6",
-    "drupal/redoc_field_formatter": "^1.0",
+    "drupal/redoc_field_formatter": "^2.2",
     "drupal/sm_appdashboard_apigee": "^1.2",
     "drupal/smart_trim": "^1.2",
     "drupal/svg_image": "^1.13",
-    "drupal/swagger_ui_formatter": "^2.4",
+    "drupal/swagger_ui_formatter": "^3.3",
     "drupal/term_reference_tree": "^1.0@alpha",
     "drupal/token": "^1.6",
     "drupal/twig_tweak": "^2.4",
@@ -61,8 +60,8 @@
     "drupal/views_infinite_scroll": "^1.6"
   },
   "require-dev": {
-    "drupal/core-dev": "^8.7",
-    "drush/drush": "^9.0"
+    "drupal/core-dev": "^9.3.0",
+    "drush/drush": "^10.6"
   },
   "conflict": {
     "drupal/pathauto": "<1.6"
@@ -74,9 +73,10 @@
     "sort-packages": true
   },
   "extra": {
+    "enable-patching": true,
     "patches": {
-      "drupal/default_content": {
-        "Do not import existing entities": "https://www.drupal.org/files/issues/2020-11-06/default_content-existing-entities-2698425-1-x.patch"
+      "drupal/core": {
+        "Support entities that are neither content nor config entities": "https://www.drupal.org/files/issues/2020-12-02/3042467-50.patch"
       }
     }
   }
