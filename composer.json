@@ -28,7 +28,7 @@
     "drupal/apigee_api_catalog": "^2.2",
     "drupal/apigee_edge": "^1.8",
     "drupal/better_exposed_filters": "^4.0@alpha",
-    "drupal/block_field": "^1.0@alpha",
+    "drupal/block_field": "^1.0@RC",
     "drupal/color_field": "^2.2",
     "drupal/config_direct_save": "^1.0",
     "drupal/console": "^1.0.2",
