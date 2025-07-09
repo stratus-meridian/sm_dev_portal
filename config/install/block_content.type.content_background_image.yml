@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: content_background_image
 label: 'Content Background Image'
-revision: 0
+revision: false
 description: 'Basic block for full-width content with background image cover.'

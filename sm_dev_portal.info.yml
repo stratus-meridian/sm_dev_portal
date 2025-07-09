@@ -1,7 +1,7 @@
 name: Stratus Meridian Developer Portal Kickstart
 type: profile
-description: 'A customized kickstart profile for Apigee Developer Portals.'
-core_version_requirement: ^8 || ^9
+description: "A customized kickstart profile for Apigee Developer Portals."
+core_version_requirement: ^10 || ^11
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
@@ -9,6 +9,8 @@ core_version_requirement: ^8 || ^9
 # a label for the software being installed.
 distribution:
   name: Stratus Meridian Developer Portal Kickstart
+  install:
+    theme: claro
   # If you want your distribution to pre-select a language you can specify
   # the language code, as well. This will prevent the user from selecting
   # a language code in the user interface. While not recommended for generic
@@ -24,83 +26,98 @@ distribution:
 
 # Modules to install to support the profile.
 install:
-  - node
-  - history
-  - block
-  - breakpoint
-  - ckeditor
-  - color
-  - config
-  - comment
-  - contextual
-  - contact
-  - datetime
-  - block_content
-  - quickedit
-  - editor
-  - help
-  - image
-  - menu_ui
-  - options
-  - path
-  - page_cache
-  - dynamic_page_cache
-  - big_pipe
-  - taxonomy
-  - dblog
-  - shortcut
-  - toolbar
-  - field_ui
-  - file
-  - rdf
-  - views
-  - views_ui
-  - tour
-  - automated_cron
-  - media
-  - media_library
-  - responsive_image
   - admin_toolbar
-  - admin_toolbar_links_access_filter
   - admin_toolbar_tools
   - adminimal_admin_toolbar
-  - apigee_edge
   - apigee_api_catalog
-  - apigee_kickstart_enhancement
+  - apigee_edge
+  - apigee_edge_teams
+  - automated_cron
+  - backup_migrate
   - better_exposed_filters
-  - email_registration
-  - paragraphs
-  - pathauto
+  - big_pipe
+  - block
+  - block_content
   - block_field
+  - breakpoint
+  - ckeditor5
   - color_field
+  - comment
+  - config
+  - contact
+  - contextual
+  - ctools
+  - datetime
+  - dblog
+  - default_content
+  - dynamic_page_cache
   - easy_breadcrumb
+  - editor
+  - email_registration
+  - entity
+  - entity_reference_revisions
+  - field
   - field_group
+  - field_ui
+  - file
+  - file_link
+  - filter
   - formdazzle
+  - hal
+  - help
+  - history
+  - image
   - inline_responsive_images
+  - jquery_ui
+  - jquery_ui_datepicker
+  - jquery_ui_slider
+  - jquery_ui_touch_punch
   - key
+  - link
   - link_attributes
+  - link_attributes_menu_link_content
+  - media
+  - media_library
+  - menu_ui
+  - mysql
+  - node
   - openapi_ui
   - openapi_ui_redoc
+  - options
+  - page_cache
+  - path
   - path_alias
+  - phpass
   - redoc_field_formatter
-  - redoc_field_formatter
+  - responsive_image
+  - serialization
+  - shortcut
   - smart_trim
   - smdp_helper
   - svg_image
   - swagger_ui_formatter
+  - system
+  - taxonomy
   - term_reference_tree
+  - text
+  - token
+  - toolbar
+  - tour
   - twig_tweak
   - typed_data
+  - update
+  - user
   - views_infinite_scroll
+  - views_ui
   - menu_link_content
+  - pathauto
+  - views
+  - paragraphs
   - login_redirect_per_role
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
 themes:
-  - stable
-  - classy
   - sm_dev_portal_theme
-  - seven
-  - adminimal_theme
   - claro
+  - olivero

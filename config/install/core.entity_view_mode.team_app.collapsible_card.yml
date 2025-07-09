@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_edge_teams
+id: team_app.collapsible_card
+label: 'Collapsible card'
+description: ''
+targetEntityType: team_app
+cache: true

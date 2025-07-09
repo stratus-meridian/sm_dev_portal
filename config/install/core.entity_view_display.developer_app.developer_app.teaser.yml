@@ -12,77 +12,77 @@ mode: teaser
 content:
   appId:
     type: string
-    weight: 0
-    region: content
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  callbackUrl:
-    label: inline
-    weight: 4
+    weight: 0
     region: content
+  callbackUrl:
+    type: uri_link
+    label: inline
     settings: {  }
     third_party_settings: {  }
-    type: uri_link
+    weight: 4
+    region: content
   createdAt:
     type: timestamp_ago
     label: inline
-    weight: 5
-    region: content
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
+    weight: 5
+    region: content
   credentials:
+    settings: {  }
+    third_party_settings: {  }
     weight: 8
     region: content
+  description:
+    type: basic_string
+    label: inline
     settings: {  }
     third_party_settings: {  }
-  description:
-    label: inline
     weight: 6
     region: content
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
   displayName:
+    type: string
     label: inline
-    weight: 2
-    region: content
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
+    region: content
   lastModifiedAt:
     type: timestamp_ago
     label: inline
-    weight: 7
-    region: content
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
+    weight: 7
+    region: content
   name:
     type: string
-    weight: 1
-    region: content
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  status:
-    label: inline
-    type: status_property
-    weight: 3
+    weight: 1
     region: content
+  status:
+    type: status_property
+    label: inline
     settings:
       indicator_status_ok: approved
       indicator_status_warning: ''
       indicator_status_error: revoked
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   appFamily: true
   createdBy: true

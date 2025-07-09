@@ -11,12 +11,12 @@ pattern: 'service-type/[term:name]'
 selection_criteria:
   aa5d82e1-07e9-4eba-a11a-6b1535568208:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      service_type: service_type
     negate: false
+    uuid: aa5d82e1-07e9-4eba-a11a-6b1535568208
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: aa5d82e1-07e9-4eba-a11a-6b1535568208
+    bundles:
+      service_type: service_type
 selection_logic: and
 weight: -5
 relationships: {  }

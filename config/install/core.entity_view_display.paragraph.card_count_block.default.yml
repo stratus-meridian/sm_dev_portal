@@ -12,26 +12,26 @@ bundle: card_count_block
 mode: default
 content:
   field_count:
-    weight: 0
+    type: number_unformatted
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: number_unformatted
+    weight: 0
     region: content
   field_label:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_suffix:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
 hidden: {  }

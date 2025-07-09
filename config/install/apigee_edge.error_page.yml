@@ -1,0 +1,6 @@
+langcode: en
+error_page_title: 'Connection error'
+error_page_content:
+  format: plain_text
+  value: 'Cannot reach management server. An administrator should check the configuration of this site.'
+error_page_debug_messages: true

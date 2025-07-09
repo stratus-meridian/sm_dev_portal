@@ -12,11 +12,11 @@ theme: sm_dev_portal_theme
 region: hidden
 weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:apigee_api_catalog-apidoc_list'
+plugin: "views_exposed_filter_block:apigee_api_catalog-page_1"
 settings:
-  id: 'views_exposed_filter_block:apigee_api_catalog-apidoc_list'
-  label: ''
+  id: "views_exposed_filter_block:apigee_api_catalog-page_1"
+  label: ""
+  label_display: "0"
   provider: views
-  label_display: '0'
   views_label: Categories
-visibility: {  }
+visibility: {}

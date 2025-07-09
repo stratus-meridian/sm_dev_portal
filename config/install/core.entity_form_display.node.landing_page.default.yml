@@ -15,43 +15,43 @@ third_party_settings:
       children:
         - group_banner
         - group_body
+      label: Sections
+      region: content
       parent_name: ''
       weight: 1
       format_type: tabs
       format_settings:
-        direction: horizontal
-        id: ''
         classes: ''
-      label: Sections
-      region: content
+        id: ''
+        direction: horizontal
     group_banner:
       children:
         - field_page_banner
+      label: Banner
+      region: content
       parent_name: group_sections
       weight: 20
       format_type: tab
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Banner
-      region: content
     group_body:
       children:
         - field_page_section
+      label: Body
+      region: content
       parent_name: group_sections
       weight: 21
       format_type: tab
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Body
-      region: content
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -66,6 +66,7 @@ content:
   field_page_banner:
     type: paragraphs
     weight: 21
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -77,14 +78,14 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
-        add_above: '0'
     third_party_settings: {  }
-    region: content
   field_page_section:
     type: paragraphs
     weight: 26
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -96,11 +97,10 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
-        add_above: '0'
     third_party_settings: {  }
-    region: content
   path:
     type: path
     weight: 7
@@ -109,24 +109,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 8
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -139,11 +139,11 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 3
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden: {  }

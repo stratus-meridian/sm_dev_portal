@@ -1,3 +1,4 @@
+langcode: en
 name: 'Stratus Meridian'
 mail: support@stratusmeridian.com
 slogan: 'Developer Portal'
@@ -7,6 +8,5 @@ page:
   front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
 mail_notification: ''

@@ -50,16 +50,16 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_tags:
-    weight: 26
-    settings:
-      start_minimized: '1'
-      cascading_selection: '0'
-      max_depth: '0'
-      leaves_only: 0
-      select_parents: 0
-    third_party_settings: {  }
     type: term_reference_tree
+    weight: 26
     region: content
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
+    third_party_settings: {  }
   path:
     type: path
     weight: 9
@@ -68,24 +68,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -101,8 +101,8 @@ content:
     region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
 hidden: {  }

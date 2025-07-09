@@ -9,6 +9,23 @@
 #}
 
 {% if breadcrumb %}
+  {% if flag_user %}
+  <nav role="navigation" aria-label="breadcrumb" class="smdp-breadcrumb-wrapper">
+    <ol class="breadcrumb bg-transparent p-0 mb-0">
+    {% for item in user_breadcrumb %}
+      {% if item[1] %}
+        <li class="breadcrumb-item">
+          <a href="{{ item[1] }}" class="text-decoration-none">{{ item[0]|replace({'_': " ", "%20" : " "})|title }}</a>
+        </li>
+      {% else %}
+        <li class="breadcrumb-item active">
+          {{ item[0]|replace({'_': " ", "%20" : " "})|title }}
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </nav>
+  {% else %}
   <nav role="navigation" aria-label="breadcrumb" class="smdp-breadcrumb-wrapper">
     <ol class="breadcrumb bg-transparent p-0 mb-0">
     {% for item in breadcrumb %}
@@ -24,4 +41,5 @@
     {% endfor %}
     </ol>
   </nav>
+  {% endif %}
 {% endif %}

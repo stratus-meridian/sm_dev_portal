@@ -23,32 +23,32 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       card_count: card_count
       title_and_link: title_and_link
       content_background_image: content_background_image
       content_tabs: content_tabs
+    negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 4
         enabled: false
       card_count:
-        enabled: true
         weight: 5
+        enabled: true
       card_count_block:
         weight: 6
         enabled: false
-      title_and_link:
+      content_background_image:
+        weight: 11
         enabled: true
-        weight: 8
       content_tab_block:
         weight: 10
         enabled: false
-      content_background_image:
-        enabled: true
-        weight: 11
       content_tabs:
-        enabled: true
         weight: 11
+        enabled: true
+      title_and_link:
+        weight: 8
+        enabled: true
 field_type: entity_reference_revisions

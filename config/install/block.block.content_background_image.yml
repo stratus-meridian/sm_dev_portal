@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:content_background_image:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
+    - "block_content:content_background_image:fe11fcba-5db3-4780-8727-2e2381e5fbc3"
   module:
     - block_content
     - system
@@ -13,18 +13,18 @@ theme: sm_dev_portal_theme
 region: content
 weight: -1
 provider: null
-plugin: 'block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
+plugin: "block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3"
 settings:
-  id: 'block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3'
-  label: 'Join over 2000 developers using our APIs'
-  provider: block_content
+  id: "block_content:fe11fcba-5db3-4780-8727-2e2381e5fbc3"
+  label: "Join over 2000 developers using our APIs"
   label_display: visible
+  provider: block_content
   status: true
-  info: ''
+  info: ""
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: "/apis\r\n/api/*"
     negate: false
-    context_mapping: {  }
+    context_mapping: {}
+    pages: "/apis\r\n/api/*"

@@ -10,80 +10,80 @@ mode: default
 content:
   appId:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
   callbackUrl:
-    type: uri_link
-    weight: 5
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  createdAt:
-    type: timestamp_ago
-    weight: 6
-    region: content
-    label: hidden
-    settings:
-      future_format: '@interval hence'
-      past_format: '@interval ago'
-      granularity: 2
-    third_party_settings: {  }
-  credentials:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  description:
-    label: hidden
-    weight: 4
+    label: inline
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-  displayName:
-    label: hidden
-    weight: 2
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  lastModifiedAt:
+  createdAt:
     type: timestamp_ago
-    weight: 7
-    region: content
     label: hidden
     settings:
       future_format: '@interval hence'
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
-  name:
-    type: string
-    weight: 1
+    weight: 6
     region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  status:
-    type: string
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  warnings:
-    weight: 12
-    region: content
+  credentials:
     settings: {  }
     third_party_settings: {  }
+    weight: 8
+    region: content
+  description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  displayName:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  lastModifiedAt:
+    type: timestamp_ago
+    label: hidden
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  status:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  warnings:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
 hidden:
   appFamily: true
   createdBy: true

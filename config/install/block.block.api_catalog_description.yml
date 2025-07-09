@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:071cfbfa-8780-481b-9983-0c19e51136f3'
+    - "block_content:basic:071cfbfa-8780-481b-9983-0c19e51136f3"
   module:
     - block_content
   theme:
@@ -12,13 +12,13 @@ theme: sm_dev_portal_theme
 region: hidden
 weight: 0
 provider: null
-plugin: 'block_content:071cfbfa-8780-481b-9983-0c19e51136f3'
+plugin: "block_content:071cfbfa-8780-481b-9983-0c19e51136f3"
 settings:
-  id: 'block_content:071cfbfa-8780-481b-9983-0c19e51136f3'
-  label: 'API Catalog Description (Page: API Catalog)'
+  id: "block_content:071cfbfa-8780-481b-9983-0c19e51136f3"
+  label: "API Catalog Description (Page: API Catalog)"
+  label_display: "0"
   provider: block_content
-  label_display: '0'
   status: true
-  info: ''
+  info: ""
   view_mode: full
-visibility: {  }
+visibility: {}

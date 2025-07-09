@@ -15,17 +15,19 @@ bundle: title_and_link
 mode: default
 content:
   field_description:
+    type: text_textarea_with_summary
     weight: 1
+    region: content
     settings:
       rows: 4
-      placeholder: ''
       summary_rows: 3
+      placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
   field_link:
+    type: link_attributes
     weight: 2
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -39,16 +41,14 @@ content:
         aria-label: false
         title: false
     third_party_settings: {  }
-    type: link_attributes
-    region: content
   field_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

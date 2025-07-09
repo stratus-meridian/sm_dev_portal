@@ -5,3 +5,4 @@ name: 'API Category'
 vid: service_type
 description: 'Category for the API Document'
 weight: 0
+new_revision: false

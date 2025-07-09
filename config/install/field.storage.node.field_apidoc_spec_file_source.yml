@@ -1,12 +1,12 @@
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - apigee_api_catalog
   module:
     - node
     - options
+  enforced:
+    module:
+      - apigee_api_catalog
 id: node.field_apidoc_spec_file_source
 field_name: field_apidoc_spec_file_source
 entity_type: node
