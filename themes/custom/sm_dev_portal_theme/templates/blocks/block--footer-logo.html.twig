@@ -27,9 +27,9 @@
  * @see template_preprocess_block()
  */
 #}
+{% block content %}
+	{% if content.field_logo['#items'].entity.uri.value or content.field_footer_label.0 %}
 
-{% if content.field_logo['#items'].entity.uri.value or content.field_footer_label.0 %}
-	{% block content %}
 		<div class="logo-blocks">
 			{% if content.field_logo['#items'].entity.uri.value %}
 				<img class="d-lg-inline-block img-fluid mr-0 mr-lg-3 mb-3 mb-lg-0" alt="{{ content.field_logo['#items'].alt }}" src="{{ file_url(content.field_logo['#items'].entity.uri.value) }}" />
@@ -39,5 +39,6 @@
 				<p class="mb-0 d-lg-inline-block">{{ content.field_footer_label.0 }}</p>
 			{% endif %}
 		</div>
-	{% endblock %}
-{% endif %}
+
+	{% endif %}
+{% endblock %}

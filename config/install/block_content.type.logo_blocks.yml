@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: logo_blocks
 label: 'Logo Blocks'
-revision: 0
+revision: false
 description: 'Basic blocks for uploading Logos and vector images.'

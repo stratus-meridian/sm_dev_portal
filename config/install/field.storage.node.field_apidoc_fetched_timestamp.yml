@@ -1,11 +1,11 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
   enforced:
     module:
       - apigee_api_catalog
-  module:
-    - node
 id: node.field_apidoc_fetched_timestamp
 field_name: field_apidoc_fetched_timestamp
 entity_type: node

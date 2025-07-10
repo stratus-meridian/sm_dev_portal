@@ -2,41 +2,25 @@
   "name": "sm_dev_portal_theme",
   "version": "1.0.0",
   "description": "Custom theme for Stratus Meridian Developer Portal",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Stratus Meridian",
-    "dev_portal",
-    "sm_dev_portal",
-    "bootstrap4",
-    "sass",
-    "apigee"
-  ],
-  "author": "Mer Alvin Grita",
-  "license": "ISC",
-  "dependencies": {
-    "@dashboardcode/bsmultiselect": "^0.4.33",
-    "bootstrap": "^4.5.2",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.3",
-    "tachyons-sass": "^4.9.5"
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "bootstrap": "4.5.1",
     "browser-sync": "^2.24.7",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-scss-lint": "^1.0.0",
-    "gulp-clean-css": "3.9.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-postcss": "^8.0.0",
-    "gulp-uglify": "^3.0.0",
-    "merge-stream": "^1.0.1"
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "cross-env": "^5.2.1",
+    "jquery": "^3.3.1",
+    "laravel-mix": "^5.0.5",
+    "popper.js": "^1.14.3",
+    "resolve-url-loader": "^2.3.2",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }

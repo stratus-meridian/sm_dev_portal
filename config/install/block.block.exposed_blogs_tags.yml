@@ -12,11 +12,11 @@ theme: sm_dev_portal_theme
 region: hidden
 weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:blogs-blog_list'
+plugin: "views_exposed_filter_block:blogs-blog_list"
 settings:
-  id: 'views_exposed_filter_block:blogs-blog_list'
-  label: ''
+  id: "views_exposed_filter_block:blogs-blog_list"
+  label: ""
+  label_display: "0"
   provider: views
-  label_display: '0'
-  views_label: ''
-visibility: {  }
+  views_label: ""
+visibility: {}

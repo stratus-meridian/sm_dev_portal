@@ -64,7 +64,7 @@
 
 		$.each(smdp_opblock_tag_section, function(key, value) {
 			let $this = $(this);
-			let header = $this.find('h4');
+			let header = $this.find('h3');
 			let data_tag = header.data('tag');
 			let parent_span = $this.parent();
 

@@ -18,21 +18,21 @@ content:
     weight: 2
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_color_identification:
+    type: color_field_widget_spectrum
     weight: 1
+    region: content
     settings:
       show_input: '1'
-      palette: ''
       show_palette: '0'
+      palette: ''
       show_palette_only: '0'
       show_buttons: '0'
       allow_empty: '0'
     third_party_settings: {  }
-    type: color_field_widget_spectrum
-    region: content
   name:
     type: string_textfield
     weight: 0
@@ -49,9 +49,9 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4'
+    - "block_content:basic:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4"
   module:
     - block_content
   theme:
@@ -12,13 +12,13 @@ theme: sm_dev_portal_theme
 region: hidden
 weight: -3
 provider: null
-plugin: 'block_content:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4'
+plugin: "block_content:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4"
 settings:
-  id: 'block_content:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4'
-  label: 'Register (Page: User Login)'
+  id: "block_content:f5c346dd-ce1f-4e06-9e1a-a92b829c4db4"
+  label: "Register (Page: User Login)"
+  label_display: "0"
   provider: block_content
-  label_display: '0'
   status: true
-  info: ''
+  info: ""
   view_mode: full
-visibility: {  }
+visibility: {}

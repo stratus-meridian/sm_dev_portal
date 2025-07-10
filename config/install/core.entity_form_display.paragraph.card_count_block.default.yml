@@ -12,28 +12,28 @@ bundle: card_count_block
 mode: default
 content:
   field_count:
-    weight: 0
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
     type: number
+    weight: 0
     region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_label:
+    type: string_textfield
     weight: 2
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_suffix:
+    type: string_textfield
     weight: 1
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

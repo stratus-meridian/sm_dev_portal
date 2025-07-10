@@ -1,0 +1,9 @@
+langcode: en
+entity_label_singular: ''
+entity_label_plural: ''
+cache_expiration: 900
+required_base_fields:
+  - displayName
+locked_base_fields:
+  - displayName
+credential_lifetime: 0

@@ -16,27 +16,29 @@ bundle: banner
 mode: default
 content:
   field_background_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
       svg_attributes:
-        width: ''
-        height: ''
+        width: null
+        height: null
       svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_description_plain:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   field_link:
-    weight: 3
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -45,15 +47,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 3
     region: content
   field_title:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

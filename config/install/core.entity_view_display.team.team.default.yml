@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_edge
+    - apigee_edge_teams
+id: team.team.default
+targetEntityType: team
+bundle: team
+mode: default
+content:
+  displayName:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  status:
+    type: status_property
+    label: inline
+    settings:
+      indicator_status_ok: active
+      indicator_status_warning: ''
+      indicator_status_error: inactive
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  createdAt: true
+  lastModifiedAt: true
+  name: true

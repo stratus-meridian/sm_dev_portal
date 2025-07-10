@@ -1,11 +1,24 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - apigee_edge
+    - apigee_edge_teams
+    - comment
+    - contact
+    - file
+    - filter
+    - media
+    - shortcut
+    - system
 id: authenticated
 label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'accept own team invitation'
   - 'access comments'
   - 'access content'
   - 'access shortcuts'
@@ -13,14 +26,14 @@ permissions:
   - 'add_api_key own developer_app'
   - 'analytics own developer_app'
   - 'create developer_app'
+  - 'decline own team invitation'
   - 'delete own developer_app'
+  - 'delete own files'
   - 'edit_api_products developer_app'
   - 'post comments'
   - 'revoke_api_key own developer_app'
-  - 'search content'
   - 'skip comment approval'
   - 'update own developer_app'
   - 'use text format basic_html'
   - 'view media'
   - 'view own developer_app'
-  - 'view published apidoc entities'

@@ -13,20 +13,20 @@ bundle: service_type
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_color_identification:
-    weight: 1
+    type: color_field_formatter_text
     label: hidden
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

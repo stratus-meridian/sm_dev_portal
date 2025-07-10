@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * @file
@@ -99,7 +99,9 @@ function sm_dev_portal_theme_preprocess_apigee_entity__team(array &$variables) {
   $app = $variables['entity'];
 
   $variables['additional_tabs'] = [];
-  if ($app->getName()) $teamId = $app->getName();
+  if ($app->getName()) {
+    $teamId = $app->getName();
+  }
 
   $canonical_route_name = 'entity.team.canonical';
 

@@ -1,83 +1,125 @@
 {
-  "name": "stratus-meridian/sm_dev_portal",
-  "description": "Stratus Meridian Developer portal for Google Cloud Apigee.",
-  "type": "drupal-profile",
-  "license": "GPL-2.0-or-later",
-  "homepage": "https://www.drupal.org/project/sm_dev_portal",
-  "support": {
-    "docs": "https://support.stratusmeridian.com",
-    "chat": "https://www.stratusmeridian.com"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },{
-      "type": "composer",
-      "url": "https://asset-packagist.org"
+    "name": "stratus-meridian/sm_dev_portal",
+    "description": "Stratus Meridian Developer portal for Google Cloud Apigee.",
+    "type": "drupal-profile",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/sm_dev_portal",
+    "support": {
+        "docs": "https://support.stratusmeridian.com",
+        "chat": "https://www.stratusmeridian.com"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "furf/jquery-ui-touch-punch",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "php": "~8.1.0 || ~8.2.0",
+        "bower-asset/chosen": "^1.8",
+        "bower-asset/jquery-simple-color": "^1.2",
+        "bower-asset/spectrum": "^1.8",
+        "bower-asset/swagger-ui": "^5.17",
+        "composer/installers": "^1.7",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.2",
+        "drupal/adminimal_admin_toolbar": "1.x-dev@dev",
+        "drupal/adminimal_theme": "^1.5",
+        "drupal/apigee_api_catalog": "^3.0.4",
+        "drupal/apigee_edge": "^2.1.2 || ^3.0",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/block_field": "^1.0@alpha",
+        "drupal/color_field": "^3.0",
+        "drupal/crazyegg": "^1.1",
+        "drupal/ctools": "^3.2",
+        "drupal/default_content": "^2.0@alpha",
+        "drupal/easy_breadcrumb": "^2.0",
+        "drupal/email_registration": "^1.0@RC",
+        "drupal/entity_reference_revisions": "^1.7",
+        "drupal/field_group": "^3.0",
+        "drupal/formdazzle": "^3.0",
+        "drupal/hal": "^2.0",
+        "drupal/inline_responsive_images": "3.x-dev@dev",
+        "drupal/jquery_ui_slider": "^2.0",
+        "drupal/key": "^1.12",
+        "drupal/link_attributes": "^2.1",
+        "drupal/login_redirect_per_role": "^1.7",
+        "drupal/openapi_ui": "^1.0@RC",
+        "drupal/openapi_ui_redoc": "^1.0@RC",
+        "drupal/paragraphs": "^1.9",
+        "drupal/pathauto": "^1.6",
+        "drupal/redoc_field_formatter": "^3.0",
+        "drupal/smart_trim": "^2.0",
+        "drupal/svg_image": "^3.0",
+        "drupal/swagger_ui_formatter": "^4.2",
+        "drupal/term_reference_tree": "^2.0",
+        "drupal/token": "^1.6",
+        "drupal/twig_tweak": "^3.3",
+        "drupal/typed_data": "^2.1",
+        "drupal/upgrade_status": "^4.0",
+        "drupal/views_infinite_scroll": "^2.0",
+        "furf/jquery-ui-touch-punch": "dev-master"
+    },
+    "require-dev": {
+        "apigee/apigee-mock-client-php": "^1.1",
+        "drupal/core-dev": "^10",
+        "drush/drush": "^12.5 || ^13.6"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-paths": {
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/libraries/swagger_ui": [
+                "bower-asset/swagger-ui"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "patches": {
+            "drupal/core": {
+                "TypeError: FieldTypePluginManager::createFieldItem() called in FieldStorageConfig.php": "https://www.drupal.org/files/issues/2024-05-27/field-typeerror-3450175-3.patch",
+                "Support entities that are neither content nor config entities": "https://www.drupal.org/files/issues/2020-12-02/3042467-50.patch",
+                "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-12-17/core-undefined-index-summary_attributes-2998194-9.patch",
+                "Fix Validation issue for entity reference field on updating teams #470": "https://www.drupal.org/files/issues/2021-04-23/validate-reference-constraint-3210319-3.patch",
+                "Fix Drupal 10.3 upgrade issue of missing status-message theme suggestions": "https://www.drupal.org/files/issues/2024-06-28/3456176-45-missing-status-messages-theme-suggestions.patch"
+            },
+            "drupal/default_content": {
+                "Do not import existing entities": "https://www.drupal.org/files/issues/2022-07-29/default_content-fix-uuid-duplicate-entry-2698425.patch"
+            }
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
+        }
     }
-  ],
-  "require": {
-    "bower-asset/jquery-simple-color": "^1.2",
-    "bower-asset/spectrum": "^1.8",
-    "bower-asset/swagger-ui": "^3.24",
-    "cweagans/composer-patches": "^1.6.5",
-    "drupal/admin_toolbar": "^2.0",
-    "drupal/adminimal_admin_toolbar": "^1.10",
-    "drupal/adminimal_theme": "^1.5",
-    "drupal/apigee_api_catalog": "^2.2",
-    "drupal/apigee_edge": "^1.8",
-    "drupal/better_exposed_filters": "^4.0@alpha",
-    "drupal/block_field": "^1.0@alpha",
-    "drupal/color_field": "^2.2",
-    "drupal/config_direct_save": "^1.0",
-    "drupal/console": "^1.0.2",
-    "drupal/console-extend-plugin": "^0.9.3",
-    "drupal/ctools": "^3.2",
-    "drupal/default_content": "^2.0@alpha",
-    "drupal/easy_breadcrumb": "^1.12",
-    "drupal/email_registration": "^1.0@RC",
-    "drupal/entity_reference_revisions": "^1.7",
-    "drupal/entity_update": "^1.2@RC",
-    "drupal/field_group": "^3.0",
-    "drupal/formdazzle": "^1.0",
-    "drupal/inline_responsive_images": "^2.1",
-    "drupal/key": "^1.12",
-    "drupal/link_attributes": "^1.9",
-    "drupal/login_redirect_per_role": "^1.7",
-    "drupal/openapi_ui": "^1.0@RC",
-    "drupal/openapi_ui_redoc": "^1.0@RC",
-    "drupal/paragraphs": "^1.9",
-    "drupal/pathauto": "^1.6",
-    "drupal/redoc_field_formatter": "^1.0",
-    "drupal/sm_appdashboard_apigee": "^1.2",
-    "drupal/smart_trim": "^1.2",
-    "drupal/svg_image": "^1.13",
-    "drupal/swagger_ui_formatter": "^2.4",
-    "drupal/term_reference_tree": "^1.0@alpha",
-    "drupal/token": "^1.6",
-    "drupal/twig_tweak": "^2.4",
-    "drupal/typed_data": "^1.0@alpha",
-    "drupal/views_infinite_scroll": "^1.6"
-  },
-  "require-dev": {
-    "drupal/core-dev": "^8.7",
-    "drush/drush": "^9.0"
-  },
-  "conflict": {
-    "drupal/pathauto": "<1.6"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "extra": {
-    "patches": {
-      "drupal/default_content": {
-        "Do not import existing entities": "https://www.drupal.org/files/issues/2020-11-06/default_content-existing-entities-2698425-1-x.patch"
-      }
-    }
-  }
 }
